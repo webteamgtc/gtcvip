@@ -48,8 +48,8 @@ const FooterNew = () => {
                 Get in Touch
               </h2>
               <p className="text-gray-400 text-sm xl:text-base tracking-wider">
-              Discover our Forex & CFDs accounts at GTC Financial to optimize 
-              your investment potential.
+              Unlock premium insights, expert coaching, exclusive competitions, and loyalty rewards — all designed to accelerate your trading journey with GTC.
+
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 p-4">
