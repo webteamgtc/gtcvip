@@ -1,0 +1,203 @@
+{
+  "navigation": {
+    "tobbar": {
+      "liclabel": "SCA许可证",
+      "partner": "与（BHAT）-纳斯达克上市合作伙伴",
+      "member": "会员登录",
+      "account": "开设账户",
+      "rgister": "注册为合作伙伴"
+    },
+    "about": {
+      "lable": "关于我们"
+        },
+    "account": {
+      "lable": "账户"
+    },
+    "trading": {
+      "lable": "交易与平台"
+    },
+    "login": "会员登录",
+    "new_client_portal": "会员登录",
+    "old_client_portal": "旧客户门户"
+  },
+  "common": {
+    "liveAccount": "开设真实账户",
+    "demoAccount": "免费模拟账户"
+  },
+  "home": {
+    "metaData": {
+      "title": "GTC集团 - 我们致力于提供顶级服务",
+      "des": "我们丰富的经验和深入的知识是我们专业技能的基石"
+    },
+    "hero": {
+      "title1": "值得信赖",
+      "desc1": "通过持续增长和坚定不移的以客户为中心，巩固我们服务行业的全球领导地位，赢得全球信任。",
+      "title3": "全球的",
+      "desc3": "我们为全球超过895,000名客户提供服务，在100多个国家提供多样化的产品。",
+      "liveAccount": "开设真实账户",
+"partnerAccount": "成为合作伙伴",
+      "fact_no1": 895000,
+      "fact_desc1": "服务过客户",
+      "fact_no2": 85000,
+      "fact_desc2": "全球服务的国家",
+      "fact_no3": "亿美元",
+      "fact_desc3": "亿美元实收资本",
+      "fact_no4": "亿美元",
+      "fact_desc4": "亿美元每日业务"
+    },
+    "whyGTC": { 
+      "title": "为什么选择GTC?",
+      "desc": "通过量身定制的解决方案、专业见解和无与伦比的支持进行创新，推动您的业务成功。",
+      "first" : {
+        "title": "致力",
+        "heading": "优质服务",
+        "description": "我们致力于提供最上层的服务"
+      },
+      "second" : {
+        "title": "技术",
+        "heading": "尖端技术",
+        "description": "直接访问顶层教学"
+      },
+      "third" : {
+        "title": "卓越",
+        "heading": "没有妥协，只有卓越",
+        "description": "我们从不在影响客户绩效的因素上妥协"
+      },
+      "fourth" : {
+        "title": "体验 ",
+        "heading": "以经验为后盾的专业知识",
+        "description": "与顶级流动性交易，快速、安全地执行，仅需 10ms。"
+      },
+      "desc2":"有效地最大化您的利润",
+      "open_live_account":"开设真实账户"
+    },
+    "global_presence": {
+      "heading": "我们的全球存在",
+      "desc": "在GTC，我们是一个全球团队，在全球16个地点设有业务。从繁华都市到偏远角落，我们多样化的网络使我们能够与全球各地的客户联系，为他们提供个性化的解决方案。在GTC，我们对客户的承诺没有界限。",
+      "uae": "阿联酋",
+      "uk":"英国",
+      "china": "中国",
+      "vanuato":"瓦努阿图",
+      "vietnam":"越南",
+      "pakistan": "巴基斯坦",
+      "malaysia" : "马来西亚",
+      "hong_kong":"香港",
+      "indonesia":"印度尼西亚",
+      "india": "印度",
+      "egypt":"埃及",
+      "cyprus": "塞浦路斯",
+      "turkey": "土耳其",
+      "nigeria":"尼日利亚",
+      "mauritius": "毛里求斯",
+      "south_africa":"南非"
+    },
+    "our-payment": "我们的付款方式"   
+  },
+  "about": {
+    "metaData": {
+      "title": "公司简介 | GTCFX",
+      "des": "我们服务于多样且广泛的客户群体，为全球100个国家的客户和合作伙伴提供服务。" 
+    },
+    "about-gtc-group": {
+      "title": "关于我们",
+      "subTitle": "全球信赖的多重监管经纪商",
+      "heading1": "专业的",
+      "desc1_1": "在 GTC GROUP，我们已成为行业中全球领导者。我们的自豪在于我们丰富的经验和对提供顶级服务的坚定承诺。自 2012 年以来，我们在澳大利亚保持着强劲的业务.",
+      "desc1_2": "我们卓越的服务和产品范围证明了我们的业务稳定性以及我们致力于为快速增长的客户群提供无与伦比的服务的承诺，目前我们的客户群已遍布全球 895,000 名客户。",
+      "desc1_3": "我们迎合多元化和广泛的客户群，为全球 100 个国家的客户和合作伙伴提供服务。",
+      "heading3": "有经验的",
+      "desc3": "自成立以来，我们已在在营业牢固地建立了我们的专业知识。在我们的整个旅程中，我们一直是塑造这个行业的开拓者，卓越产品和服务。",
+      "heading4": "值得信赖",
+      "desc4": "我们的持续增长和对客户满意度的坚定关注使我们成为寻求一流解决方案的值得信赖的合作伙伴。探索我们全面的产品和体验，巩固我们作为全球行业领导者的地位。"
+    },
+    "tradeInvest": {
+      "part1": "交易和投资",
+      "part2": "我们迎合多样化和广泛的客户，为全球100个国家的客户和合作伙伴提供服务。",
+      "liveAccount": "开设真实账户"
+    },    
+    "why-gtc-group": {
+      "metaData": {
+        "title": "为什么选择 | GTCFX",
+        "des": "开启盈利机会：您的最佳投资之旅从我们开始"
+      },
+      "title": "为什么选择GTC？",
+      "sub_title1_1": "开启有利可图的机会：最佳营业之旅从我们开始",
+      "sub_title1_2": "我们的服务为您提供了明智和有利可图地业务的最佳途径，也提供一个安全高效的环境。 确保您的活动得到先进技术和专业支持的支持。",
+      "sub_title1_3": "我们致力于提供最佳的体验，赋予您顺畅导航市场的能力，做出明智决策，实现业务回报。加入我们，解锁您在行业旅程中的财务增长和成功潜力。",
+      "heading1_1": "使用最",
+      "heading1_2": "佳的服务",
+      "point1_1": "用户友好的用户关系管理系统",
+      "point1_2": "技术有助于全面市场研究",
+      "point1_3": "专业客户参与,",
+      "point1_4": "自动化工具提高了整体生产力",
+      "heading2_1": "定制自己",
+      "heading2_2": "的业务",
+      "point2_1": "全球触达",
+      "point2_2": "提高效率",
+      "point2_3": "质量控制",
+      "point2_4": "个性化产品和服务以满足客户需求",
+      "heading3_1": "借助尖端技",
+      "heading3_2": "术助力成功",
+      "heading3_3": "",
+      "point3_1": "该系分析",
+      "point3_2": "提高安全性",
+      "point3_3": "减少错误。",
+      "point3_4": "市场扩张",
+      "heading4_1": "利用顶级工",
+      "heading4_2": "具取得成功",
+      "heading4_3": "",
+      "point4_1": "重复性任务的机器人过程自动化（RPA)",
+      "point4_2": "营销效率",
+      "point4_3": "增强通信",
+      "point4_4": "实时信息",
+      "note_title1": "毫无妥协，只有卓越：",
+      "note_desc1": "我们绝不妥协影响客户表现的因素。这就是为什么我们提供紧密的点差，并确保最佳执行。",
+      "note_title2": "先进的交易平台：",
+      "note_desc2": "GTC提供尖端的交易平台，旨在满足全球多样化客户的需求。",
+      "note_title3": "经验支持的专业知识：",
+      "note_desc3": "我们对全球金融市场的深厚经验和深入了解是我们专业知识的基石。",
+      "note_title4": "优质服务：",
+      "note_desc4": "我们致力于提供一流的货币交易服务，以及差价合约、贵金属和能源。",
+      "note_title5": "我们的运营理念：",
+      "note_desc5": "在GTC，我们的运营理念很简单：客户满意带来忠诚。我们为自己的信誉感到自豪，这是建立在可信度和我们满足并超越客户期望的能力之上的。为了保持行业趋势和技术的前沿性，我们不断监控发展动态，确保我们适应不断变化的复杂和苛刻的客户需求。"
+    },
+    "contact-us": {
+      "metaData": {
+        "title": "联系我们 | GTC Group",
+        "des": "我们的团队致力于超越您的期望，满足您的需求。无论是解决您的担忧，协助您解决技术问题，还是提供专业指导，我们都在这里为您服务。"
+      },
+      "title": "联系我们",
+      "sub_title1_1": "您的满意是我们的最高优先事项。我们致力于确保您与我们服务的无缝和有益体验。",
+      "sub_title1_2": "我们的团队致力于超越您的期望，满足您的需求。无论是解决您的担忧，协助您解决技术问题，还是提供专业指导，我们都在这里为您服务。您的成功和满足是我们使命的核心，我们始终准备好以任何方式为您提供帮助。",
+      "live_chat": "在线聊天",
+      "support_email": "support@gtcup.com",
+      "phone": "+971 800 667788",
+      "more_info": "如需更多查询，请填写以下表格",
+      "form": {
+        "first-name": "名字",
+        "last-name": "姓氏",
+        "email": "电子邮件地址",
+        "message": "在这里输入您的消息...",
+        "submit": "提交",
+        "sending": "发送中..."
+      },
+      "contactTerms": "点击提交，我承认我已阅读、理解并同意客户协议，并同意 GTC Group 与我联系。"
+    }    
+  },
+  "footerLink": {
+    "footerNotice": {
+      
+      "gtc_group_heading1": "GTC Group LLC-FZ",
+      "gtc_group_para1": " is a holding company incorporated in Dubai, United Arab Emirates with Business License Number: 2311147.01. Its registered office is at: Business Center 1, M Floor, Meydan Hotel, Nad Al Sheba, Dubai, United Arab Emirates.",
+      "gtc_group_heading2": "GTC Group LLC-FZ",
+      "gtc_group_para2": " along with its wholly-owned entities or entities affiliated via common ownership or control within the GTC group of companies (collectively “GTC Group”) trade as “GTC”, “GTC Group”, “GTC Global”, “GTC Markets”, “GTC FX”, or “GTC Global Markets”."
+    }
+  },
+  "footerCopyRight": {
+    "copyRightText": "© 版权所有 2024 GTCFX - 保留所有权利"
+  },
+  "cookies": {
+    "text": "点击“接受所有 Cookie”即表示您同意在您的设备上存储 Cookie，以增强网站导航、分析网站使用情况，并协助我们的营销工作。",
+    "btnText": "接受所有 Cookie"
+  }  
+}
