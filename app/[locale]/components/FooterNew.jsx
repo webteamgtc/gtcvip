@@ -8,9 +8,9 @@ import CopyRight from "./CopyRight";
 const FooterNew = () => {
   // Define contact details for rendering
   const contactDetails = [
-    { iconSrc: "/Mail.png", title: "Email", details: "info@gtcfc.com" },
-    { iconSrc: "/phone.png", title: "Phone", details: "+971 4 553 8416" },
-    { iconSrc: "/add.png", title: "Address", details: "Nassima Tower - 17th Floor - Trade Centre - Trade Centre 1 - Dubai" }
+    { iconSrc: "/Mail.png", title: "Email", details: "info@gtcvip.com" },
+    { iconSrc: "/phone.png", title: "Phone", details: "+971 4 000 8416" },
+    { iconSrc: "/add.png", title: "Address", details: "Nassima Tower - 22nd Floor - Trade Centre - Trade Centre 1 - Dubai" }
   ];
 
   const menuItems = [
@@ -66,7 +66,7 @@ const FooterNew = () => {
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4">
         <div className="leftside flex flex-col md:flex-row gap-20 items-center">
         <div className="w-24 h-16 relative">
-          <Image src="/footer-logo.png" alt="Footer Logo" layout="fill" objectFit="contain" />
+          <Image src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/footer-logo.webp" alt="Footer Logo" layout="fill" objectFit="contain" />
         </div>
         <ul className="hidden md:flex gap-8">
           {menuItems.map((item, index) => (

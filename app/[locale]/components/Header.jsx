@@ -111,11 +111,11 @@ const Header = () => {
         <nav className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center bg-white border border-secondary border-opacity-20 rounded-full px-8">
             <Image
-              src="/logo.png"
-              width={110}
-              height={60}
+              src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/logo-2024-new.webp"
+              width={160}
+              height={58}
               alt="GTCFX"
-              className="cursor-pointer lg:w-[110px] lg:h-[60px] md:w-[120px] md:h-[53px] w-[80px] h-[40px]"
+              className="lg:w-[160px] lg:h-[58px] md:w-[120px] md:h-[53px] w-[130px] h-[47px] cursor-pointer"
               onClick={() => router.push("/")}
             />
             <div className="hidden md:flex justify-end items-center">
