@@ -20,14 +20,18 @@ import TickerTapeWidget from "./components/home/TickerTapeWidget ";
 import FrequentlyAskedQuestions from "./components/home/FrequentlyAskedQuestions";
 import VIPSteps from "./components/home/VIPSteps";
 import VIPJourney from "./components/home/VIPJourney";
+import { useUserStore } from "./store/userSlice";
 
 
 
 
 export default function Home() {
   const t = useTranslations("home");
+  const setUser = useUserStore((state) => state.setUser);
+
   useEffect(() => {
     AOS.init({ disable: "mobile" }); 
+    setUser(null);
   }, []);
   const gtcFaqData = [
     {
