@@ -19,7 +19,7 @@ const NavItem = ({ title, action, icon, submenu, isActive }) => {
 
   return (
     <li
-      className={`clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-3 text-[sm] lg:text-base ${
+      className={`clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-3 text-[sm] lg:text-base font-medium ${
         isActive ? "text-secondary" : "text-primary hover:text-secondary"
       }`}
       onMouseEnter={() => setShowSubmenu(true)}
@@ -61,17 +61,23 @@ const Header = () => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
+      const offset = 100; // height to scroll above the section (adjust as needed)
+      const top = section.getBoundingClientRect().top + window.scrollY - offset;
+  
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
     }
   };
-
+  
   const navigationData = [
     { title: "Home", id: "home" },
-    { title: "About GTC VIP", id: "aboutUs" },
-    { title: "Why Trade", id: "whyTrade" },
-    { title: "FAQ's", id: "faq" },
+    { title: "Why Trade With Us", id: "whyTrade" },
+    { title: "Journey With Us", id: "journey" },
     { title: "How It Work", id: "howItWorks" },
-    { title: "Contact Us", id: "contact" },
+    { title: "FAQ's", id: "faq" },
+    { title: "Contact Us", id: "contact Us" },
   ];
 
   useEffect(() => {
@@ -110,13 +116,13 @@ const Header = () => {
         }`}
       >
         <nav className="max-w-6xl mx-auto">
-          <div className="flex justify-between items-center bg-white border border-secondary border-opacity-20 rounded-full px-8">
+          <div className="flex justify-between items-center bg-white py-2 border border-secondary border-opacity-20 rounded-full px-4 md:px-8">
             <Image
-              src="/gtcvip-logo.png"
-              width={180}
-              height={35}
+              src="/h-logo.png"
+              width={200}
+              height={39}
               alt="GTCFX"
-              className="lg:w-[180px] lg:h-[35px] md:w-[120px] md:h-[53px] w-[130px] h-[47px] cursor-pointer"
+              className="lg:w-[200px] lg:h-[39px] md:w-[120px] md:h-[53px] w-[140px] h-[27px] cursor-pointer"
               onClick={() => router.push("/")}
             />
             <div className="hidden md:flex justify-end items-center">

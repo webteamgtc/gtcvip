@@ -1,5 +1,4 @@
 import React from "react";
-import VIPSteps from "./VIPSteps";
 import LiveAccountButton from "../liveAccountButton";
 
 const tiers = [
@@ -58,7 +57,7 @@ const tiers = [
 
 const VIPJourney = () => {
   return (
-    <section className="py-16 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] text-white">
+    <section id="journey" className="py-16 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] text-white">
       <div className="top-section text-center mb-10">
       <h2  style={{ lineHeight: "3.3rem" }}
         className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
