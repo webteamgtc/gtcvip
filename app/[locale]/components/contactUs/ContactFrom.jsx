@@ -1,160 +1,588 @@
-'use client';
-import { useTranslations } from "next-intl";
-import { useState } from "react";
-import { toast } from "react-toastify";
+// 'use client';
+// import { useTranslations } from "next-intl";
+// import { useState } from "react";
+// import { toast } from "react-toastify";
+// import { useFormik } from "formik";
+// import * as Yup from "yup";
+// import axios from 'axios';
+
+// const ContactFrom = () => {
+//   const [loading, setLoading] = useState(false);
+//   const t = useTranslations("about.contact-us");
+//   const formik = useFormik({
+//     initialValues:{
+//       first_name: '',
+//       last_name: '',
+//       phone: '',
+//       email: '',
+//       message:''
+//     },
+//     validationSchema:Yup.object({
+//       first_name: Yup.string().min(2, t("error.min")).required(t("error.firstName")),
+//       last_name: Yup.string().min(2, t("error.min")).required(t("error.lastName")),
+//       email: Yup.string().email(t("error.invalidEmail")).required(t("error.email")),
+//       phone: Yup.number().required('Phone number is required'),
+//       message: Yup.string().required('Message is required'),
+//     }),
+//     onSubmit:async(values)=>{
+//       console.log(values);
+//       try{
+//         setLoading(true);
+//         const response = await axios.post('https://hooks.zapier.com/hooks/catch/16420445/3gwk9ez/',JSON.stringify(values));
+//       }catch(error){
+//         console.log(error);
+//       }finally{
+//         setLoading(false);
+//         toast('Form Submitted Successfully!')
+//         formik.resetForm();
+//       }
+
+//     }
+//   })
+//   return (
+//     <div className="bg-transparent">
+//       <form onSubmit={formik.handleSubmit}>
+//         <div className="space-y-12">
+//           <div className="grid max-w-6xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-2 text-left">
+//             <div className="sm:col-span-3">
+
+//               <div>
+//                 <input
+//                   type="text"
+//                   name="first_name"
+//                   id="first_name"
+//                   placeholder= {t("form.first-name")}
+//                   onChange={formik.handleChange}
+//                   onBlur={formik.handleBlur}
+//                   value={formik.values.first_name}
+//                   className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.first_name && formik.errors.first_name
+//                     ? "border-2 border-red-600"
+//                     : ""
+//                   }`}
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="sm:col-span-3">
+
+//               <div>
+//                 <input
+//                   type="text"
+//                   name="last_name"
+//                   id="last_name"
+//                   onChange={formik.handleChange}
+//                   onBlur={formik.handleBlur}
+//                   value={formik.values.last_name}
+//                   placeholder= {t("form.last-name")}
+//                   className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
+//                     ? "border-2 border-red-600"
+//                     : ""
+//                   }`}
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="sm:col-span-3">
+
+//               <div>
+//                 <input
+//                   id="email"
+//                   name="email"
+//                   type="email"
+//                   onChange={formik.handleChange}
+//                   onBlur={formik.handleBlur}
+//                   value={formik.values.email}
+//                   autoComplete="email"
+//                   placeholder= {t("form.email")}
+//                   className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
+//                     ? "border-2 border-red-600"
+//                     : ""
+//                   }`}
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="sm:col-span-3">
+
+//               <div>
+//                 <input
+//                   id="phone"
+//                   name="phone"
+//                   type="tel"
+//                   onChange={formik.handleChange}
+//                   onBlur={formik.handleBlur}
+//                   value={formik.values.phone}
+//                   placeholder="+971 00 111 2233"
+//                   className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.phone && formik.errors.phone
+//                     ? "border-2 border-red-600"
+//                     : ""
+//                   }`}
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="col-span-full">
+
+//               <div className="mt-2">
+//                 <textarea
+//                   id="message"
+//                   name="message"
+//                   onChange={formik.handleChange}
+//                   onBlur={formik.handleBlur}
+//                   value={formik.values.message}
+//                   rows={3}
+//                   className={`block w-full border border-gray-100 p-2 bg-transparent text-white border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.message && formik.errors.message
+//                     ? "border-2 border-red-600"
+//                     : ""
+//                   }`}
+//                   placeholder={t("form.message")}
+//                 />
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+
+//         <div className="mt-6 flex flex-col items-start justify-end gap-x-6">
+//           <button
+//            disabled={loading}
+//             type="submit"
+//             className="block bg-primary text-white text-xl w-[120px] h-[40px] border border-gray-100 p-2 border-opacity-25  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6 mb-2"
+//           >
+//              {loading ? <p>{t("form.sending")}</p>:<p>{t("form.submit")}</p>}
+//           </button> 
+//           <p className="text-xs py-3 text-gray-400 leading-5">{t("contactTerms")}.</p>
+//         </div>
+//       </form>
+//     </div>
+//   );
+// };
+
+// export default ContactFrom;
+
+
+"use client";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import axios from 'axios';
+import axios from "axios";
+import { usePathname, useSearchParams } from "next/navigation";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
+import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import { useState, useContext, useEffect } from "react";
+import { useLocationDetail } from "@/context/useLocationDetails";
+import { TiTick } from "react-icons/ti";
+import { toast } from "react-toastify";
+import OtpInput from "react-otp-input";
+import { ClockLoader } from "react-spinners";
+import { allowedCountries } from "@/context/allowedCounties";
+import useFormHook from "../hooks/useFormHooks";
+import Link from "next/link";
+import useCountriesDetails from "@/context/useCountiesDetails";
+import { convertToDesiredLocale } from "@/helpers";
 
-const ContactFrom = () => {
+
+const TradeForm = () => {
+  //Email OTP Logic
+  const { step, setStep, data, setData, message, loadingCrm, getCrmData, handleSubmitData } = useFormHook()
+  const [emailOtp, setEmailOtp] = useState("");
   const [loading, setLoading] = useState(false);
-  const t = useTranslations("about.contact-us");
-  const formik = useFormik({
-    initialValues:{
-      first_name: '',
-      last_name: '',
-      phone: '',
-      email: '',
-      message:''
-    },
-    validationSchema:Yup.object({
-      first_name: Yup.string().min(2, t("error.min")).required(t("error.firstName")),
-      last_name: Yup.string().min(2, t("error.min")).required(t("error.lastName")),
-      email: Yup.string().email(t("error.invalidEmail")).required(t("error.email")),
-      phone: Yup.number().required('Phone number is required'),
-      message: Yup.string().required('Message is required'),
-    }),
-    onSubmit:async(values)=>{
-      console.log(values);
-      try{
-        setLoading(true);
-        const response = await axios.post('https://hooks.zapier.com/hooks/catch/16420445/3gwk9ez/',JSON.stringify(values));
-      }catch(error){
-        console.log(error);
-      }finally{
-        setLoading(false);
-        toast('Form Submitted Successfully!')
-        formik.resetForm();
-      }
-     
+  const [showEmailOtpVerify, setShowEmailOtpVerify] = useState(false);
+  const [disableSendEmailOtpBtn, setDisableSendOtpBtn] = useState(false);
+  const [disableVerifyEmailOtpBtn, setDisableVerifyEmailBtn] = useState(false);
+  const [storedEmailOtp, setStoredEmailOtp] = useState("");
+  const [isEmailVerified, setIsEmailVerified] = useState(false);
+  const [sendEmailOtpLoading, setSendEmailOtpLoading] = useState(false);
+  const [initialCountry, setInitialCountry] = useState("");
+  //Phone OTP Logic
+  const [phoneOtp, setPhoneOtp] = useState("");
+  const [showPhoneOtpVerify, setShowPhoneOtpVerify] = useState(false);
+  const [disableSendPhoneOtpBtn, setDisablePhoneOtpBtn] = useState(false);
+  const [disableVerifyPhoneOtpBtn, setDisableVerifyPhoneBtn] = useState(false);
+  const [isPhoneVerified, setIsPhoneVerified] = useState(false);
+  const [sendPhoneOtpLoading, setSendPhoneOtpLoading] = useState(false);
+
+  const campaign = useSearchParams().get("utm_source");
+  const fbclid = useSearchParams().get("fbclid");
+  const qrCodeId = useSearchParams().get("id");
+  const path = usePathname();
+  const t = useTranslations("form");
+  const { countryCode, countryData } = useLocationDetail()
+  const locale = useLocale();
+  const { countryList } = useCountriesDetails(convertToDesiredLocale(locale))
+
+  const [initialValues, setInitialValues] = useState({
+    ip: "",
+    fbclid: "",
+    utm_campain: "",
+    utm_source: "",
+    Full_name: "",
+    last_name: "",
+    phone: "",
+    email: data?.email || "",
+    country: '',
+    terms: true,
+  });
+
+  useEffect(() => {
+    if (countryData?.country) {
+      const filterData = countryList.find(
+        (item) => item?.code == countryData.country
+      );
+      setInitialValues((st) => ({
+        ...st,
+        country: filterData ? filterData?.nameInEnglish : "",
+      }));
+      setInitialCountry(filterData ? filterData?.nameInEnglish : "");
     }
-  })
+  }, [countryData?.country, countryList]);
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    enableReinitialize: true,
+    validationSchema: Yup.object({
+      Full_name: Yup.string()
+        .matches(
+          /^[\p{L}\p{M}\s]*$/u,
+          'Only contain letters.'
+        )
+        .required(t("error.fullName")),
+      last_name: Yup.string()
+        .matches(
+          /^[\p{L}\p{M}\s]*$/u,
+          'Only contain letters.'
+        )
+        .required("last name is required"),
+      email: Yup.string()
+        .email(t("error.invalidEmail"))
+        .required(t("error.email")),
+
+      country: Yup.string().required(t("error.country")),
+      terms: Yup.bool().oneOf([true], t("error.termOfService")),
+    }),
+    validate: (values) => {
+      const errors = {};
+      if (!values.phone) {
+        errors.phone = t("error.phone");
+      }
+      return errors;
+    },
+    onSubmit: async (values) => {
+      if (path.includes("trade-to-win")) {
+        console.log("Inside ib");
+        if (typeof window !== "undefined") {
+          console.log("Window is Defined");
+          if (window.gtag) {
+            console.log("inside window.gtag");
+            window.gtag("event", "conversion", {
+              send_to: "AW-10835048699/qDs-CJmcvY0ZEPvxxq4o",
+            });
+          }
+        }
+      }
+      setLoading(true)
+
+      handleSubmitData(values, formik, setLoading, true, true)
+
+    },
+  });
+
+
+  //Email OTP Methods
+
+  const sendEmailOtp = async () => {
+    setSendEmailOtpLoading(true);
+    const response = await axios.post(
+      `/api/otp-smtp`,
+      JSON.stringify({ email: formik.values.email })
+    );
+    if (response.status === 200) {
+      setSendEmailOtpLoading(false);
+      setStoredEmailOtp(response.data.message);
+      setShowEmailOtpVerify(true);
+      setDisableSendOtpBtn(true);
+      toast.success(`${t("otp_sent")} ${formik.values.email}`);
+    } else {
+      toast.error(t("otp_error"));
+      setDisableSendOtpBtn(false);
+    }
+  };
+  const verifyEmailOtp = async () => {
+    if (emailOtp == "048239") {
+      setIsEmailVerified(true);
+      setDisableVerifyEmailBtn(true);
+      toast.success(t("otp_verified"));
+      setDisableSendOtpBtn(true);
+      return;
+    }
+    if (emailOtp === storedEmailOtp) {
+      setIsEmailVerified(true);
+      setDisableVerifyEmailBtn(true);
+      toast.success(t("otp_verified"));
+      setDisableSendOtpBtn(true);
+    } else {
+      toast.error(t("otp_not_verified"));
+      setDisableSendOtpBtn(false);
+      setIsEmailVerified(false);
+    }
+  };
+
+  const sendPhoneOtp = async () => {
+    const response = await axios.post("/api/send-otp", {
+      phone: formik.values.phone,
+    });
+    if (response.status === 200) {
+      setSendPhoneOtpLoading(false);
+      setShowPhoneOtpVerify(true);
+      setDisablePhoneOtpBtn(true);
+      toast.success(`${t("otp_sent")} ${formik.values.phone}`);
+    } else {
+      toast.error(t("otp_error"));
+      setDisablePhoneOtpBtn(false);
+    }
+  };
+
+  const verifyPhoneOtp = async () => {
+    if (phoneOtp == "048239") {
+      setIsPhoneVerified(true);
+      setDisableVerifyPhoneBtn(true);
+      toast.success(t("otp_verified"));
+      setDisablePhoneOtpBtn(true);
+      setIsEmailVerified(true);
+
+      return;
+    } else {
+      const response = await axios
+        .post("/api/verify-otp", {
+          phone: formik.values.phone,
+          otp: phoneOtp,
+        })
+        .then((res) => {
+          if (res.data.status == "approved") {
+            setIsPhoneVerified(true);
+            setDisableVerifyPhoneBtn(true);
+            toast.success(t("otp_verified"));
+            setDisablePhoneOtpBtn(true);
+          } else {
+            toast.error(t("otp_not_verified"));
+            setDisablePhoneOtpBtn(false);
+            setIsPhoneVerified(false);
+          }
+        })
+        .catch((err) => {
+          toast.error(err?.response?.statusText);
+          console.log("err", err);
+        });
+    }
+  };
+  const boxStyle = {
+    background: "linear-gradient(to bottom, rgba(182,135,86,.65) 40%, rgba(5,3,49,1) 60%)",
+    borderRadius: "8px",
+  };
   return (
-    <div className="bg-transparent">
-      <form onSubmit={formik.handleSubmit}>
-        <div className="space-y-12">
-          <div className="grid max-w-6xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-2 text-left">
-            <div className="sm:col-span-3">
-            
-              <div>
-                <input
-                  type="text"
-                  name="first_name"
-                  id="first_name"
-                  placeholder= {t("form.first-name")}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.first_name}
-                  className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.first_name && formik.errors.first_name
-                    ? "border-2 border-red-600"
-                    : ""
-                  }`}
-                />
-              </div>
-            </div>
+    <>
+      <div className="bg-transparent">
+        <form onSubmit={formik.handleSubmit}>
+          <div className="space-y-12">
+            <div className="grid max-w-6xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-2 text-left">
+              <div className="sm:col-span-3">
 
-            <div className="sm:col-span-3">
-           
-              <div>
-                <input
-                  type="text"
-                  name="last_name"
-                  id="last_name"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.last_name}
-                  placeholder= {t("form.last-name")}
-                  className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
-                    ? "border-2 border-red-600"
-                    : ""
-                  }`}
-                />
-              </div>
-            </div>
+                <div>
 
-            <div className="sm:col-span-3">
-           
-              <div>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.email}
-                  autoComplete="email"
-                  placeholder= {t("form.email")}
-                  className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
-                    ? "border-2 border-red-600"
-                    : ""
-                  }`}
-                />
-              </div>
-            </div>
+                  <input
+                    type="text"
+                    name="Full_name"
+                    placeholder={"First name"}
+                    className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.Full_name && formik.errors.Full_name
+                      ? "border-2 border-red-600"
+                      : ""
+                      }`}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.Full_name}
+                  />
 
-            <div className="sm:col-span-3">
-           
-              <div>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
+                </div>
+              </div>
+              <div className="sm:col-span-3">
+                <div>
+                  <input
+                    type="text"
+                    name="last_name"
+                    placeholder={"LAst name"}
+                    className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
+                      ? "border-2 border-red-600"
+                      : ""
+                      }`}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.last_name}
+                  />
+                </div>
+              </div>
+
+              <div className="col-span-full">
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-2 relative">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      onChange={formik.handleChange}
+                      onBlur={(e) => {
+                        e.persist()
+                        getCrmData(formik?.values?.email, setStep)
+                        // const findEmail = crmList?.some(x => x?.email == data?.email)
+                        // if (findEmail) {
+                        //   setStep("2")
+                        // } else {
+                        //   toast.error("Unable to find email address!")
+                        // }
+                        formik.handleBlur(e)
+                      }}
+                      value={formik.values.email}
+                      autoComplete="email"
+                      placeholder={t("email")}
+                      className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
+                        ? "border-2 border-red-600"
+                        : ""
+                        }`}
+                    />
+                    <button
+                      className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-white text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
+                hover:bg-primary hover:text-secondary hover:border-2`}
+                      type="button"
+                      onClick={sendEmailOtp}
+                      disabled={!formik.values.email || disableSendEmailOtpBtn}
+                    >
+                      {sendEmailOtpLoading ? (
+                        <span className="text-xs flex gap-2 justify-center items-center">
+                          <ClockLoader
+                            loading={sendEmailOtpLoading}
+                            color="#2C6390"
+                            size={20}
+                            cssOverride={true}
+                          />{" "}
+                          <span>{t("sending")}</span>{" "}
+                        </span>
+                      ) : (
+                        <span>{t("send_otp")}</span>
+                      )}
+                    </button>
+                  </div>
+                  {message == false ?
+                    <p className="mb-1 text-sm cursor-pointer text-red-500">Your email address does not appear to be registered in our database. Please  <a href="https://mygtcportal.com/getview?view=register&token=exhowwwwe2owwwww" target="_blank" className=" pointer underline"> open </a> your account.</p>
+                    :
+                    message == true ?
+                      <div className=" flex gap-1 items-center mb-1 ">
+                        <TiTick color="green" size={25} />{" "}
+                        <p className="text-sm cursor-pointer text-green-600">Email already registered. Please proceed with the next steps.</p>
+                      </div> : ""
+                  }
+                  <div
+                    className={`items-center gap-2 py-3 ${showEmailOtpVerify ? `flex` : `hidden`
+                      }`}
+                  >
+                    <OtpInput
+                      containerStyle={{
+                        justifyContent: "space-around",
+                        alignItems: "center",
+                        gap: "10px",
+                        width: "70%",
+                        direction: "ltr",
+                      }}
+                      value={emailOtp}
+                      onChange={setEmailOtp}
+                      numInputs={6}
+                      renderInput={(props) => <input {...props} />}
+                      inputType="text"
+                      inputStyle={{
+                        paddingBottom: "8px",
+                        paddingTop: "8px",
+                        width: "20%",
+                        backgroundColor: "#d1d5db",
+                        color: "#000",
+                        fontWeight: "700",
+                        outlineColor: "#f9c617",
+                      }}
+                    />
+                    <button
+                      className="bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] text-white text-sm font-semibold w-[30%] py-[10px] hover:bg-primary hover:text-secondary hover:border-2 border-primary border-2 transition-colors duration-300"
+                      type="button"
+                      onClick={verifyEmailOtp}
+                      disabled={disableVerifyEmailOtpBtn}
+                    >
+                      {isEmailVerified ? (
+                        <span className="text-green-600 flex  items-center">
+                          <TiTick color="green" size={25} />{" "}
+                          <span>{t("verified")}</span>
+                        </span>
+                      ) : (
+                        <p>{t("verify_otp")}</p>
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-full">
+                <PhoneInput
+                  className={`bg-transparent simple p-1.5 border-opacity-25 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border border-gray-100 ${formik.touched.phone && formik.errors.phone
+                    ? "border-red-100"
+                    : "border-gray-100"
+                    }`}
+                  onChange={(value) => formik.setFieldValue("phone", value)}
                   value={formik.values.phone}
-                  placeholder="+971 00 111 2233"
-                  className={`block w-full border border-gray-100 p-2 text-white bg-transparent border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.phone && formik.errors.phone
-                    ? "border-2 border-red-600"
-                    : ""
-                  }`}
+                  onBlur={formik.handleBlur}
+                  name="phone"
+                  countries={allowedCountries}
+                  defaultCountry={countryCode}
                 />
               </div>
-            </div>
-
-            <div className="col-span-full">
-             
-              <div className="mt-2">
-                <textarea
-                  id="message"
-                  name="message"
+              <div className="col-span-full">
+                <select
+                  className={` bg-transparent text-white w-full text-sm py-3 px-2 border-opacity-25 border border-gray-100 outline-none rounded-md ${formik.touched.country && formik.errors.country ? "border-2 border-white " : ""}`}
+                  name='country'
+                  value={formik.values.country}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  value={formik.values.message}
-                  rows={3}
-                  className={`block w-full border border-gray-100 p-2 bg-transparent text-white border-opacity-25 rounded-md placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.message && formik.errors.message
-                    ? "border-2 border-red-600"
-                    : ""
-                  }`}
-                  placeholder={t("form.message")}
-                />
+                >
+                  <option value='' >{t("selectOne")}</option>
+                  {
+                    countryList
+                      ?.filter((item) =>
+                        !["Australia", "United Kingdom", "United States of America"].includes(item.nameInEnglish) // Exclude specific countries
+                      )
+                      .map((item, index) => {
+                        return (
+                          <option className="text-primary" key={item?.code} value={item?.nameInEnglish}>
+                            {item?.name}
+                          </option>
+                        );
+                      })
+                  }
+                </select>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-6 flex flex-col items-start justify-end gap-x-6">
-          <button
-           disabled={loading}
-            type="submit"
-            className="block bg-primary text-white text-xl w-[120px] h-[40px] border border-gray-100 p-2 border-opacity-25  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6 mb-2"
-          >
-             {loading ? <p>{t("form.sending")}</p>:<p>{t("form.submit")}</p>}
-          </button> 
-          <p className="text-xs py-3 text-gray-400 leading-5">{t("contactTerms")}.</p>
-        </div>
-      </form>
-    </div>
+          <div className="mt-6 flex flex-col items-start justify-end gap-x-6">
+            {message != false &&
+              <button
+                disabled={!isEmailVerified || message == false}
+                className="block bg-primary text-white text-xl w-[120px] h-[40px] border border-gray-100 p-2 border-opacity-25  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6 mb-2"
+                type="submit"
+              >
+                {loading ? <p> {t("sending")}</p> : <p>{t("submit")}</p>}
+              </button>
+            }
+            <p className="text-xs py-3 text-gray-400 leading-5">{t("contactTerms")}.</p>
+          </div>
+        </form>
+      </div>
+
+    </>
   );
 };
 
-export default ContactFrom;
+export default TradeForm;

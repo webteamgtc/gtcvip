@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    font-family: 'Outfit', sans-serif;
+    font-family: "Outfit", sans-serif;
   }
 }
 
@@ -28,7 +28,7 @@
     @apply bg-secondary text-center capitalize text-white py-2 px-3 lg:px-4 rounded-none text-sm hover:bg-primary hover:text-white;
   }
   .liveAccount {
-    @apply bg-[#29a643] text-white uppercase  hover:text-white text-sm 3xl:text-xl  px-8 py-3 hover:bg-primary transition-colors duration-500 text-center md:w-auto w-[300px] md:m-0 mx-auto
+    @apply bg-[#29a643] text-white uppercase  hover:text-white text-sm 3xl:text-xl  px-8 py-3 hover:bg-primary transition-colors duration-500 text-center md:w-auto w-[300px] md:m-0 mx-auto;
   }
   .mainHeading {
     @apply text-center text-xl md:text-3xl text-primary font-bold mb-2;
@@ -46,11 +46,11 @@
     @apply p-[10px] border border-gray-300 w-full rounded-sm mt-2;
   }
   .text {
-    @apply text-accent md:text-base 2xl:text-[17px] text-sm text-center
+    @apply text-accent md:text-base 2xl:text-[17px] text-sm text-center;
   }
 }
 ul.dropdown-content.language-setting:before {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   display: block;
@@ -72,7 +72,7 @@ ul.dropdown-content.language-setting.arabic:after {
 }
 
 ul.dropdown-content.language-setting:after {
-  content: '';
+  content: "";
   width: 0;
   height: 0;
   display: block;
@@ -142,8 +142,6 @@ body {
   border-top-right-radius: 8px;
 }
 
-
-
 .mySwiper-blogs .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
@@ -161,7 +159,7 @@ body {
   }
   .mobile-setting-line {
     line-height: 75px !important;
-}
+  }
 }
 
 /* flip card style */
@@ -244,7 +242,6 @@ body {
     width: 0%;
     display: none;
   }
-
 }
 
 .phone-number-input .PhoneInput {
@@ -344,7 +341,7 @@ body
   .win-trade:after {
     width: 20%;
     display: none;
-}
+  }
 }
 .webinar-register-form .PhoneInputInput {
   background: #fff;
@@ -394,41 +391,42 @@ body
   @apply !text-primary;
 }
 
-.single-blog-descreption .image-collagu-setting{
+.single-blog-descreption .image-collagu-setting {
   flex-wrap: wrap;
 }
-.single-blog-descreption img,iframe{
+.single-blog-descreption img,
+iframe {
   width: 100%;
 }
-.single-blog-descreption .epyt-video-wrapper.fluid-width-video-wrapper{
-  width:100%!important;
+.single-blog-descreption .epyt-video-wrapper.fluid-width-video-wrapper {
+  width: 100% !important;
 }
 
 /* React Toastify Styles */
 
 .Toastify__toast-body {
-  background-color:#2C6390 !important;
+  background-color: #2c6390 !important;
   color: #f9c617 !important;
   font-weight: 700;
   text-align: center;
 }
 .Toastify__toast {
-  background-color:#2C6390 !important;
+  background-color: #2c6390 !important;
 }
 .Toastify__toast-container {
-  background-color:transparent !important;
+  background-color: transparent !important;
 }
 .Toastify__progress-bar {
   color: #f9c617 !important;
   background-color: #f9c617 !important;
 }
-.Toastify__close-button > svg{
-  color: #FFF !important;
+.Toastify__close-button > svg {
+  color: #fff !important;
 }
-.Toastify__close-button > svg:hover{
+.Toastify__close-button > svg:hover {
   color: #f9c617 !important;
 }
-.Toastify__close-button{
+.Toastify__close-button {
   color: #f9c617 !important;
 }
 .Toastify__close-button--default {
@@ -437,40 +435,39 @@ body
 .Toastify__close-button:focus {
   color: #f9c617 !important;
 }
-.Toastify__progress-bar-theme--light{
-background: #f9c617 !important;
+.Toastify__progress-bar-theme--light {
+  background: #f9c617 !important;
 }
-.Toastify__close-button--light{
+.Toastify__close-button--light {
   opacity: 1 !important;
 }
-.custom_appearance{
+.custom_appearance {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
 
-input[type="date"]
-{
-    display:block;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
+input[type="date"] {
+  display: block;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
 }
-.tab-content-regulations{
+.tab-content-regulations {
   display: none;
 }
 .active-tab-regulation {
   display: block;
 }
 
-.webinar_form input{
+.webinar_form input {
   outline: none;
   padding: 10px 15px;
 }
 
-button:disabled{
+button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
-.competetion_banner{
+.competetion_banner {
   background-image: url("https://gtcfx.org/event/wp-content/uploads/2023/10/liveaccount-hero-scaled.webp");
   background-position: center center;
   background-size: cover;
@@ -479,9 +476,9 @@ button:disabled{
   height: 40vh;
   position: relative;
 }
-.competetion_banner_overlay{
+.competetion_banner_overlay {
   background-image: url("https://gtcfx.org/event/wp-content/uploads/2023/10/overlay-scaled.webp");
-  background-color: #14446C9E;
+  background-color: #14446c9e;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -492,38 +489,38 @@ button:disabled{
   height: 100%;
   width: 100%;
 }
-.competetion_overview{
-  background-image: linear-gradient(98deg, #2B5F87 0%, #02223B 74%);
+.competetion_overview {
+  background-image: linear-gradient(98deg, #2b5f87 0%, #02223b 74%);
   background-color: transparent;
 }
-.leaderboard_table thead tr th{
+.leaderboard_table thead tr th {
   padding: 10px 10px;
   background-color: #f9c617;
 }
-.leaderboard_table tbody tr td{
+.leaderboard_table tbody tr td {
   padding: 10px 10px;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
-.competetion_steps{
-  background-image: linear-gradient(98deg, #2B5F87 0%, #02223B 74%);
+.competetion_steps {
+  background-image: linear-gradient(98deg, #2b5f87 0%, #02223b 74%);
   background-color: transparent;
 }
-.competition_variety{
-  background-image: linear-gradient(98deg, #2B5F87 0%, #02223B 74%);
+.competition_variety {
+  background-image: linear-gradient(98deg, #2b5f87 0%, #02223b 74%);
   background-color: transparent;
 }
-.competition_terms{
-  background-image: linear-gradient(212deg, #02223B 25%, #2B5F87 77%);
+.competition_terms {
+  background-image: linear-gradient(212deg, #02223b 25%, #2b5f87 77%);
   background-color: transparent;
 }
-.ReactCollapse--content{
-border: none;
+.ReactCollapse--content {
+  border: none;
 }
-.wiki_banner{
- background-image: url("https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/images/promotions/wiki-trade/bg1_wiki.jpg");
+.wiki_banner {
+  background-image: url("https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/images/promotions/wiki-trade/bg1_wiki.jpg");
 }
-.subscriber_form .PhoneInputInput{
-  background: #FFF;
+.subscriber_form .PhoneInputInput {
+  background: #fff;
   outline: none;
 }
 .custom-style input.PhoneInputInput:focus-visible {
@@ -533,14 +530,14 @@ border: none;
 @media screen and (min-width: 2200px) {
   .home-banner {
     background-position: 50% 88% !important;
+  }
 }
-}
-.customPadding{
-  padding-top:5px;
-  padding-bottom: 5px; 
+.customPadding {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.flip-countdown{
+.flip-countdown {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -550,35 +547,33 @@ border: none;
     margin: 0 auto;
   }
 }
-.flip-countdown:dir(rtl){
+.flip-countdown:dir(rtl) {
   direction: ltr;
 }
-.flip-countdown.size-small .flip-countdown-piece .flip-countdown-title{ 
+.flip-countdown.size-small .flip-countdown-piece .flip-countdown-title {
   font-size: 15px !important;
 }
-.flip-countdown .flip-countdown-piece .flip-countdown-card{
+.flip-countdown .flip-countdown-piece .flip-countdown-card {
   justify-content: center;
 }
 
-
-
-@media screen and (min-width:2000px) {
-  .deposit_banner{
+@media screen and (min-width: 2000px) {
+  .deposit_banner {
     padding-bottom: 15rem !important;
   }
 }
-@media screen and (min-width:2500px) {
-  .deposit_banner{
+@media screen and (min-width: 2500px) {
+  .deposit_banner {
     padding-bottom: 18rem !important;
   }
 }
-@media screen and (min-width:3000px) {
-  .deposit_banner{
+@media screen and (min-width: 3000px) {
+  .deposit_banner {
     padding-bottom: 20rem !important;
   }
 }
-@media screen and (min-width:3500px) {
-  .deposit_banner{
+@media screen and (min-width: 3500px) {
+  .deposit_banner {
     padding-bottom: 22rem !important;
   }
 }
@@ -599,49 +594,66 @@ border: none;
 /* .swiper-slide-active {
   opacity: 1!important;
 } */
-.swiper-button-prev,.swiper-button-next{
-  color:#b58d47 !important;
+.swiper-button-prev,
+.swiper-button-next {
+  color: #b58d47 !important;
 }
-.swiper-button-next:after{
+.swiper-button-next:after {
   font-size: 30px !important;
 }
-.swiper-button-prev:after{
+.swiper-button-prev:after {
   font-size: 30px !important;
 }
-.swiper-pagination{
+.swiper-pagination {
   position: relative !important;
   padding-top: 1.5rem;
 }
-.swiper-pagination-bullet{
+.swiper-pagination-bullet {
   background-color: #b58d47 !important;
   width: 20px !important;
   border-radius: 5px !important;
 }
-body > section:nth-child(4) > div > div > div:nth-child(4){
+body > section:nth-child(4) > div > div > div:nth-child(4) {
   border-right: none !important;
   padding-left: 15px;
 }
 
-body > section.container > div > div:nth-child(1) > div > div:nth-child(8) > svg{
+body
+  > section.container
+  > div
+  > div:nth-child(1)
+  > div
+  > div:nth-child(8)
+  > svg {
   margin-bottom: 27px;
 }
 
 .award {
-  border-image: repeating-linear-gradient(135deg,#b58d47 0 3px,#b58d47 0 20px,#b58d47 0 30px) 8;
-  -webkit-mask: 
-    conic-gradient(from 180deg at top 1px right 1px, #0000 90deg,#000 0)
-     var(--_i,200%) 0  /200% var(--_i,8px) border-box no-repeat,
-    conic-gradient(at bottom 1px left  1px,  #0000 90deg,#000 0)
-     0   var(--_i,200%)/var(--_i,2px) 200% border-box no-repeat,
+  border-image: repeating-linear-gradient(
+      135deg,
+      #b58d47 0 3px,
+      #b58d47 0 20px,
+      #b58d47 0 30px
+    )
+    8;
+  -webkit-mask:
+    conic-gradient(from 180deg at top 1px right 1px, #0000 90deg, #000 0)
+      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+    conic-gradient(at bottom 1px left 1px, #0000 90deg, #000 0) 0
+      var(--_i, 200%) / var(--_i, 2px) 200% border-box no-repeat,
     linear-gradient(#000 0 0) padding-box no-repeat;
-  transition: .5s, -webkit-mask-position .5s .5s;
+  transition:
+    0.5s,
+    -webkit-mask-position 0.5s 0.5s;
 }
 .award:hover {
   --_i: 100%;
-  transition: .5s, -webkit-mask-size .5s .5s;
+  transition:
+    0.5s,
+    -webkit-mask-size 0.5s 0.5s;
 }
-.white_input{
-  border:1px solid #DDD;
+.white_input {
+  border: 1px solid #ddd;
   padding: 10px 10px;
   outline: none;
 }
@@ -653,6 +665,12 @@ body > section.container > div > div:nth-child(1) > div > div:nth-child(8) > svg
 }
 .clip-right {
   clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+}
+
+.PhoneInputInput {
+  background: transparent;
+  outline: none;
+  color: #fff;
 }
 @keyframes fade-in {
   from { opacity: 0; transform: scale(0.95); }
