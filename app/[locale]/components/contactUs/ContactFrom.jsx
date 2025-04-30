@@ -527,7 +527,7 @@ const TradeForm = () => {
 
               <div className="col-span-full">
                 <PhoneInput
-                  className={`bg-transparent simple p-1.5 border-opacity-25 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border border-gray-100 ${formik.touched.phone && formik.errors.phone
+                  className={`bg-transparent text-secondary simple p-1.5 border-opacity-25 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border border-gray-100 ${formik.touched.phone && formik.errors.phone
                     ? "border-red-100"
                     : "border-gray-100"
                     }`}

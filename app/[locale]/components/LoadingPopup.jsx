@@ -56,7 +56,7 @@ const LoadingPopup = () => {
 
               {/* Logo */}
               <Image
-                src="/gtcvip-footer.png"
+                src="/Logo-White.svg"
                 alt="GTC VIP"
                 width={250}
                 height={44}

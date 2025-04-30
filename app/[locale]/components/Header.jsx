@@ -118,7 +118,7 @@ const Header = () => {
         <nav className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center bg-white py-2 border border-secondary border-opacity-20 rounded-full px-4 md:px-8">
             <Image
-              src="/h-logo.png"
+              src="/Logo-Standard.svg"
               width={200}
               height={39}
               alt="GTCFX"

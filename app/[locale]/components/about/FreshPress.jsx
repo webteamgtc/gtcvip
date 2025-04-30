@@ -4,27 +4,27 @@ import React from "react";
 const FreshPress = () => {
 
   const features = [
-    { icon: "/SA-2.png", 
+    { icon: "/Icons/Icons/Icons-01.svg", 
       title: "Real-Time Market Intelligence",
       desc: "Stay ahead with daily expert analysis, trade ideas, and institutional-grade forecasts — tailored for serious traders.",
     },
-    { icon: "/SA-1.png", 
+    { icon: "/Icons/Icons/Icons-02.svg", 
       title: "Loyalty Points That Reward You",
       desc: "Earn points for trading, referring friends, depositing, and even engaging with our community. Redeem points for premium prizes, tools, and experiences.",
 
      },
-    { icon: "/SA-3.png", 
+    { icon: "/Icons/Icons/Icons-03.svg", 
       title: "Elite Trading Competitions",
     desc: "Climb the leaderboard, win exclusive rewards, and compete with the very best — or simply enjoy the thrill of trading tournaments designed to reward your skill and loyalty.",
      },
-    { icon: "/SA-2.png",
+    { icon: "/Icons/Icons/Icons-04.svg",
       title: "Personalised Expert Access",
       desc: "Request analysis, book one-on-one consultations, and get direct feedback from award-winning analysts and prop traders.",
      },
-    { icon: "/SA-1.png",  title: "Exclusive VIP Store",
+    { icon: "/Icons/Icons/Icons-05.svg",  title: "Exclusive VIP Store",
       desc: "Use your loyalty points to unlock premium rewards — from high-end trading tools to real-world luxury prizes.",
     },
-    { icon: "/SA-3.png", 
+    { icon: "/Icons/Icons/Icons-06.svg", 
       title: "Build Your Status",
       desc: "Level up your VIP tier based on your lifetime deposits and trading volume, unlocking even greater rewards, privileges, and opportunities.",
   

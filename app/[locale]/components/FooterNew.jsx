@@ -89,7 +89,7 @@ const FooterNew = () => {
       
         <div className="leftside flex flex-col md:flex-row justify-between gap-20 items-center">
         <div className="w-52 h-16 relative">
-          <Image src="/gtcvip-footer.png" alt="Footer Logo" layout="fill" objectFit="contain" />
+          <Image src="/Logo-White.svg" alt="Footer Logo" layout="fill" objectFit="contain" />
         </div>
         <ul className="hidden md:flex gap-8">
           {menuItems.map((item, index) => (
