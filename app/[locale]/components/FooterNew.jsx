@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactFrom from "./contactUs/ContactFrom";  // Assuming you have a form component to include
-import Link from "next/link";
-import SocialIcon from "./SocialIcon";
 import CopyRight from "./CopyRight";
 
 const FooterNew = () => {
@@ -16,10 +14,11 @@ const FooterNew = () => {
   const [activeSection, setActiveSection] = useState("home");
   const menuItems = [
     { title: "Home", id: "home" },
-    { title: "About GTC VIP", id: "aboutUs" },
-    { title: "Why Trade With GTC VIP", id: "whyTrade" },
+    { title: "Why Trade With Us", id: "whyTrade" },
+    { title: "Journey With Us", id: "journey" },
     { title: "How It Work", id: "howItWorks" },
-    { title: "Contact Us", id: "contact" },
+    { title: "FAQ's", id: "faq" },
+    { title: "Contact Us", id: "contact Us" },
   ];
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -89,7 +88,7 @@ const FooterNew = () => {
         <div className="menu-content">
       
         <div className="leftside flex flex-col md:flex-row justify-between gap-20 items-center">
-        <div className="w-40 h-8 relative">
+        <div className="w-52 h-16 relative">
           <Image src="/gtcvip-footer.png" alt="Footer Logo" layout="fill" objectFit="contain" />
         </div>
         <ul className="hidden md:flex gap-8">

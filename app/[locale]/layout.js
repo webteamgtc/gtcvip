@@ -13,6 +13,7 @@ import Script from "next/script";
 import { supportedLanguages } from "@/helpers/localization";
 import CookiesBanner from "@/app/[locale]/components/CookiesBanner";
 import { getCookie, setCookie } from "cookies-next";
+import LoadingPopup from "./components/LoadingPopup";
 
 const roboto = localFont({
   src: [
@@ -116,6 +117,7 @@ export default async function LocaleLayout({ children, params }) {
       <body className="bg-white">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header currentLanguage={currentLanguage} />
+          <LoadingPopup />
           {children}
           <ToastContainer autoClose={3000} />
           <Suspense fallback={null}>

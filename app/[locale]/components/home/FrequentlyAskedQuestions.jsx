@@ -45,7 +45,7 @@ const FrequentlyAskedQuestions = ({ data }) => {
   return (
 
 
-    <section id="faq" className='py-10 md:py-16 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331]'>
+    <section id="faq" className='py-10 md:pt-10 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331]'>
     <div className='container'>
     <div className="top-section text-center mb-10">
       <h2  style={{ lineHeight: "3.3rem" }}

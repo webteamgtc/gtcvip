@@ -654,3 +654,11 @@ body > section.container > div > div:nth-child(1) > div > div:nth-child(8) > svg
 .clip-right {
   clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
 }
+@keyframes fade-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out;
+}
