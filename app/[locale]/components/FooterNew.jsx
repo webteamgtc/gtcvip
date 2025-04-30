@@ -53,7 +53,7 @@ const FooterNew = () => {
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-lg text-secondary font-medium">{title}</h3>
-        <p className="text-gray-400 text-sm">{details}</p>
+        <p className="text-white text-sm">{details}</p>
       </div>
     </div>
   );

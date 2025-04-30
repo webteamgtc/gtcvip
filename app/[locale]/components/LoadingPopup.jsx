@@ -49,7 +49,7 @@ const LoadingPopup = () => {
               {/* Close button */}
               <button
                 onClick={() => setIsOpen(false)}
-                className="absolute top-3 right-4 text-2xl font-bold text-white hover:text-secondary"
+                className="absolute top-3 right-4 text-2xl font-bold text-white hover:text-secondary border-none py-2 px-2 rounded-full outline-none"
               >
                 ×
               </button>
@@ -84,7 +84,7 @@ const LoadingPopup = () => {
                     href="https://my.gtcvip.com/v2/app/register"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-6 px-6 py-2 rounded-full bg-secondary hover:bg-white hover:text-primary text-white font-medium hover:bg-opacity-90 transition"
+                    className="inline-block mt-3 px-6 py-2 rounded-full bg-secondary hover:bg-white hover:text-primary text-white font-medium hover:bg-opacity-90 transition"
                     >
                     Open Account Now
                     </Link>

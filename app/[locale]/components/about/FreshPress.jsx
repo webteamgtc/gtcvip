@@ -56,7 +56,7 @@ const FreshPress = () => {
           <img src={item.icon} alt={item.title} className="w-16 h-16" />
         </div>
         <h4 className="text-secondary text-lg font-semibold">{item.title}</h4>
-        <p className="text-base text-gray-400 max-w-xs">{item.desc}</p>
+        <p className="text-base text-white max-w-xs">{item.desc}</p>
       </div>
     );
   })}
