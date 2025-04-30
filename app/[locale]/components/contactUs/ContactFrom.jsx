@@ -184,7 +184,7 @@ import { convertToDesiredLocale } from "@/helpers";
 
 const TradeForm = () => {
   //Email OTP Logic
-  const { step, setStep, data, setData, message, loadingCrm, getCrmData, handleSubmitData } = useFormHook()
+  const { step, setStep, data, setData, message, loadingCrm, handleSubmitData } = useFormHook()
   const [emailOtp, setEmailOtp] = useState("");
   const [loading, setLoading] = useState(false);
   const [showEmailOtpVerify, setShowEmailOtpVerify] = useState(false);
@@ -194,13 +194,6 @@ const TradeForm = () => {
   const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [sendEmailOtpLoading, setSendEmailOtpLoading] = useState(false);
   const [initialCountry, setInitialCountry] = useState("");
-  //Phone OTP Logic
-  const [phoneOtp, setPhoneOtp] = useState("");
-  const [showPhoneOtpVerify, setShowPhoneOtpVerify] = useState(false);
-  const [disableSendPhoneOtpBtn, setDisablePhoneOtpBtn] = useState(false);
-  const [disableVerifyPhoneOtpBtn, setDisableVerifyPhoneBtn] = useState(false);
-  const [isPhoneVerified, setIsPhoneVerified] = useState(false);
-  const [sendPhoneOtpLoading, setSendPhoneOtpLoading] = useState(false);
 
   const campaign = useSearchParams().get("utm_source");
   const fbclid = useSearchParams().get("fbclid");
@@ -327,58 +320,6 @@ const TradeForm = () => {
     }
   };
 
-  const sendPhoneOtp = async () => {
-    const response = await axios.post("/api/send-otp", {
-      phone: formik.values.phone,
-    });
-    if (response.status === 200) {
-      setSendPhoneOtpLoading(false);
-      setShowPhoneOtpVerify(true);
-      setDisablePhoneOtpBtn(true);
-      toast.success(`${t("otp_sent")} ${formik.values.phone}`);
-    } else {
-      toast.error(t("otp_error"));
-      setDisablePhoneOtpBtn(false);
-    }
-  };
-
-  const verifyPhoneOtp = async () => {
-    if (phoneOtp == "048239") {
-      setIsPhoneVerified(true);
-      setDisableVerifyPhoneBtn(true);
-      toast.success(t("otp_verified"));
-      setDisablePhoneOtpBtn(true);
-      setIsEmailVerified(true);
-
-      return;
-    } else {
-      const response = await axios
-        .post("/api/verify-otp", {
-          phone: formik.values.phone,
-          otp: phoneOtp,
-        })
-        .then((res) => {
-          if (res.data.status == "approved") {
-            setIsPhoneVerified(true);
-            setDisableVerifyPhoneBtn(true);
-            toast.success(t("otp_verified"));
-            setDisablePhoneOtpBtn(true);
-          } else {
-            toast.error(t("otp_not_verified"));
-            setDisablePhoneOtpBtn(false);
-            setIsPhoneVerified(false);
-          }
-        })
-        .catch((err) => {
-          toast.error(err?.response?.statusText);
-          console.log("err", err);
-        });
-    }
-  };
-  const boxStyle = {
-    background: "linear-gradient(to bottom, rgba(182,135,86,.65) 40%, rgba(5,3,49,1) 60%)",
-    borderRadius: "8px",
-  };
   return (
     <>
       <div className="bg-transparent">
@@ -431,7 +372,6 @@ const TradeForm = () => {
                       onChange={formik.handleChange}
                       onBlur={(e) => {
                         e.persist()
-                        getCrmData(formik?.values?.email, setStep)
                         // const findEmail = crmList?.some(x => x?.email == data?.email)
                         // if (findEmail) {
                         //   setStep("2")
@@ -507,7 +447,7 @@ const TradeForm = () => {
                       }}
                     />
                     <button
-                      className="bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] text-white text-sm font-semibold w-[30%] py-[10px] hover:bg-primary hover:text-secondary hover:border-2 border-primary border-2 transition-colors duration-300"
+                      className="bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] text-white text-sm font-semibold w-[30%] py-[10px] rounded-md hover:bg-primary hover:text-secondary hover:border-2 border-primary border-2 transition-colors duration-300"
                       type="button"
                       onClick={verifyEmailOtp}
                       disabled={disableVerifyEmailOtpBtn}

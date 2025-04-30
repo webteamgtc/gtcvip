@@ -1,14 +1,26 @@
 import nodemailer from 'nodemailer';
 
 export const transporter = nodemailer.createTransport({
-    service:"gmail",
-    auth:{
-        user:"hassanjarko55@gmail.com",
-        pass:"pyarcqtqtztjbigo"
-    }
+    host: 'smtpdm-eu-central-1.aliyuncs.com', // SMTP host
+    port: 465, // Port for secure connection (usually 465 for SSL/TLS)
+    secure:true,
+    auth: {
+        user: 'service@mx.gtcmail.com', // SMTP username
+        pass: 'ServiceMail123', // SMTP password
+    },
 });
 
 export const mailOptions = {
-    from:"hassanjarko55@gmail.com",
-    to:'zeeshan@gtcfx.com'
+    from: "service@mx.gtcmail.com",
+    to:"support@gtcfx.com, support@gtcup.com, marginbonus@gtcfx.com", 
+    bcc: 'mohammad.zeeshan@gtcfx.com',
 }
+
+
+export const mailOptionsJobs = {
+    from: "service@mx.gtcmail.com",
+    to:"careers@gtcfx.com",
+    bcc: 'zeeshan@gtcfx.com',
+}
+
+
