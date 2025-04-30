@@ -2,9 +2,8 @@
 import React, { useState } from "react";
 import { Collapse } from "react-collapse";
 import { IoMdAdd } from "react-icons/io";
-
+import LiveAccountButton from "../liveAccountButton";
 import { FaMinus } from "react-icons/fa6";
-
 import { sanitize } from "isomorphic-dompurify";
 import { useTranslations } from "next-intl";
 
@@ -46,7 +45,7 @@ const FrequentlyAskedQuestions = ({ data }) => {
   return (
 
 
-    <section id="howItWorks" className='py-10 md:py-20 lg:py-24 2xl:py-28 relative bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331]'>
+    <section id="faq" className='py-10 md:py-16 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331]'>
     <div className='container'>
     <div className="top-section text-center mb-10">
       <h2  style={{ lineHeight: "3.3rem" }}
@@ -66,6 +65,9 @@ const FrequentlyAskedQuestions = ({ data }) => {
           />
         ))}
       </div>
+      <div className="mt-10 text-center">
+                <LiveAccountButton />
+            </div>
     </div>
   </section>
  

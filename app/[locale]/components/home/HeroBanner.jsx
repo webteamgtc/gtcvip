@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const HeroBanner = () => {
   return (
-    <section id="home" className="hero-banner py-10 md:py-20 lg:py-24 2xl:py-28 relative bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] overflow-hidden">
+    <section id="home" className="hero-banner py-10 md:pt-20 lg:pt-24 2xl:pt-28 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] overflow-hidden">
       <div className="container">
-        <div className="grid grid-cols-1 items-center gap-8 text-center md:text-left h-[450px]">
+        <div className="grid grid-cols-1 items-center gap-8 text-center md:text-left h-[400px]">
           {/* Image column */}
      
           {/* Content column */}
@@ -34,7 +34,7 @@ const HeroBanner = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto mt-10">
         <div className="relative w-full h-[458px] rounded-xl overflow-hidden border border-white/10">
           <Image src="/gif.gif" fill alt="" className="object-cover" />
         </div>

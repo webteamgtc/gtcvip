@@ -19,7 +19,7 @@ const NavItem = ({ title, action, icon, submenu, isActive }) => {
 
   return (
     <li
-      className={`clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-5 text-[sm] lg:text-base ${
+      className={`clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-3 text-[sm] lg:text-base ${
         isActive ? "text-secondary" : "text-primary hover:text-secondary"
       }`}
       onMouseEnter={() => setShowSubmenu(true)}
@@ -68,7 +68,8 @@ const Header = () => {
   const navigationData = [
     { title: "Home", id: "home" },
     { title: "About GTC VIP", id: "aboutUs" },
-    { title: "Why Trade With GTC VIP", id: "whyTrade" },
+    { title: "Why Trade", id: "whyTrade" },
+    { title: "FAQ's", id: "faq" },
     { title: "How It Work", id: "howItWorks" },
     { title: "Contact Us", id: "contact" },
   ];
@@ -111,11 +112,11 @@ const Header = () => {
         <nav className="max-w-6xl mx-auto">
           <div className="flex justify-between items-center bg-white border border-secondary border-opacity-20 rounded-full px-8">
             <Image
-              src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/logo-2024-new.webp"
-              width={160}
-              height={58}
+              src="/gtcvip-logo.png"
+              width={180}
+              height={35}
               alt="GTCFX"
-              className="lg:w-[160px] lg:h-[58px] md:w-[120px] md:h-[53px] w-[130px] h-[47px] cursor-pointer"
+              className="lg:w-[180px] lg:h-[35px] md:w-[120px] md:h-[53px] w-[130px] h-[47px] cursor-pointer"
               onClick={() => router.push("/")}
             />
             <div className="hidden md:flex justify-end items-center">

@@ -645,12 +645,12 @@ body > section.container > div > div:nth-child(1) > div > div:nth-child(8) > svg
   padding: 10px 10px;
   outline: none;
 }
-.shining-bracket {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-  animation: shine 2s infinite alternate;
+.clip-left {
+  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
 }
-
-@keyframes shine {
-  from { opacity: 0.8; }
-  to { opacity: 1; }
+.clip-center {
+  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+}
+.clip-right {
+  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
 }

@@ -32,7 +32,7 @@ const FreshPress = () => {
   ];
 
   return (
-    <div className="md:max-w-5xl mx-auto pt-12" id="whyTrade">
+    <div className="md:max-w-5xl mx-auto" id="whyTrade">
       <div className="top-section text-center mb-10">
         <h2  style={{ lineHeight: "3.3rem" }}
           className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">

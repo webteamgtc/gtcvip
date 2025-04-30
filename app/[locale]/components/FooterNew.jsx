@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import ContactFrom from "./contactUs/ContactFrom";  // Assuming you have a form component to include
 import Link from "next/link";
@@ -12,14 +13,39 @@ const FooterNew = () => {
     { iconSrc: "/phone.png", title: "Phone", details: "+971 4 000 8416" },
     { iconSrc: "/add.png", title: "Address", details: "Nassima Tower - 22nd Floor - Trade Centre - Trade Centre 1 - Dubai" }
   ];
-
+  const [activeSection, setActiveSection] = useState("home");
   const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Contact", href: "/contact" }
+    { title: "Home", id: "home" },
+    { title: "About GTC VIP", id: "aboutUs" },
+    { title: "Why Trade With GTC VIP", id: "whyTrade" },
+    { title: "How It Work", id: "howItWorks" },
+    { title: "Contact Us", id: "contact" },
   ];
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
+      for (let item of menuItems) {
+        const section = document.getElementById(item.id);
+        if (
+          section &&
+          section.offsetTop <= scrollPosition &&
+          section.offsetTop + section.offsetHeight > scrollPosition
+        ) {
+          setActiveSection(item.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   // Contact item component logic integrated directly
   const ContactItem = ({ iconSrc, title, details }) => (
     <div className="flex justify-start items-center gap-4">
@@ -34,24 +60,22 @@ const FooterNew = () => {
   );
 
   return (
-    <section className="bg-[#050331] py-12 md:py-16 2xl:py-20" id="contact">
+    <section className="bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] py-12 md:py-16" id="contact">
       <div className="max-w-6xl mx-auto">
         <div className="relative py-[1px] px-[1px]" style={{ 
           background: 'linear-gradient(to bottom, rgba(182,135,86,.65) 40%, rgba(5,3,49,1) 60%)', 
           borderRadius: '8px' 
         }}>
           <div className="contact-form relative bg-gradient-to-b from-[#202d7bdb] via-[#050331] to-[#050331] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12">
-            <div className="text-center p-4">
-              <h2
-                className="bg-gradient-to-r from-white to-secondary text-transparent bg-clip-text text-xl xl:text-3xl 2xl:text-[35px] capitalize font-[500] pb-5"
-              >
-                Get in Touch
-              </h2>
-              <p className="text-gray-400 text-sm xl:text-base tracking-wider">
-              Unlock premium insights, expert coaching, exclusive competitions, and loyalty rewards — all designed to accelerate your trading journey with GTC.
+            
+          <div className="top-section text-center mb-10">
+              <h2  style={{ lineHeight: "3.3rem" }}
+                className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
+                  Get in Touch
 
-              </p>
+              </h2>
             </div>
+       
             <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 p-4">
               <ContactFrom />
               <div className="contact-info flex flex-col gap-8">
@@ -63,24 +87,29 @@ const FooterNew = () => {
           </div>
         </div>
         <div className="menu-content">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4">
-        <div className="leftside flex flex-col md:flex-row gap-20 items-center">
-        <div className="w-24 h-16 relative">
-          <Image src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/footer-logo.webp" alt="Footer Logo" layout="fill" objectFit="contain" />
+      
+        <div className="leftside flex flex-col md:flex-row justify-between gap-20 items-center">
+        <div className="w-40 h-8 relative">
+          <Image src="/gtcvip-footer.png" alt="Footer Logo" layout="fill" objectFit="contain" />
         </div>
         <ul className="hidden md:flex gap-8">
           {menuItems.map((item, index) => (
             <li key={index} className="text-white">
-              <Link href={item.href}>{item.label}</Link>
+               <button
+                    onClick={() => scrollToSection(item.id)}
+                    className={`text-sm font-medium transition-colors ${
+                      activeSection === item.id ? "text-secondary" : "text-white hover:text-secondary"
+                    }`}
+                  >
+                    {item.title}
+                  </button>
             </li>
           ))}
         </ul>
         </div>
        
-        <div className="social">
-        
-        </div>
-      </div>
+       
+
     </div>
     <CopyRight />
       </div>

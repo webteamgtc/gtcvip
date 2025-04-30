@@ -2,7 +2,7 @@
 import Hero from "./components/home/Hero";
 import { useTranslations } from "next-intl";
 import WhyGTC from "./components/home/FrequentlyAskedQuestions";
-import SecurityFund from "./components/home/SecurityFund";
+import SecurityFund from "./components/home/VIPSteps";
 import StatCounter from "./components/home/StatCounter";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,11 +13,13 @@ import DirectAccess from "./components/home/DirectAccess";
 import Map from "./components/home/Map";
 import ClientLogo from "./components/home/ClientLogo";
 import AssesAsset from "./components/home/AssesAsset";
-import TradingPlatform from "./components/home/TradingPlatform";
+import TradingPlatform from "./components/home/VIPJourney";
 import FreshPress from "./components/about/FreshPress";
 import HeroBanner from "./components/home/HeroBanner";
 import TickerTapeWidget from "./components/home/TickerTapeWidget ";
 import FrequentlyAskedQuestions from "./components/home/FrequentlyAskedQuestions";
+import VIPSteps from "./components/home/VIPSteps";
+import VIPJourney from "./components/home/VIPJourney";
 
 
 
@@ -69,9 +71,11 @@ export default function Home() {
         <HeroBanner />
      
         <DirectAccess />
+        <VIPJourney/>
+        <VIPSteps />
         
         <FrequentlyAskedQuestions data={gtcFaqData} />
-    
+   
   
         {/* <CompanyNews/> */}
         </LocationContextProvider>
