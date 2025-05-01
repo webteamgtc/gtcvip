@@ -15,7 +15,6 @@ import OtpInput from "react-otp-input";
 import { ClockLoader } from "react-spinners";
 import { allowedCountries } from "@/context/allowedCounties";
 import useFormHook from "../hooks/useFormHooks";
-import Link from "next/link";
 import useCountriesDetails from "@/context/useCountiesDetails";
 import { convertToDesiredLocale } from "@/helpers";
 import { useUserStore } from "../../store/userSlice";
@@ -81,7 +80,7 @@ const TradeForm = () => {
     }).catch(err => {
       console.log({ err })
     })
-    await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/3kq25sj/`, JSON.stringify(data)).then(res => {
+    await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/2pqc16e/`, JSON.stringify(data)).then(res => {
       toast.success(res?.data?.message)
       setUser(data);
       formik.resetForm()
