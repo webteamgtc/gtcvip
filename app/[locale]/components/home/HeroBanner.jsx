@@ -12,8 +12,8 @@ const HeroBanner = () => {
           {/* Content column */}
           <div className="content md:order-1 text-center max-w-2xl mx-auto pt-16">
           <div className="text-center mb-5">
-  <div className="inline-block rounded-full p-[1px] bg-gradient-to-b from-secondary via-[#202d7bdb] to-primary">
-    <button className="flex items-center gap-2 rounded-full bg-gradient-to-t from-[#202d7bdb] via-[#050331] to-[#050331] px-6 py-2 text-lg font-semibold text-white hover:bg-white/20 transition-all">
+  <div className="inline-block rounded-full p-[1px] bg-gradient-to-b from-secondary via-transparent to-transparent">
+    <button className="flex items-center gap-2 rounded-full bg-gradient-to-b from-[#202d7bdb] via-[#050331] to-[#050331] px-6 py-2 text-lg font-semibold text-white hover:bg-white/20 transition-all">
       ✨ Unlock a New Era of Trading
     </button>
   </div>

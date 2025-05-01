@@ -41,7 +41,7 @@ const ThankYouPage = () => {
     <section className="py-10 md:py-14 xl:py-20 3xl:py-20 5xl:py-28">
       <div className="container text-left md:pt-20 lg:pt-24 2xl:pt-28">
         <h1 className="text-[2em] md:text-[2em] text-primary mb-0">
-          {`Success! You're All Set, (${user?.Full_name} ${user?.last_name})!`}
+          {`Success! You're All Set, (${user?.Full_name} !`}
         </h1>
         <p className="text-secondary font-[400] md:text-[1.5rem] mb-5">
           {`Your account is almost ready to go. We've just sent a confirmation email to (${user?.email}). 

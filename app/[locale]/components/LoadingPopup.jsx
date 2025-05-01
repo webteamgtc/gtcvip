@@ -70,7 +70,7 @@ const LoadingPopup = () => {
               <h3
               className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[24px] 3xl:text-[35px] capitalize leading-normal xl:leading-[3rem] 3xl:leading-[3rem]"
             >
-             Step Inside the <br></br>GTC VIP Trading Room
+             Step Inside <br></br>GTC VIP Trading Room
             </h3>
             <p
               className={`text-white text-sm xl:text-base 2xl:text-lg tracking-wider py-4 mx-auto`}
