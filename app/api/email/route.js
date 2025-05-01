@@ -265,11 +265,6 @@ export async function POST(req) {
         `
   };
   try {
-    await transporter.sendMail({
-      ...mailOptions,
-      ...generateEmailContent(reqBody),
-      subject: `Lead From -  Margin Bonus Promotion (Account No: ${reqBody.account_no})`
-    });
     await transporter.sendMail(mailData);
 
     return NextResponse.json({ message: "Success", test: reqBody?.email }, { status: 200 })
