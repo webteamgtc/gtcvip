@@ -4,7 +4,10 @@ import Image from "next/image";
 
 const HeroBanner = () => {
   return (
-    <section id="home" className="hero-banner py-10 md:pt-20 lg:pt-24 2xl:pt-28 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] overflow-hidden">
+    <section 
+    id="home" 
+    className="hero-banner py-10 md:pt-20 lg:pt-24 2xl:pt-28 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] overflow-hidden"
+    >
       <div className="container">
         <div className="grid grid-cols-1 items-center gap-8 text-center md:text-left h-[450px]">
           {/* Image column */}

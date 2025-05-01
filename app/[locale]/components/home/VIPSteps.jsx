@@ -11,7 +11,8 @@ const StepBox = ({ step, title, description, bgColor, textColor, clipClass }) =>
 
 const VIPSteps = () => {
   return (
-    <section id="howItWorks" className="py-10 bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] text-white">
+    <section id="howItWorks" className="py-10 bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] text-white" 
+    >
       <div className="top-section text-center mb-10">
         <h2  style={{ lineHeight: "3.3rem" }}
           className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-lg leading-normal">
