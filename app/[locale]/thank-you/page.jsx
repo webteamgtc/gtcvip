@@ -38,34 +38,43 @@ const ThankYouPage = () => {
   if (!hasHydrated || !user) return null;
 
   return (
-    <section className="py-10 md:py-14 xl:py-20 3xl:py-20 5xl:py-28">
+    <section className="py-10 md:py-14 xl:py-20 3xl:py-20 5xl:py-28 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331]">
       <div className="container text-left md:pt-20 lg:pt-24 2xl:pt-28">
-        <h1 className="text-[2em] md:text-[2em] text-primary mb-0">
-          {`Success! You're All Set, (${user?.Full_name} ${user?.last_name})!`}
-        </h1>
-        <p className="text-secondary font-[400] md:text-[1.5rem] mb-5">
-          {`Your account is almost ready to go. We've just sent a confirmation email to (${user?.email}). 
-Check your inbox and click the verification link to complete your registration.
-Once you verify, we'll log you into the GTC Client Area and you’ll be ready to make your first deposit and start trading gold with us!
-Need help? Our support team is here for you.`}
-        </p>
 
-        <p className="pb-2 max-w-96">
-          Let’s make this your best trading experience yet!
-        </p>
-        <p className="pb-2">Having Trouble?</p>
-        <p className="pb-2">
-          Contact Us at +971 800 667788. See you soon! GTC Team
-        </p>
-        <p className="text-left pb-2">
-          Email:
-          <a
-            className="cursor-pointer ml-2 text-secondary"
-            href="mailto:support@gtcfx.com"
-          >
-            support@gtcfx.com
-          </a>
-        </p>
+      <div className="top-section text-center mb-10">
+        <h2  style={{ lineHeight: "3.3rem" }}
+          className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
+         {`Success! You're All Set, (${user?.Full_name} !`}
+
+        </h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div className="content-area">
+            <p className="text-white font-[400] md:text-[1.5rem] mb-5">
+              {`Thank you for choosing GTCVIP and expressing interest in our services!`}
+            </p>
+
+            <p className="pb-2 max-w-96">
+            Our support team will contact you shortly to gather more information and explain the best way to utilize our services.
+            </p>
+            <p>Here’s to an exciting journey ahead!</p>
+            <p className="pb-2">Having Trouble?</p>
+            <p className="pb-2">
+              Contact Us at +971 800 667788. See you soon! GTC Team
+            </p>
+            <p className="text-left pb-2">
+              Email:
+              <a
+                className="cursor-pointer ml-2 text-secondary"
+                href="mailto:support@gtcvip.com"
+              >
+                support@gtcvip.com
+              </a>
+            </p>
+        </div>
+
+      </div>
+       
       </div>
     </section>
   );
