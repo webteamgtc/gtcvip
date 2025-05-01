@@ -16,10 +16,10 @@ const useFormHook = () => {
 
 
     const handleSubmitData = async (data, formik, setLoading, commonForm, sendMail = false) => {
-        sendDataToZaiper({ ...data, user_referrer: localStorage.getItem("user_referrer") }, sendMail)
+        sendDataToZaiper({ ...data, user_referrer: localStorage.getItem("user_referrer") }, formik, setLoading)
     }
 
-    const sendDataToZaiper = async (data) => {
+    const sendDataToZaiper = async (data, formik,setLoading) => {
         console.log({ data })
         await axios.post(
             `/api/email`,
@@ -32,6 +32,8 @@ const useFormHook = () => {
         await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/3kq25sj/`, JSON.stringify(data)).then(res => {
             toast.success(res?.data?.message)
             setUser(data);
+            formik.resetForm()
+            setLoading(false)
             router.push("/thank-you",);
         }).catch((err) => {
             toast.error("Something went wrong")

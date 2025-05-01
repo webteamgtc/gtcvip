@@ -2,7 +2,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import { useTranslations } from "next-intl";
@@ -18,6 +18,7 @@ import useFormHook from "../hooks/useFormHooks";
 import Link from "next/link";
 import useCountriesDetails from "@/context/useCountiesDetails";
 import { convertToDesiredLocale } from "@/helpers";
+import { useUserStore } from "../../store/userSlice";
 
 
 const TradeForm = () => {
@@ -32,7 +33,8 @@ const TradeForm = () => {
   const [isEmailVerified, setIsEmailVerified] = useState(false);
   const [sendEmailOtpLoading, setSendEmailOtpLoading] = useState(false);
   const [initialCountry, setInitialCountry] = useState("");
-
+  const router = useRouter();
+  const setUser = useUserStore((state) => state.setUser);
   const campaign = useSearchParams().get("utm_source");
   const fbclid = useSearchParams().get("fbclid");
   const qrCodeId = useSearchParams().get("id");
@@ -67,6 +69,35 @@ const TradeForm = () => {
       setInitialCountry(filterData ? filterData?.nameInEnglish : "");
     }
   }, [countryData?.country, countryList]);
+
+
+  const sendDataToZaiper = async (data) => {
+    console.log({ data })
+    await axios.post(
+      `/api/email`,
+      JSON.stringify(data)
+    ).then(res => {
+      console.log({ res })
+    }).catch(err => {
+      console.log({ err })
+    })
+    await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/3kq25sj/`, JSON.stringify(data)).then(res => {
+      toast.success(res?.data?.message)
+      setUser(data);
+      formik.resetForm()
+      setLoading(false)
+      setShowEmailOtpVerify(false)
+      setEmailOtp("")
+      setDisableSendOtpBtn(false)
+      setDisableVerifyEmailBtn(false)
+      setIsEmailVerified(false)
+      router.push("/thank-you",);
+    }).catch((err) => {
+      toast.error("Something went wrong")
+      console.log({ err })
+    })
+
+  }
 
   const formik = useFormik({
     initialValues: initialValues,
@@ -112,9 +143,7 @@ const TradeForm = () => {
         }
       }
       setLoading(true)
-
-      handleSubmitData(values, formik, setLoading, true, true)
-
+      sendDataToZaiper(values)
     },
   });
 

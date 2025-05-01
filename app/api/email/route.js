@@ -131,11 +131,6 @@ const generateEmailContent = (data) => {
 export async function POST(req) {
   const reqBody = await req.json();
   try {
-    await transporter.sendMail({
-      ...mailOptions,
-      ...generateEmailContent(reqBody),
-      subject: `Thank You -  Become the part of GTCVIP`
-    });
     await transporter.sendMail(mailData);
 
     return NextResponse.json({ message: "Success", test: reqBody?.email }, { status: 200 })
