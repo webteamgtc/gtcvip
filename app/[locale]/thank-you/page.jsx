@@ -43,34 +43,34 @@ const ThankYouPage = () => {
 
       <div className="top-section text-center mb-10">
         <h2  style={{ lineHeight: "3.3rem" }}
-          className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
-         {`Success! You're All Set, (${user?.Full_name} !`}
+          className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-lg leading-normal">
+         {`Success! You're All Set, (${user?.Full_name})!`}
 
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-        <div className="content-area">
-            <p className="text-white font-[400] md:text-[1.5rem] mb-5">
+      <div className="grid grid-cols-1 gap-6 items-center">
+        <div className="content-area text-white text-center">
+            <p className="font-[400] text-sm md:text-base mb-5">
               {`Thank you for choosing GTCVIP and expressing interest in our services!`}
             </p>
 
-            <p className="pb-2 max-w-96">
+            <p className="pb-5">
             Our support team will contact you shortly to gather more information and explain the best way to utilize our services.
             </p>
-            <p>Here’s to an exciting journey ahead!</p>
-            <p className="pb-2">Having Trouble?</p>
-            <p className="pb-2">
-              Contact Us at +971 800 667788. See you soon! GTC Team
-            </p>
-            <p className="text-left pb-2">
-              Email:
+            <p className="pb-5">Here’s to an exciting journey ahead!</p>
+            <p className="pb-5">Having Trouble?</p>
+            <p className="pb-5">
+              Contact Us at +971 800 667788 & Email:
               <a
                 className="cursor-pointer ml-2 text-secondary"
                 href="mailto:support@gtcvip.com"
               >
                 support@gtcvip.com
-              </a>
+              </a>      </p>
+            <p className=" pb-5 ">
+            See you soon! 
             </p>
+            <p className="pb-5 text-secondary font-bold">GTC VIP Team</p>
         </div>
 
       </div>
