@@ -23,7 +23,7 @@ const HeroBanner = () => {
   </div>
 </div>
             <h1
-              className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[55px] capitalize leading-normal xl:leading-[3rem] 3xl:leading-[4rem]"
+              className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-3xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[55px] capitalize leading-normal xl:leading-[3rem] 3xl:leading-[4rem]"
             >
              Step Inside the GTC VIP Trading Room
             </h1>
@@ -38,9 +38,9 @@ const HeroBanner = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto mt-10">
-        <div className="relative w-full h-[458px] rounded-xl overflow-hidden border border-white/10">
-          <Image src="/gif.gif" fill alt="" className="object-cover" />
+        <div className="max-w-4xl mx-auto mt-5 md:mt-10">
+        <div className="relative w-full h-[300px] md:h-[460px]">
+          <Image src="/animation/one1.gif" fill alt="GTC Animation" className="object-cover" />
         </div>
       </div>
       </div>
