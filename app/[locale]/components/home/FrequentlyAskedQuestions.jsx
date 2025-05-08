@@ -49,7 +49,7 @@ const FrequentlyAskedQuestions = ({ data }) => {
     <div className='container'>
     <div className="top-section text-center mb-10">
       <h2  style={{ lineHeight: "3.3rem" }}
-        className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
+        className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] md:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
      Frequently Asked Questions
 
       </h2>

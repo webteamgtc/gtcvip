@@ -24,6 +24,7 @@
     "formik": "^2.4.5",
     "i18n-iso-countries": "^7.14.0",
     "isomorphic-dompurify": "^2.4.0",
+    "lottie-react": "^2.4.1",
     "next": "13.5.4",
     "next-intl": "^2.20.2",
     "nodemailer": "^6.9.7",

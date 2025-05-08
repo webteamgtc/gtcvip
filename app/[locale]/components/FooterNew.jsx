@@ -60,7 +60,7 @@ const FooterNew = () => {
 
   return (
     <section className="bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] py-12 md:py-16" id="contact">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-2">
         <div className="relative py-[1px] px-[1px]" style={{ 
           background: 'linear-gradient(to bottom, rgba(182,135,86,.65) 40%, rgba(5,3,49,1) 60%)', 
           borderRadius: '8px' 
@@ -69,13 +69,13 @@ const FooterNew = () => {
             
           <div className="top-section text-center mb-10">
               <h2  style={{ lineHeight: "3.3rem" }}
-                className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
+                className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
                   Get in Touch
 
               </h2>
             </div>
        
-            <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 md:p-4">
               <ContactFrom />
               <div className="contact-info flex flex-col gap-8">
                 {contactDetails.map((item, index) => (
