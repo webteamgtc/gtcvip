@@ -107,13 +107,13 @@ const TradeForm = () => {
           /^[\p{L}\p{M}\s]*$/u,
           'Only contain letters.'
         )
-        .required(t("error.fullName")),
+        .required("First name is required"),
       last_name: Yup.string()
         .matches(
           /^[\p{L}\p{M}\s]*$/u,
           'Only contain letters.'
         )
-        .required("last name is required"),
+        .required("Last name is required"),
       email: Yup.string()
         .email(t("error.invalidEmail"))
         .required(t("error.email")),
