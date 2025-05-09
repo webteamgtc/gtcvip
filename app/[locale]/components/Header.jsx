@@ -77,7 +77,7 @@ const Header = () => {
     { title: "Journey With Us", id: "journey" },
     { title: "How It Work", id: "howItWorks" },
     { title: "FAQ's", id: "faq" },
-    { title: "Contact Us", id: "contact Us" },
+    { title: "Contact Us", id: "contact" },
   ];
 
   useEffect(() => {
@@ -143,7 +143,7 @@ const Header = () => {
               <MobileMenu />
             </div>
           </div>
-        </nav>
+        </nav>s
       </div>
     </LocationContextProvider>
   );

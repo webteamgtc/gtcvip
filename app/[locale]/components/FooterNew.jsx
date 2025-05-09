@@ -7,8 +7,8 @@ import CopyRight from "./CopyRight";
 const FooterNew = () => {
   // Define contact details for rendering
   const contactDetails = [
-    { iconSrc: "/Mail.png", title: "Email", details: "info@gtcvip.com" },
-    { iconSrc: "/phone.png", title: "Phone", details: "+971 4 000 8416" },
+    { iconSrc: "/Mail.png", title: "Email", details: "hello@gtcvip.com" },
+    { iconSrc: "/phone.png", title: "Phone", details: "+971 4 800 667788" },
     { iconSrc: "/add.png", title: "Address", details: "Nassima Tower - 22nd Floor - Trade Centre - Trade Centre 1 - Dubai" }
   ];
   const [activeSection, setActiveSection] = useState("home");
@@ -18,7 +18,7 @@ const FooterNew = () => {
     { title: "Journey With Us", id: "journey" },
     { title: "How It Work", id: "howItWorks" },
     { title: "FAQ's", id: "faq" },
-    { title: "Contact Us", id: "contact Us" },
+    { title: "Contact Us", id: "contact" },
   ];
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
