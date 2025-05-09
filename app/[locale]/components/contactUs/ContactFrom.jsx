@@ -216,7 +216,7 @@ const TradeForm = () => {
                   <input
                     type="text"
                     name="last_name"
-                    placeholder={"LAst name"}
+                    placeholder={"Last name"}
                     className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
                       ? "border-2 border-red-600"
                       : ""

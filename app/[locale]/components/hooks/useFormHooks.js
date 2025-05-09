@@ -29,7 +29,7 @@ const useFormHook = () => {
         }).catch(err => {
             console.log({ err })
         })
-        await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/3kq25sj/`, JSON.stringify(data)).then(res => {
+        await axios.post(``, JSON.stringify(data)).then(res => {
             toast.success(res?.data?.message)
             setUser(data);
             formik.resetForm()

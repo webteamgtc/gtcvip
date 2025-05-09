@@ -6,7 +6,7 @@ export async function POST(req) {
   const mailData = {
     from: 'service@mx.gtcmail.com',
     to: reqBody.email,
-    subject: 'Confirmation: Margin Bonus Request Received',
+    subject: '🎉You are In! Welcome to GTC VIP',
     html: `
    <!DOCTYPE html>
 <html>
@@ -21,70 +21,48 @@ export async function POST(req) {
     <tr>
         <td align="center" bgcolor="#F7F7F7">
             <div class="container" style="max-width: 650px; margin: 0 auto; background-color: #192055; padding: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-radius: 36px; padding: 20px; background-color: #fff; width: 100%;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="border-radius: 36px; padding: 20px 0px; background-color: #fff; width: 100%;">
                     <tr>
                         <td class="header" style="padding: 20px; text-align: center;">
                             <img src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/email-test.png" alt="GTC Global Capital Trade Logo" style="max-width: 165px; height: auto;">
                         </td>
                     </tr>
+                   
                     <tr>
-                        <td class="content">
-                          <h1 style="color: #192055; text-align: center; font-size: 18px; margin: 0px auto 20px;">
-                            Confirmation of Your Margin Bonus Request
-                          </h1>
-                      
-                          <h3 style="font-size: 16px; color: #192055;">Dear  ${reqBody.Full_name || ''},</h3>
-                      
-                          <p>
-                            Thank you for submitting your Margin Bonus request on the <b style="color: #b68756;">GTCFX</b> website.
-                          </p>
-                      
-                          <p>
-                            This message confirms that you have acknowledged and agreed to the 
-                            <b>Terms and Conditions</b> associated with the Margin Bonus. By proceeding with this request, you accept that:
-                          </p>
-                      
-                          <ul style="color: #192055; margin-left: 20px;">
-                            <li>You are fully responsible for all trading activities conducted under your account.</li>
-                            <li>GTCFX is not liable for any outcomes resulting from the use of the Margin Bonus.</li>
-                            <li>Misuse of this offer may result in removal of the bonus, cancellation of profits, or account suspension.</li>
-                          </ul>
-                      
-                          <hr style="border: 1px solid #b68756; margin: 25px 0;" />
-                      
-                          <h3 style="font-size: 16px; color: #192055;">What is a Margin Bonus?</h3>
-                      
-                          <p>
-                            A Margin Bonus is a <b>non-withdrawable</b> and <b>non-transferable</b> trading credit provided based on your deposit amount.
-                            It is intended exclusively for trading purposes and does not represent actual funds that can be withdrawn or transferred.
-                          </p>
-                      
-                          <p>
-                            The bonus enhances your available margin, allowing for increased trading capacity. However, it may be removed if specific conditions are not met.
-                          </p>
-                      
-                          <p style="color: red;"><b>Important:</b> The bonus can be lost and will not be restored once removed. It cannot be withdrawn or transferred at any point.</p>
-                      
-                          <hr style="border: 1px solid #b68756; margin: 25px 0;" />
-                      
-                          <p>
-                            If you have any questions or require assistance, please contact our support team at 
-                            <a href="mailto:support@gtcfx.com" style="color: #b68756; text-decoration: underline;">support@gtcfx.com</a> 
-                            or visit our website at 
-                            <a href="https://www.gtcfx.com" style="color: #b68756; text-decoration: underline;">www.gtcfx.com</a>.
-                          </p>
-                      
-                          <p style="line-height: 30px; padding-top: 20px;">
-                            Best regards,<br />
-                            <strong style="color: #192055;">GTCFX Team</strong>
-                          </p>
-                        </td>
-                      </tr>
-                      
-                    
+                          <td class="content" style="font-family: Arial, sans-serif; color: #192055; font-size: 15px; line-height: 1.6; padding: 0px 0px;">
+                            <h3 style="font-size: 16px; color: #192055; margin-bottom: 16px; padding: 0px 20px;">
+                              Dear  ${reqBody.Full_name || ''},
+                            </h3>
+                            <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              Thank you for signing up with <b style="color: #b68756;">GTC VIP</b> – we’re thrilled to have you on board!
+                            </p>
+                            <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              You're now one step closer to experiencing a smarter, faster, and more powerful way to trade. Our team is reviewing your submission and will get back to you shortly with the next steps.
+                            </p>
+                            <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              In the meantime, here’s what you can expect as a <a href="https://my.gtcvip.com/v2/app/login" style="color: blue; text-decoration:underline;"><b style="color: #b68756;">GTC VIP</b></a> member:
+                            </p>
+                            <ul style="padding: 0px 40px 0px 40px; margin-bottom: 16px;">
+                              <li style="margin-bottom: 10px;">💡 VIP trading tips straight from the experts</li>
+                              <li style="margin-bottom: 10px;">🚀 Special trading signals to help you make smarter moves</li>
+                              <li style="margin-bottom: 10px;">💬 Personal support whenever you need it (just shoot us a message)</li>
+                            </ul>
+                            <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              🔒 Your information is safe with us. We respect your privacy and are committed to protecting your data.
+                            </p>
+                            <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              Stay tuned – your trading evolution starts now.
+                            </p>
+                            <p style="padding: 0px 20px; margin-bottom: 0;">
+                              Best regards,<br/>
+                              <strong style="color: #192055;">Your GTC Family</strong>
+                            </p>
+                          </td>
+                        </tr>
+
                     
                     <tr>
-                      <td class="footer" style="padding: 20px 0px; font-size: 10px; color: #000; background-color: #f7f7f736; border-radius: 0 0 36px 36px; text-align: left;">
+                      <td class="footer" style="padding: 20px 20px; font-size: 10px; color: #000; background-color: #f7f7f736; border-radius: 0 0 36px 36px; text-align: left;">
                             <div class="social-icons" style="padding-bottom: 10px; text-align: center;">
                                 <a href="https://www.facebook.com/gtcfxofficial" style="text-decoration: none;" target="_blank">
                                     <img alt="Facebook" src="https://d3k81ch9hvuctc.cloudfront.net/assets/email/buttons/default/facebook_96.png" style="width: 24px; height: 24px; margin: 0 5px;">
