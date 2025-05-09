@@ -39,7 +39,7 @@ const HeroBanner = () => {
           </div>
         </div>
         <div className="max-w-4xl mx-auto mt-5 md:mt-10">
-        <div className="relative w-full h-[300px] md:h-[460px]">
+        <div className="relative w-full h-[180px] md:h-[460px]">
           <Image src="/animation/one1.gif" fill alt="GTC Animation" className="object-cover" />
         </div>
       </div>

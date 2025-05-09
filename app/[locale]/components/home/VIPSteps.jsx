@@ -14,8 +14,8 @@ const VIPSteps = () => {
     <section id="howItWorks" className="py-10 bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] text-white" 
     >
       <div className="top-section text-center mb-10">
-        <h2  style={{ lineHeight: "2rem" }}
-          className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] md:text-[30px] 2xl:text-[45px] capitalize max-w-lg leading-normal">
+        <h2  style={{ lineHeight: "3.3rem" }}
+          className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-lg font-[500] md:text-[30px] 2xl:text-[45px] capitalize max-w-lg leading-normal">
         Unlock Your GTC VIP Access in 3 Simple Steps
 
         </h2>

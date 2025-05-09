@@ -9,14 +9,14 @@ const FooterNew = () => {
   const contactDetails = [
     { iconSrc: "/Mail.png", title: "Email", details: "hello@gtcvip.com" },
     { iconSrc: "/phone.png", title: "Phone", details: "+971 4 800 667788" },
-    { iconSrc: "/add.png", title: "Address", details: "Nassima Tower - 22nd Floor - Trade Centre - Trade Centre 1 - Dubai" }
+    { iconSrc: "/add.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE" }
   ];
   const [activeSection, setActiveSection] = useState("home");
   const menuItems = [
     { title: "Home", id: "home" },
     { title: "Why Trade With Us", id: "whyTrade" },
     { title: "Journey With Us", id: "journey" },
-    { title: "How It Work", id: "howItWorks" },
+    { title: "How It Works", id: "howItWorks" },
     { title: "FAQ's", id: "faq" },
     { title: "Contact Us", id: "contact" },
   ];

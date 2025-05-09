@@ -75,7 +75,7 @@ const Header = () => {
     { title: "Home", id: "home" },
     { title: "Why Trade With Us", id: "whyTrade" },
     { title: "Journey With Us", id: "journey" },
-    { title: "How It Work", id: "howItWorks" },
+    { title: "How It Works", id: "howItWorks" },
     { title: "FAQ's", id: "faq" },
     { title: "Contact Us", id: "contact" },
   ];
