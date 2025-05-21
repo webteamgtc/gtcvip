@@ -9,10 +9,10 @@ import { useTranslations } from "next-intl";
 
 const AccordionItem = ({ toggle, open, title, paragraphs }) => {
   return (
-    <div className="rounded-md p-2 overflow-hidden shadow-md border border-secondary border-opacity-15 bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] transition hover:shadow-lg">
+    <div className="rounded-md p-2 overflow-hidden shadow-xl border border-secondary border-opacity-15 bg-white dark:bg-gradient-to-b dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] transition hover:shadow-lg">
       {/* Accordion Header */}
       <div
-        className="py-4 px-5 flex justify-between items-center cursor-pointer text-white"
+        className="py-4 px-5 flex justify-between items-center cursor-pointer text-primary dark:text-white"
         onClick={toggle}
       >
         <p className="text-lg font-medium">{title}</p>
@@ -21,7 +21,7 @@ const AccordionItem = ({ toggle, open, title, paragraphs }) => {
 
       {/* Accordion Content */}
       <Collapse isOpened={open}>
-        <div className="px-5 py-3 border-t border-secondary border-opacity-10 text-white bg-transparent">
+        <div className="px-5 py-3 border-t border-secondary border-opacity-10 text-primary dark:text-white bg-transparent">
           {paragraphs.map((paragraph, index) => (
             <p
               key={index}
@@ -35,7 +35,6 @@ const AccordionItem = ({ toggle, open, title, paragraphs }) => {
   );
 };
 
-
 const FrequentlyAskedQuestions = ({ data }) => {
   const t = useTranslations("prime-tech.pamm");
   if (!data || data.length < 1) return null;
@@ -43,34 +42,42 @@ const FrequentlyAskedQuestions = ({ data }) => {
   const toggle = (index) => setOpenIndex(openIndex === index ? null : index);
 
   return (
+    <section
+      id="faq"
+      className="py-10 md:pt-10 relative"
+    >
+      <div className="container">
+        <div className="top-section text-center mb-10">
+          <h2
+            style={{ lineHeight: "3.3rem" }}
+            className="
+              text-primary 
+              dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text 
+              text-2xl font-[500] md:text-[30px] 2xl:text-[40px] capitalize max-w-sm mx-auto leading-normal 
+              transition-colors duration-300
+            "
+          >
+            Frequently Asked Questions
+          </h2>
+        </div>
 
+        <div className="max-w-6xl mx-auto space-y-4">
+          {data.map((item, index) => (
+            <AccordionItem
+              key={index}
+              open={index === openIndex}
+              title={item.title}
+              paragraphs={item.paragraphs}
+              toggle={() => toggle(index)}
+            />
+          ))}
+        </div>
 
-    <section id="faq" className='py-10 md:pt-10 relative bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331]'>
-    <div className='container'>
-    <div className="top-section text-center mb-10">
-      <h2  style={{ lineHeight: "3.3rem" }}
-        className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] md:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
-     Frequently Asked Questions
-
-      </h2>
-    </div>
-    <div className="max-w-6xl mx-auto space-y-2">
-        {data.map((item, index) => (
-          <AccordionItem
-            key={index}
-            open={index === openIndex}
-            title={item.title}
-            paragraphs={item.paragraphs}
-            toggle={() => toggle(index)}
-          />
-        ))}
+        <div className="mt-10 text-center">
+          <LiveAccountButton />
+        </div>
       </div>
-      <div className="mt-10 text-center">
-                <LiveAccountButton />
-            </div>
-    </div>
-  </section>
- 
+    </section>
   );
 };
 

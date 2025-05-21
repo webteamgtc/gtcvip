@@ -57,47 +57,44 @@ const tiers = [
 
 const VIPJourney = () => {
   return (
-    <section id="journey" className="py-16 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] text-white">
-      <div className="top-section text-center mb-10">
-      <h2  style={{ lineHeight: "3.3rem" }}
-        className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] md:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
-     Your Journey to VIP Status
+    <section id="journey">
+  <div className="top-section text-center mb-10">
+   <h2 style={{ lineHeight: "3.3rem" }} className=" text-2xl font-[500] md:text-[30px] 2xl:text-[40px] max-w-xs mx-auto leading-normal text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Journey to VIP Status </h2>
+  </div>
 
-      </h2>
-    </div>
-      <div className="max-w-7xl mx-auto px-4">
-     
-        <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
-          {tiers.map((tier, index) => (
-            <div
-              key={index}
-              className="rounded-xl overflow-hidden shadow-lg flex flex-col h-full bg-white/5 backdrop-blur-md pl-0"
-            >
-              {/* Top gradient header */}
-              <div
-                className={`p-6 text-left bg-gradient-to-br ${tier.gradient}`}
-              >
-                <h3 className="text-2xl font-bold">{tier.name}</h3>
-                <p className="text-base opacity-90">{tier.subtitle}</p>
-              </div>
+  <div className="max-w-7xl mx-auto px-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-4">
+      {tiers.map((tier, index) => (
+        <div
+          key={index}
+          className="rounded-xl overflow-hidden shadow-lg flex flex-col h-full bg-white/5 backdrop-blur-md pl-0"
+        >
+          {/* Top gradient header */}
+          <div className={`p-6 text-left bg-gradient-to-br ${tier.gradient}`}>
+            <h3 className="text-2xl font-bold text-secondary dark:text-yellow-400">
+              {tier.name}
+            </h3>
+            <p className="text-base opacity-90 text-white">{tier.subtitle}</p>
+          </div>
 
-              {/* Feature list */}
-              <div className="bg-white text-black p-5 text-sm flex-1">
-                <ul className="list-decimal pl-4 space-y-2">
-                  {tier.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
+          {/* Feature list */}
+          <div className="bg-white text-black dark:bg-[#1c1f3a] dark:text-white p-5 text-sm flex-1">
+            <ul className="list-decimal pl-4 space-y-2">
+              {tier.features.map((feature, i) => (
+                <li key={i}>{feature}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-        <div className="mt-10 text-center">
-                <LiveAccountButton />
-            </div>
-      </div>
-  
-    </section>
+      ))}
+    </div>
+
+    <div className="mt-10 text-center">
+      <LiveAccountButton />
+    </div>
+  </div>
+</section>
+
   );
 };
 

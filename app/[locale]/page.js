@@ -56,15 +56,15 @@ export default function Home() {
     },
     {
       title: "Can I change my display name?",
-      paragraphs: ["Yes. After logging into the platform, you can edit your display name anytime in your profile settings."],
+      paragraphs: ["Yes, After logging into the platform, you can edit your display name anytime in your profile settings."],
     },
     {
       title: "Are my conversations private?",
-      paragraphs: ["Yes. Any direct messages between you and analysts are private. Community discussions are moderated for quality and security."],
+      paragraphs: ["Yes, Any direct messages between you and analysts are private. Community discussions are moderated for quality and security."],
     },
     {
       title: "Can I participate in competitions?",
-      paragraphs: ["Absolutely. GTC VIP hosts exclusive competitions — based on trading volume, referrals, and engagement — with fantastic rewards up for grabs."],
+      paragraphs: ["Absolutely! GTC VIP hosts exclusive competitions based on trading volume, referrals, and engagement, with fantastic rewards up for grabs."],
     },
   ];
   

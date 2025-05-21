@@ -1,17 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import ContactFrom from "./contactUs/ContactFrom";  // Assuming you have a form component to include
+import ContactFrom from "./contactUs/ContactFrom";
 import CopyRight from "./CopyRight";
 
 const FooterNew = () => {
-  // Define contact details for rendering
   const contactDetails = [
-    { iconSrc: "/Mail.png", title: "Email", details: "hello@gtcvip.com" },
-    { iconSrc: "/phone.png", title: "Phone", details: "+971 4 800 667788" },
-    { iconSrc: "/add.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE" }
+    { iconSrc: "/Icons-2-b.png", title: "Email", details: "hello@gtcvip.com" },
+    { iconSrc: "/Icons-1-b.png", title: "Phone", details: "+971 4 800 667788" },
+    { iconSrc: "/Icons-3-b.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE" }
   ];
+
   const [activeSection, setActiveSection] = useState("home");
+
   const menuItems = [
     { title: "Home", id: "home" },
     { title: "Why Trade With Us", id: "whyTrade" },
@@ -20,6 +21,7 @@ const FooterNew = () => {
     { title: "FAQ's", id: "faq" },
     { title: "Contact Us", id: "contact" },
   ];
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) section.scrollIntoView({ behavior: "smooth" });
@@ -45,7 +47,7 @@ const FooterNew = () => {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // Contact item component logic integrated directly
+
   const ContactItem = ({ iconSrc, title, details }) => (
     <div className="flex justify-start items-center gap-4">
       <div className="relative w-14 h-14">
@@ -53,28 +55,37 @@ const FooterNew = () => {
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="text-lg text-secondary font-medium">{title}</h3>
-        <p className="text-white text-sm">{details}</p>
+        <p className="text-primary dark:text-white text-sm">{details}</p>
       </div>
     </div>
   );
 
   return (
-    <section className="bg-gradient-to-b from-[#283085] via-[#050331] to-[#050331] py-12 md:py-16" id="contact">
+    <section className="py-12 md:py-16" id="contact">
       <div className="max-w-6xl mx-auto px-2">
-        <div className="relative py-[1px] px-[1px]" style={{ 
-          background: 'linear-gradient(to bottom, rgba(182,135,86,.65) 40%, rgba(5,3,49,1) 60%)', 
-          borderRadius: '8px' 
-        }}>
-          <div className="contact-form relative bg-gradient-to-b from-[#202d7bdb] via-[#050331] to-[#050331] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12">
-            
-          <div className="top-section text-center mb-10">
-              <h2  style={{ lineHeight: "3.3rem" }}
-                className="bg-gradient-to-r from-secondary via-white to-secondary inline-block text-transparent bg-clip-text text-2xl font-[500] xl:text-[30px] 2xl:text-[45px] capitalize max-w-sm leading-normal">
-                  Get in Touch
 
+        {/* Contact Section */}
+        <div
+          className="relative py-[1px] px-[1px] rounded-lg"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(182,135,86,.3) 40%, rgba(5,3,49,0.1) 0%)",
+          }}
+        >
+          <div
+            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#050331] dark:to-[#050331] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12 transition-colors"
+          >
+            {/* Heading */}
+            <div className="top-section text-center mb-10">
+              <h2
+                style={{ lineHeight: "3.3rem" }}
+                className="text-primary text-2xl font-[500] xl:text-[30px] 2xl:text-[45px] max-w-sm mx-auto leading-normal dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300"
+              >
+                Get in Touch
               </h2>
             </div>
-       
+
+            {/* Form + Contact Info */}
             <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 md:p-4">
               <ContactFrom />
               <div className="contact-info flex flex-col gap-8">
@@ -85,35 +96,50 @@ const FooterNew = () => {
             </div>
           </div>
         </div>
-        <div className="menu-content">
-      
-        <div className="leftside flex flex-col md:flex-row justify-between gap-20 items-center">
-        <div className="w-52 h-16 relative">
-          <Image src="/Logo-White.svg" alt="Footer Logo" layout="fill" objectFit="contain" />
-        </div>
-        <ul className="hidden md:flex gap-8">
-          {menuItems.map((item, index) => (
-            <li key={index} className="text-white">
-               <button
+
+        {/* Navigation Footer */}
+        <div className="menu-content mt-20">
+          <div className="leftside flex flex-col md:flex-row justify-between gap-20 items-center">
+            <div className="w-52 h-16 relative">
+              <Image
+                src="/Logo-Standard.svg"
+                alt="Footer Logo"
+                layout="fill"
+                objectFit="contain"
+                className="block dark:hidden"
+              />
+              <Image
+                src="/Logo-White.svg"
+                alt="Footer Logo Dark"
+                layout="fill"
+                objectFit="contain"
+                className="hidden dark:block"
+              />
+            </div>
+
+            <ul className="hidden md:flex gap-8">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <button
                     onClick={() => scrollToSection(item.id)}
                     className={`text-sm font-medium transition-colors ${
-                      activeSection === item.id ? "text-secondary" : "text-white hover:text-secondary"
+                      activeSection === item.id
+                        ? "text-secondary"
+                        : "text-primary dark:text-white hover:text-secondary"
                     }`}
                   >
                     {item.title}
                   </button>
-            </li>
-          ))}
-        </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-       
-       
 
-    </div>
-    <CopyRight />
+        <CopyRight />
       </div>
     </section>
   );
 };
 
-export default FooterNew; 
+export default FooterNew;

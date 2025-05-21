@@ -191,7 +191,7 @@ const TradeForm = () => {
       <div className="bg-transparent">
         <form onSubmit={formik.handleSubmit}>
           <div className="space-y-12">
-            <div className="grid max-w-6xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-2 text-left">
+            <div className="grid max-w-6xl grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-6 md:col-span-2 text-primary dark:text-white text-left placeholder:text-primary dark:placeholder:text-white">
               <div className="sm:col-span-3">
 
                 <div>
@@ -200,9 +200,9 @@ const TradeForm = () => {
                     type="text"
                     name="Full_name"
                     placeholder={"First name"}
-                    className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.Full_name && formik.errors.Full_name
+                    className={`block w-full bg-transparent border-opacity-100 rounded-md p-2  outline-none sm:text-sm sm:leading-6 ${formik.touched.Full_name && formik.errors.Full_name
                       ? "border-2 border-red-600"
-                      : ""
+                      : "border-2 border-gray-300"
                       }`}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -217,9 +217,9 @@ const TradeForm = () => {
                     type="text"
                     name="last_name"
                     placeholder={"Last name"}
-                    className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
+                    className={`block w-full border border-gray-100 bg-transparent border-opacity-100 rounded-md p-2  outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
                       ? "border-2 border-red-600"
-                      : ""
+                      : "border-2 border-gray-300"
                       }`}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -249,13 +249,13 @@ const TradeForm = () => {
                       value={formik.values.email}
                       autoComplete="email"
                       placeholder={t("email")}
-                      className={`block w-full border border-gray-100 text-white bg-transparent border-opacity-25 rounded-md p-2 placeholder:text-gray-100 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
+                      className={`block w-full border border-gray-100 bg-transparent border-opacity-100 rounded-md p-2 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
                         ? "border-2 border-red-600"
-                        : ""
+                        : "border-2 border-gray-300"
                         }`}
                     />
                     <button
-                      className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-white text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
+                      className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
                 hover:bg-primary hover:text-secondary hover:border-2`}
                       type="button"
                       onClick={sendEmailOtp}
@@ -333,9 +333,9 @@ const TradeForm = () => {
 
               <div className="col-span-full">
                 <PhoneInput
-                  className={`bg-transparent text-secondary simple p-1.5 border-opacity-25 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border border-gray-100 ${formik.touched.phone && formik.errors.phone
-                    ? "border-red-100"
-                    : "border-gray-100"
+                  className={`bg-transparent text-secondary simple p-1.5 border-opacity-100 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border-2 ${formik.touched.phone && formik.errors.phone
+                    ? "border-2 border-red-600"
+                        : "border-2 border-gray-300"
                     }`}
                   onChange={(value) => formik.setFieldValue("phone", value)}
                   value={formik.values.phone}
@@ -347,7 +347,7 @@ const TradeForm = () => {
               </div>
               <div className="col-span-full">
                 <select
-                  className={` bg-transparent text-white w-full text-sm py-3 px-2 border-opacity-25 border border-gray-100 outline-none rounded-md ${formik.touched.country && formik.errors.country ? "border-2 border-white " : ""}`}
+                  className={` bg-transparent w-full text-sm py-3 px-2 border-opacity-100 border-2 border-gray-200 outline-none rounded-md ${formik.touched.country && formik.errors.country ? "border-2 border-white " : ""}`}
                   name='country'
                   value={formik.values.country}
                   onChange={formik.handleChange}
@@ -361,7 +361,7 @@ const TradeForm = () => {
                       )
                       .map((item, index) => {
                         return (
-                          <option className="text-primary" key={item?.code} value={item?.nameInEnglish}>
+                          <option  key={item?.code} value={item?.nameInEnglish}>
                             {item?.name}
                           </option>
                         );
@@ -376,13 +376,13 @@ const TradeForm = () => {
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}
-                className="block bg-primary text-white text-xl w-[120px] h-[40px] border border-gray-100 p-2 border-opacity-25  placeholder:text-gray-400 outline-none sm:text-sm sm:leading-6 mb-2"
+                className="block bg-primary text-xl w-[120px] h-[40px] border border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-sm sm:leading-6 mb-2"
                 type="submit"
               >
                 {loading ? <p> {t("sending")}</p> : <p>{t("submit")}</p>}
               </button>
             }
-            <p className="text-xs py-3 text-gray-400 leading-5">{t("contactTerms")}.</p>
+            <p className="text-xs py-3 leading-5">{t("contactTerms")}.</p>
           </div>
         </form>
       </div>
