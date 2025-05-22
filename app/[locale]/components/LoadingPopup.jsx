@@ -75,7 +75,7 @@ const LoadingPopup = () => {
             <p
               className={`text-white text-sm xl:text-base 2xl:text-lg tracking-wider py-4 mx-auto`}
             >
-             Join the new standard in trading communities. <br></br>Unlock premium insights, expert coaching, exclusive competitions, and loyalty rewards — all designed to accelerate your trading journey with GTC.
+             Join the new standard in trading communities. <br></br>Unlock premium insights, expert coaching, exclusive competitions, and loyalty rewards, all designed to accelerate your trading journey with GTC.
 
             </p>
 

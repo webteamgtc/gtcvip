@@ -15,7 +15,9 @@ const LiveAccountButton = () => {
         transition-colors duration-300
       "
     >
-      Open Account Today
+     BE REWARDED
+
+
     </Link>
   );
 };

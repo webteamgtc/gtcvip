@@ -13,14 +13,16 @@ const VIPSteps = () => {
   return (
     <section id="howItWorks" className="py-10">
       <div className="top-section text-center my-10">
-       <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[40px] max-w-xs md:max-w-lg mx-auto leading-tight text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Unlock Your GTC VIP Access in 3 Simple Steps </h2>
+       <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[35px] max-w-xs md:max-w-sm mx-auto leading-tight text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Get Your GTC VIP Access in 
+3 Simple Steps
+ </h2>
       </div>
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-0 max-w-6xl mx-auto overflow-hidden rounded-md px-2">
         <StepBox
           step="Step 1 – Register"
           title="Register"
-          description="Open your GTC account and log into your Client Portal."
+          description="Fill in your details to create your free account in minutes."
           bgColor="bg-[#283085]"
           textColor="text-white"
           darkBg="dark:bg-[#1e255b]"
@@ -28,9 +30,9 @@ const VIPSteps = () => {
           clipClass="clip-left"
         />
         <StepBox
-          step="Step 2 – Deposit"
-          title="Deposit"
-          description="Fund your account with at least $1,000 to begin your VIP journey."
+          step="Step 2 – Login"
+          title="Login"
+          description="Access your client area anytime to see your progress and rewards."
           bgColor="bg-[#b68756]"
           textColor="text-white"
           darkBg="dark:bg-[#d1a865]"
@@ -38,9 +40,9 @@ const VIPSteps = () => {
           clipClass="clip-center"
         />
         <StepBox
-          step="Step 3 – Explore"
-          title="Explore"
-          description="Access the GTC VIP Trading Room and start earning, learning, and winning."
+          step="Step 3 – Earn"
+          title="Earn"
+          description="Join the loyalty program, collect points, and claim amazing prizes."
           bgColor="bg-[#E7E4F2]"
           textColor="text-black"
           darkBg="dark:bg-[#f5f3ff]"

@@ -15,7 +15,7 @@ const AccordionItem = ({ toggle, open, title, paragraphs }) => {
         className="py-4 px-5 flex justify-between items-center cursor-pointer text-primary dark:text-white"
         onClick={toggle}
       >
-        <p className="text-lg font-medium">{title}</p>
+        <h5 className="text-lg font-medium">{title}</h5>
         <div className="text-2xl text-secondary">{open ? <FaMinus /> : <IoMdAdd />}</div>
       </div>
 
@@ -49,11 +49,10 @@ const FrequentlyAskedQuestions = ({ data }) => {
       <div className="container">
         <div className="top-section text-center mb-10">
           <h2
-            style={{ lineHeight: "3.3rem" }}
             className="
               text-primary 
               dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text 
-              text-2xl font-[500] md:text-[30px] 2xl:text-[40px] capitalize max-w-sm mx-auto leading-normal 
+              text-2xl font-[500] md:text-[30px] 2xl:text-[35px] capitalize max-w-sm mx-auto leading-normal 
               transition-colors duration-300
             "
           >
@@ -73,7 +72,7 @@ const FrequentlyAskedQuestions = ({ data }) => {
           ))}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-14 text-center">
           <LiveAccountButton />
         </div>
       </div>
