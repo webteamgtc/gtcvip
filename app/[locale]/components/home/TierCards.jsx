@@ -6,7 +6,7 @@ const tiers = [
     title: "Available for",
     price: "All Traders",
     benefits: [
-      "Access to FX Analysis",
+      "Access to Basic Market Analysis",
       "Community Access",
       "Loyalty Points for Engagement",
     ],
@@ -17,8 +17,8 @@ const tiers = [
      price: "$10,000",
     title: "Equity",
     benefits: [
-      "Direct messaging with Pro Traders",
-      "Access to Bigger Rewards",
+      "Access to Lower Tier Rewards",
+      "Access to Tier 2 & 3 Rewards",
       "Double the Reward Points",
     ],
   },
@@ -31,7 +31,7 @@ const tiers = [
       "Triple the Reward Points",
       "Access to All the Rewards",
       "Direct Access to Our Chief Analyst",
-      "Full Market Analysis Access",
+      "Access to Roundtable Events",
     ],
   },
 ];
@@ -43,12 +43,15 @@ export default function TierCards() {
       <h2 style={{ lineHeight: "3.3rem" }} className=" text-2xl font-[500] md:text-[30px] 2xl:text-[40px] max-w-xs mx-auto leading-normal text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Journey Starts Here
 </h2>
       </div>
-      <div className="container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4 text-center pt-10">
+      <div className="container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-8 px-4 text-center pt-10">
         {tiers.map((tier, idx) => (
           <div
             key={idx}
             className="relative flex flex-col items-center justify-start rounded-3xl shadow-xl px-6 py-10 pt-16 min-h-[630px] transition-all duration-300
-              bg-white text-primary dark:bg-gradient-to-b dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white"
+              bg-gradient-to-b
+from-white
+via-gray-100
+to-slate-200 border border-primary dark:border-[#ffffff3f] text-primary border-opacity-10 dark:bg-gradient-to-b dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white"
           >
             {/* Top badge */}
             <div

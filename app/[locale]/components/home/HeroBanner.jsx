@@ -15,7 +15,7 @@ const HeroBanner = () => {
             {/* Gradient Tag Button */}
          
             {/* Heading */}
-           <h1 className=" text-3xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[55px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Step Inside the Your Loyalty Gets
+           <h1 className=" text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Step Inside the Your Loyalty Gets
 Rewarded Now
  </h1>
 
