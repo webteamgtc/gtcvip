@@ -52,8 +52,8 @@ GTC VIP?
             flex flex-col items-center justify-center gap-4 p-4 text-center cursor-pointer 
             bg-transparent hover:bg-gradient-radial hover:from-[#f2f2f2] hover:via-transparent hover:to-transparent dark:hover:from-[#1a1a3d] dark:hover:via-transparent dark:hover:to-transparent
 
-            ${!isLastColumn ? "border-r border-gray-300 dark:border-gray-600" : ""}
-            ${!isLastRow ? "border-b border-gray-300 dark:border-gray-600" : ""}
+            ${!isLastColumn ? "border-none border-gray-300 dark:border-gray-600" : ""}
+            ${!isLastRow ? "border-none border-gray-300 dark:border-gray-600" : ""}
           `}
         >
           <div className="w-24 h-24 flex items-center justify-center">
