@@ -15,13 +15,13 @@ const HeroBanner = () => {
             {/* Gradient Tag Button */}
          
             {/* Heading */}
-           <h1 className=" text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Step Inside the Your Loyalty Gets
-Rewarded Now
+           <h1 className=" text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Loyalty.<br></br> Rewarded.
  </h1>
 
             {/* Paragraph */}
             <p className="text-primary dark:text-white text-sm xl:text-base 2xl:text-lg tracking-wider py-4 mx-auto">
-             Welcome to GTC VIP, the new standard of trading communities.<br></br> Register and gain access to loyalty points that could see you be rewarded with a Mercedes G63, an all-expenses-paid holiday in Las Vegas, and many more exciting gifts.
+             GTC VIP is the new standard when it comes to trading communities.<br></br> Register, trade, and gain access to loyalty points that could see you be rewarded with a Mercedes G63, an all-expenses-paid holiday in Las Vegas, and many more exciting gifts. Click on the button below to get started
+
             </p>
 
             {/* CTA Button */}

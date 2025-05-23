@@ -78,11 +78,12 @@ const Header = () => {
 
   const navigationData = [
     { title: "Home", id: "home" },
-    { title: "Why Trade With Us", id: "whyTrade" },
-    { title: "Journey With Us", id: "journey" },
-    { title: "How It Works", id: "howItWorks" },
-    { title: "FAQ's", id: "faq" },
-    { title: "Contact Us", id: "contact" },
+    { title: "Rewards", id: "whyTrade" },
+    { title: "Benefits", id: "journey" },
+    { title: "Levels", id: "contact" },
+    { title: "Steps", id: "howItWorks" },
+    { title: "FAQs", id: "faq" },
+   
   ];
 const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
   useEffect(() => {

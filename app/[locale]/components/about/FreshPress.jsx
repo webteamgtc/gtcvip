@@ -6,28 +6,28 @@ const FreshPress = () => {
 
   const features = [
     { icon: "/Images-11.webp", 
-      title: "Loyalty Points That Truly Count",
-      desc: "Every little action, from referrals to just showing up, earns you points. These points turn into exciting rewards that make your loyalty worth it.",
+      title: "Loyalty Points with Real Value",
+      desc: "Earn points effortlessly, from logging in to referring friends. Then turn those points into rewards that actually matter.",
     },
     { icon: "/Images-12.webp", 
-      title: "Competitions with Real Rewards",
-      desc: "VIPs enjoy fun challenges where winning isn’t just possible, it’s part of the experience. Members truly love the thrill, excitement, and real valuable rewards.",
+      title: "Competitions That Reward the Elite",
+      desc: "Enjoy exclusive trading challenges where the winners don’t just walk away with bragging rights… they leave with luxury.",
 
      },
     { icon: "/Images-13.webp", 
-      title: "A VIP Store Just for You",
-    desc: "There’s a full store waiting, filled with luxury gifts and unforgettable experiences. All carefully made to thank you for staying loyal and committed.",
+      title: "The VIP Store That’s Curated for You",
+    desc: "Unlock a store that’s packed with luxury gear, truly unforgettable experiences & exclusive gifts, all just for being loyal.",
      },
     { icon: "/Images-14.webp",
-      title: "Level Up Your Status",
-      desc: "The more loyal you are, the more you earn. Your tier rises with every action, bringing bigger rewards, better perks, and VIP treatment.",
+      title: "Climb the Ranks & Unlock More",
+      desc: "The more active and loyal you are, the higher your tier, which means better perks, priority access, and elevated status.",
      },
-    { icon: "/Images-15.webp",  title: "Easy Ways to Earn Points",
-      desc: "Simple things like logging in or joining the conversation help you collect points quickly every day. Getting rewarded has never been easier.",
+    { icon: "/Images-15.webp",  title: "Simple. Seamless. Rewarding.",
+      desc: "You’ll earn daily points by simply trading & engaging with our social posts. It’s that easy to be a part of the VIP lifestyle.",
     },
     { icon: "/Images-16.webp", 
-      title: "More Equity & More VIP Power",
-      desc: "The more equity you bring, the better your perks, like analyst access and triple points. GTC VIP makes sure your loyalty truly pays off.",
+      title: "Higher Balance. Bigger Rewards.",
+      desc: "The more you hold in your GTC account, the more you unlock, including triple points and amazing perks only GTC VIPs enjoy.",
   
      },
   ];
@@ -73,6 +73,7 @@ GTC VIP?
     <LiveAccountButton />
   </div>
 </div>
+
 
   );
 };

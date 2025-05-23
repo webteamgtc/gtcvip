@@ -20,9 +20,9 @@ const VIPSteps = () => {
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-0 max-w-6xl mx-auto overflow-hidden rounded-md px-2">
         <StepBox
-          step="Step 1 – Register"
+          step="Step 1 - Sign Up"
           title="Register"
-          description="Fill in your details to create your free account in minutes."
+          description="Create your free GTC VIP account in minutes. No fuss, just quick access."
           bgColor="bg-[#283085]"
           textColor="text-white"
           darkBg="dark:bg-[#1e255b]"
@@ -32,7 +32,7 @@ const VIPSteps = () => {
         <StepBox
           step="Step 2 – Login"
           title="Login"
-          description="Access your client area anytime to see your progress and rewards."
+          description="Head to your dashboard to track your tier, points, and rewards."
           bgColor="bg-[#b68756]"
           textColor="text-white"
           darkBg="dark:bg-[#d1a865]"
@@ -40,7 +40,7 @@ const VIPSteps = () => {
           clipClass="clip-center"
         />
         <StepBox
-          step="Step 3 – Earn"
+          step="Step 3 – Start Earning"
           title="Earn"
           description="Join the loyalty program, collect points, and claim amazing prizes."
           bgColor="bg-[#E7E4F2]"
