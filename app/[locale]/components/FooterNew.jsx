@@ -7,7 +7,7 @@ import CopyRight from "./CopyRight";
 const FooterNew = () => {
   const contactDetails = [
     { iconSrc: "/Icons-2-b.png", title: "Email", details: "hello@gtcvip.com" },
-    { iconSrc: "/Icons-1-b.png", title: "Phone", details: "+971 4 800 667788" },
+    { iconSrc: "/Icons-1-b.png", title: "Phone", details: "971 800 667788" },
     { iconSrc: "/Icons-3-b.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE" }
   ];
 
