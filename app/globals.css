@@ -658,13 +658,13 @@ body
   outline: none;
 }
 .clip-left {
-  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+  clip-path: polygon(0 0, 75% 0, 100% 55%, 75% 100%, 0 100%);
 }
 .clip-center {
-  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+  clip-path: polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%);
 }
 .clip-right {
-  clip-path: polygon(0 0, 95% 0, 100% 50%, 95% 100%, 0 100%);
+  clip-path: polygon(0 0, 75% 0, 100% 50%, 75% 100%, 0 100%);
 }
 
 .PhoneInputInput {

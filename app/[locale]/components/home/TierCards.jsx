@@ -64,33 +64,33 @@ export default function TierCards() {
     </thead>
     <tbody className="text-center">
       {[
-        "Access to the Electronic Rewards",
-        "Access to the Entertainment Rewards",
-        "Access to the Car Rewards",
-        "FX Research",
-        "Commodities Research",
-        "Crypto Research",
-        "Indices Research",
-        "MT4/MT5 Indicator Bundle",
-        "Access to our AI Analyst",
-        "Pro Trader Direct Engagement",
-        "Chief Trader Direct Access",
-        "One–On–One Pro Trader Consultations",
-      ].map((label, index) => {
-        const accessMap = [
-          ["x", "", ""],
-          ["", "x", "x"],
-          ["", "", "x"],
-          ["x", "x", "x"],
-          ["x", "x", "x"],
-          ["x", "x", "x"],
-          ["x", "x", "x"],
-          ["", "x", "x"],
-          ["", "x", "x"],
-          ["", "x", "x"],
-          ["", "", "x"],
-          ["", "", "x"],
-        ];
+    "Coins multiplier",
+    "FX Research",
+    "Commodities Research",
+    "Crypto Research",
+    "Indices Research",
+    "MT4 /5 Premium Indicator Bundle",
+    "AI Analysts",
+    "Pro Trader Direct Access",
+    "Priority Store Access",
+    "Chief Trader Direct Access",
+    "VIP Store Rewards",
+    "One-on-One Pro Trader Consultations",
+  ].map((label, index) => {
+    const accessMap = [
+      ["1", "2", "3"], // Coins multiplier
+      ["✔️", "✔️", "✔️"],
+      ["✔️", "✔️", "✔️"],
+      ["✔️", "✔️", "✔️"],
+      ["✔️", "✔️", "✔️"],
+      ["", "✔️", "✔️"],
+      ["", "✔️", "✔️"],
+      ["", "✔️", "✔️"],
+      ["", "✔️", "✔️"],
+      ["", "", "✔️"],
+      ["", "", "✔️"],
+      ["", "", "✔️"],
+    ];
         return (
           <tr
             key={index}
