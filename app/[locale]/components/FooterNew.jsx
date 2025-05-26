@@ -5,11 +5,11 @@ import ContactFrom from "./contactUs/ContactFrom";
 import CopyRight from "./CopyRight";
 
 const FooterNew = () => {
-  const contactDetails = [
-    { iconSrc: "/Icons-2-b.png", title: "Email", details: "hello@gtcvip.com" },
-    { iconSrc: "/Icons-1-b.png", title: "Phone", details: "971 800 667788" },
-    { iconSrc: "/Icons-3-b.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE" }
-  ];
+ const contactDetails = [
+  { iconSrc: "/Icons-2-b.png", title: "Email", details: "hello@gtcvip.com", link: "mailto:hello@gtcvip.com" },
+  { iconSrc: "/Icons-1-b.png", title: "Phone", details: "971 800 667788", link: "tel:971800667788" },
+  { iconSrc: "/Icons-3-b.png", title: "Address", details: "GTC, Sheikh Zayed Road, Nassima Tower, 22nd Floor Trade Centre, Dubai, UAE", link: "https://maps.app.goo.gl/k7TpqU9dojvGqZ1p7" } // replace with actual map link
+];
 
   const [activeSection, setActiveSection] = useState("home");
 
@@ -48,17 +48,28 @@ const FooterNew = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const ContactItem = ({ iconSrc, title, details }) => (
-    <div className="flex justify-start items-center gap-4">
-      <div className="relative w-14 h-14">
-        <Image src={iconSrc} fill alt={title} className="object-contain" />
-      </div>
-      <div className="flex flex-col gap-1">
-        <h3 className="text-lg text-secondary font-medium">{title}</h3>
-        <p className="text-primary dark:text-white text-sm">{details}</p>
-      </div>
+ const ContactItem = ({ iconSrc, title, details, link }) => (
+  <div className="flex justify-start items-center gap-4">
+    <div className="relative w-14 h-14">
+      <Image src={iconSrc} fill alt={title} className="object-contain" />
     </div>
-  );
+    <div className="flex flex-col gap-1">
+      <h3 className="text-lg text-secondary font-medium">{title}</h3>
+      {link ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary dark:text-white text-sm hover:text-secondary hover:underline"
+        >
+          {details}
+        </a>
+      ) : (
+        <p className="text-primary dark:text-white text-sm">{details}</p>
+      )}
+    </div>
+  </div>
+);
 
   return (
     <section className="py-12 md:py-16" id="contact">
