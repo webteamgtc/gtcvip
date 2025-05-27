@@ -21,6 +21,7 @@ import FrequentlyAskedQuestions from "./components/home/FrequentlyAskedQuestions
 import VIPSteps from "./components/home/VIPSteps";
 import VIPJourney from "./components/home/VIPJourney";
 import { useUserStore } from "./store/userSlice";
+import Carousel3D from "./components/carusal/carusal";
 
 
 
@@ -73,6 +74,7 @@ export default function Home() {
       <LiveChatWidget license="13507356" />
       <LocationContextProvider>
         <HeroBanner />
+        <Carousel3D/>
      
         <DirectAccess />
         <VIPJourney/>
