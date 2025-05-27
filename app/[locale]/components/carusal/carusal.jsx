@@ -238,13 +238,27 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const images = [
-    'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 
-    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmVzc2lvbmFsJTIwcGVvcGxlfGVufDB8fDB8fHww',
-     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmVzc2lvbmFsJTIwcGVvcGxlfGVufDB8fDB8fHww',
-      'https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHByb2Zlc3Npb25hbCUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D',
+  'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=3687&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmVzc2lvbmFsJTIwcGVvcGxlfGVufDB8fDB8fHww',
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmVzc2lvbmFsJTIwcGVvcGxlfGVufDB8fDB8fHww',
+  'https://images.unsplash.com/photo-1655249481446-25d575f1c054?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHByb2Zlc3Npb25hbCUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D',
+];
+
+const team = [
+  { name: 'iPhone 16 Pro Max', image: '/pro/P-01.webp' },
+  { name: 'iPhone 16 Pro Max', image: '/pro/P-02.webp' },
+  { name: 'iPhone 16 Pro Max', image: '/pro/P-03.webp' },
+  { name: 'iPhone 16 Pro Max', image: '/pro/P-04.webp' },
+  { name: 'David Williams', image: '/pro/P-05.webp' },
+  { name: 'David Williams', image: '/pro/P-06.webp' },
+  { name: 'David Williams', image: '/pro/P-07.webp' },
+  { name: 'David Williams', image: '/pro/P-08.webp' },
+  { name: 'David Williams', image: '/pro/P-09.webp' },
+  { name: 'David Williams', image: '/pro/P-10.webp' },
 ];
 
 export default function Carousel3D() {
@@ -252,29 +266,29 @@ export default function Carousel3D() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+      setActiveIndex((prev) => (prev + 1) % team.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   const goLeft = () => {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+    setActiveIndex((prev) => (prev - 1 + team.length) % team.length);
   };
 
   const goRight = () => {
-    setActiveIndex((prev) => (prev + 1) % images.length);
+    setActiveIndex((prev) => (prev + 1) % team.length);
   };
 
   const getOffset = (i) => {
     const diff = i - activeIndex;
-    if (diff > images.length / 2) return diff - images.length;
-    if (diff < -images.length / 2) return diff + images.length;
+    if (diff > team.length / 2) return diff - team.length;
+    if (diff < -team.length / 2) return diff + team.length;
     return diff;
   };
 
   return (
     <div className="relative w-full max-w-6xl h-[500px] mx-auto flex items-center justify-center overflow-hidden">
-      <button
+      {/* <button
         onClick={goLeft}
         className="absolute left-4 z-30 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700"
       >
@@ -285,10 +299,24 @@ export default function Carousel3D() {
         className="absolute right-4 z-30 bg-gray-800 text-white px-4 py-2 rounded-full hover:bg-gray-700"
       >
         ▶
+      </button> */}
+      <button
+        onClick={goLeft}
+
+        className="absolute top-1/2 left-4 -translate-y-1/2 z-10 bg-white dark:bg-white/10 dark:hover:bg-white/20 text-primary dark:text-white p-2 rounded-full shadow-md transition"
+      >
+        <FaChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={goRight}
+
+        className="absolute top-1/2 right-4 -translate-y-1/2 z-10 bg-white dark:bg-white/10 dark:hover:bg-white/20 text-primary dark:text-white p-2 rounded-full shadow-md transition"
+      >
+        <FaChevronRight className="w-5 h-5" />
       </button>
 
       <div className="relative flex items-center justify-center w-full h-full">
-        {images.map((src, i) => {
+        {team?.map((src, i) => {
           const offset = getOffset(i);
           const absOffset = Math.abs(offset);
 
@@ -302,10 +330,10 @@ export default function Carousel3D() {
           return (
             <img
               key={i}
-              src={src}
+              src={src?.image}
               alt={`slide-${i}`}
               onClick={() => setActiveIndex(i)}
-              className="absolute transition-all duration-700 ease-in-out rounded-lg shadow-lg w-[280px] h-[380px] object-cover cursor-pointer"
+              className="absolute object-cover transition-all duration-700 ease-in-out rounded-lg shadow-lg w-[280px] h-[380px] cursor-pointer"
               style={{
                 transform: `translateX(${translateX}%) scale(${scale})`,
                 zIndex: z,

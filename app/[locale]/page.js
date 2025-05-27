@@ -63,7 +63,7 @@ export default function Home() {
       <LiveChatWidget license="13507356" />
       <LocationContextProvider>
         <HeroBanner />
-        <Carousel3D/>
+        {/* <Carousel3D/> */}
      
        <YouStayed />
         <DirectAccess />
