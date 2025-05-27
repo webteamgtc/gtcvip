@@ -55,20 +55,6 @@ export async function generateMetadata({ params: { locale } }) {
   };
 }
 
-export function generateStaticParams() {
-  return [
-    { locale: "en" },
-    { locale: "zh-hans" },
-    { locale: "ar-AE" },
-    { locale: "ms-MY" },
-    { locale: "hi-IN" },
-    { locale: "id-ID" },
-    { locale: "fr-FR" },
-    { locale: "es-ES" },
-    { locale: "vi-VN" },
-    { locale: "fa-IR" },
-  ];
-}
 
 export default async function LocaleLayout({ children, params }) {
   setCookie("gtcfx", "true",  { maxAge: 60 * 6 * 24 });
@@ -94,27 +80,12 @@ export default async function LocaleLayout({ children, params }) {
     >
       <head>
         <meta name="facebook-domain-verification" content="60dqaxv53ub77e10r0xc6bmbl9y2b3"/>
-        <Script
-          async={true}
-          src="https://www.googletagmanager.com/gtag/js?id=AW-10835048699"
-        ></Script>
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            gtag('js', new Date());
-            gtag('config', 'AW-10835048699');
-            `,
-          }}
-        />
-        <Script
-          id="pixel-chaty"
-          async={true}
-          src="https://cdn.chaty.app/pixel.js?id=WugZFesA"
-        ></Script>
+      
+       
+     
       </head>
-      <body className="bg-white">
+      <body className="bg-white text-black dark:bg-gradient-to-t dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white transition-colors duration-300 min-h-screen">
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header currentLanguage={currentLanguage} />
           <LoadingPopup />
@@ -126,47 +97,8 @@ export default async function LocaleLayout({ children, params }) {
    
           <FooterNew />
         </NextIntlClientProvider>
-        <Script
-          id="gtm-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer', "GTM-PSWH9QF");
-        `,
-          }}
-        />
-        <Script
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-        function gtag_report_conversion(url) {
-          var callback = function () {
-            if (typeof(url) != 'undefined') {
-              window.location = url;
-            }
-          };
-          gtag('event', 'conversion', {
-              'send_to': 'AW-10835048699/LUb0CNmY5OsYEPvxxq4o',
-              'event_callback': callback
-          });
-          return false;
-        }
-           document.addEventListener("wpcf7submit", function(event){
-            gtag_report_conversion();
-          }, false);
-        `,
-          }}
-        />
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: ` <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSWH9QF"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          }}
-        />
+       
+      
       </body>
     </html>
   );

@@ -8,9 +8,16 @@ const LiveAccountButton = () => {
     <Link
       href="https://my.gtcvip.com/v2/app/register"
       target="_blank"
-      className="bg-[#b28752] text-white border border-white hover:text-white text-sm lg:text-xl px-8 py-2 text-center rounded-full md:w-auto w-[300px] md:m-0 mx-auto transition-colors duration-900 hover:bg-primary"
+      className="
+        text-sm lg:text-lg px-8 py-3 text-center rounded-full md:w-auto w-[300px] md:m-0 mx-auto
+        bg-primary text-white hover:bg-secondary hover:text-white
+        dark:bg-white dark:text-black dark:hover:bg-secondary dark:hover:text-white
+        transition-colors duration-300
+      "
     >
-     Open Account Today
+     BE REWARDED
+
+
     </Link>
   );
 };
