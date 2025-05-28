@@ -78,10 +78,10 @@ const Header = () => {
 
   const navigationData = [
     { title: "Home", id: "home" },
-    { title: "Rewards", id: "whyTrade" },
-    { title: "Benefits", id: "journey" },
-    { title: "Levels", id: "contact" },
-    { title: "Steps", id: "howItWorks" },
+    { title: "Rewards", id: "rewards" },
+    { title: "Benefits", id: "benefits" },
+    { title: "Levels", id: "level" },
+    { title: "Steps", id: "step" },
     { title: "FAQs", id: "faq" },
    
   ];

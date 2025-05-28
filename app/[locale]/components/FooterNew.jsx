@@ -84,7 +84,7 @@ const FooterNew = () => {
           }}
         >
           <div
-            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#050331] dark:to-[#050331] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12 transition-colors"
+            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#1e255b] dark:to-[#1e255b] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12 transition-colors"
           >
             {/* Heading */}
             <div className="top-section text-center mb-10">
