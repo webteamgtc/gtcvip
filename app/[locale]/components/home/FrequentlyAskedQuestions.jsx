@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 
 const AccordionItem = ({ toggle, open, title, paragraphs }) => {
   return (
-    <div className="rounded-md p-2 overflow-hidden shadow-xl border border-secondary border-opacity-15 bg-white dark:bg-gradient-to-b dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] transition hover:shadow-lg">
+    <div className="rounded-md p-2 overflow-hidden shadow-xl border border-secondary border-opacity-15 bg-white dark:bg-gradient-to-b dark:from-[#1e255b] dark:via-[#050331] dark:to-[#1e255b] transition hover:shadow-lg">
       {/* Accordion Header */}
       <div
         className="py-4 px-5 flex justify-between items-center cursor-pointer text-primary dark:text-white"
@@ -44,7 +44,7 @@ const FrequentlyAskedQuestions = ({ data }) => {
   return (
     <section
       id="faq"
-      className="py-10 md:pt-10 relative"
+      className="py-10 md:pt-0 relative"
     >
       <div className="container">
         <div className="top-section text-center mb-10">

@@ -38,7 +38,7 @@ const tiers = [
 
 export default function TierCards() {
   return (
-    <section className="max-w-6xl mx-auto pt-12 md:pt-16 text-primary dark:text-white transition-colors duration-300">
+    <section id="level" className="max-w-6xl mx-auto pt-12 md:pt-16 text-primary dark:text-white transition-colors duration-300">
        <div className="top-section text-center mb-10">
       <h2 style={{ lineHeight: "3.3rem" }} className=" text-2xl font-[500] md:text-[30px] 2xl:text-[40px] max-w-xs mx-auto leading-normal text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Journey Starts Here
 </h2>

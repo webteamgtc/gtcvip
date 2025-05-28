@@ -1,5 +1,6 @@
 import React from "react";
 import LiveAccountButton from "../liveAccountButton";
+import Link from "next/link";
 
 
 const HeroBanner = () => {
@@ -15,7 +16,7 @@ const HeroBanner = () => {
             {/* Gradient Tag Button */}
          
             {/* Heading */}
-           <h1 className=" text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Loyalty.<br></br> Rewarded.
+           <h1 className=" text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:to-90% dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300" > Your Loyalty.<br></br> Rewarded.
  </h1>
 
             {/* Paragraph */}
@@ -28,6 +29,7 @@ const HeroBanner = () => {
             <div className="mt-4">
               <LiveAccountButton />
             </div>
+         
           </div>
         </div>
 

@@ -3,7 +3,7 @@ import FreshPress from "../about/FreshPress";
 
 const DirectAccess = () => {
   return (
-    <section className="py-12">
+    <section id="benefits" className="py-12 md:py-0">
     <FreshPress />
   </section>
   );
