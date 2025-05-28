@@ -6,6 +6,7 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import MobileMenu from "./MobileMenu";
 import LocationContextProvider from "@/context/location-context";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 const gradientStyle = {
   background: "linear-gradient(45deg, #02002f, #b68756)",
@@ -18,43 +19,42 @@ const NavItem = ({ title, action, icon, submenu, isActive }) => {
   const [showSubmenu, setShowSubmenu] = useState(false);
 
   return (
-   <li
-  className={`
-    clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-3 
-    text-[sm] lg:text-base font-medium
-    ${isActive 
-      ? "text-secondary dark:text-secondary" 
-      : "text-white hover:text-secondary dark:text-primary dark:hover:text-secondary"
-    }
-  `}
-  onMouseEnter={() => setShowSubmenu(true)}
-  onMouseLeave={() => setShowSubmenu(false)}
->
-  <button onClick={action} className="flex w-full justify-between items-center">
-    {icon ? <span style={gradientStyle}>{icon}</span> : title}
-    {submenu &&
-      (showSubmenu ? (
-        <FaChevronUp className="ml-2 text-base" />
-      ) : (
-        <FaChevronDown className="ml-2 text-base" />
-      ))}
-  </button>
+    <li
+      className={`
+        clickable relative cursor-pointer py-6 pl-2 lg:pl-4 lg:pr-4 lg:py-3 
+        text-[sm] lg:text-base font-medium
+        ${isActive 
+          ? "text-secondary dark:text-secondary" 
+          : "text-white hover:text-secondary dark:text-primary dark:hover:text-secondary"
+        }
+      `}
+      onMouseEnter={() => setShowSubmenu(true)}
+      onMouseLeave={() => setShowSubmenu(false)}
+    >
+      <button onClick={action} className="flex w-full justify-between items-center">
+        {icon ? <span style={gradientStyle}>{icon}</span> : title}
+        {submenu &&
+          (showSubmenu ? (
+            <FaChevronUp className="ml-2 text-base" />
+          ) : (
+            <FaChevronDown className="ml-2 text-base" />
+          ))}
+      </button>
 
-  {showSubmenu && submenu && (
-    <ul className="absolute left-0 top-14 w-40 bg-white dark:bg-[#0b1244] shadow-md mt-1 z-50">
-      {submenu.map((item, index) => (
-        <li
-          key={index}
-          className="py-2 px-4 hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-black"
-          onClick={item.action}
-        >
-          {item.title}
-        </li>
-      ))}
-    </ul>
-  )}
-</li>
-
+      {showSubmenu && submenu && (
+        <ul className="absolute left-0 top-14 w-40 bg-white dark:bg-[#0b1244] shadow-md mt-1 z-50">
+          {submenu.map((item, index) => (
+            <li
+              key={index}
+              className="py-2 px-4 hover:bg-primary hover:text-white dark:hover:bg-secondary dark:hover:text-black"
+              onClick={item.action}
+            >
+              {item.title}
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
   );
 };
 
@@ -66,6 +66,7 @@ const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -83,9 +84,8 @@ const Header = () => {
     { title: "Levels", id: "level" },
     { title: "Steps", id: "step" },
     { title: "FAQs", id: "faq" },
-   
   ];
-const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -112,26 +112,24 @@ const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Theme toggle setup
- useEffect(() => {
-  setMounted(true);
-  const stored = localStorage.getItem("theme");
-  const preferred =
-    stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  setTheme(preferred);
-  document.documentElement.classList.toggle("dark", preferred === "dark");
+  useEffect(() => {
+    setMounted(true);
+    const stored = localStorage.getItem("theme");
+    const preferred =
+      stored || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    setTheme(preferred);
+    document.documentElement.classList.toggle("dark", preferred === "dark");
+    setLogoSrc(preferred === "dark" ? "/Logo-Standard.svg" : "/Logo-White.svg");
+  }, []);
 
-  // Set logo
-  setLogoSrc(preferred === "dark" ? "/Logo-Standard.svg" : "/Logo-White.svg");
-}, []);
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+    setLogoSrc(newTheme === "dark" ? "/Logo-Standard.svg" : "/Logo-White.svg");
+  };
 
-    const toggleTheme = () => {
-      const newTheme = theme === "dark" ? "light" : "dark";
-      setTheme(newTheme);
-      localStorage.setItem("theme", newTheme);
-      document.documentElement.classList.toggle("dark", newTheme === "dark");
-      setLogoSrc(newTheme === "dark" ? "/Logo-Standard.svg" : "/Logo-White.svg");
-    };
   return (
     <LocationContextProvider>
       <div
@@ -140,9 +138,9 @@ const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
         }`}
       >
         <nav className="max-w-6xl mx-auto">
-          <div className=" flex justify-between items-center py-2 border border-secondary border-opacity-20 rounded-full px-4 md:px-8 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] dark:bg-white dark:bg-none ">
+          <div className="flex justify-between items-center py-2 border border-secondary border-opacity-20 rounded-full px-4 md:px-8 bg-gradient-to-t from-[#283085] via-[#050331] to-[#050331] dark:bg-white dark:bg-none">
             <Image
-               src={logoSrc}
+              src={logoSrc}
               width={200}
               height={39}
               alt="GTCFX"
@@ -162,18 +160,23 @@ const [logoSrc, setLogoSrc] = useState("/Logo-White.svg");
                   />
                 ))}
               </ul>
-
-              {/* ✅ Theme Toggle Button */}
+              {/* New Links */}
+              <Link href="https://my.gtcvip.com/v2/app/login" target="_blank" className="bg-secondary text-white px-4 py-1 rounded-full hover:bg-primary">
+               Login
+              </Link>
+              <Link href="https://my.gtcvip.com/v2/app/register" target="_blank" className="bg-green-600 text-white px-4 py-1 rounded-full hover:bg-primary">
+                Register
+              </Link>
+              {/* Theme Toggle */}
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="text-white dark:text-yellow-400 border border-white dark:border-yellow-400 px-3 py-1 rounded-full text-sm"
+                  className="text-white dark:text-yellow-400 border border-white dark:border-yellow-400 p-[1px] rounded-full text-base"
                 >
-                  {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+                  {theme === "dark" ? "☀️" : "🌙"}
                 </button>
               )}
             </div>
-
             <div className="md:hidden flex gap-2 items-center">
               <MobileMenu />
             </div>

@@ -72,7 +72,7 @@ const FooterNew = () => {
 );
 
   return (
-    <section className="py-12 md:py-16" id="contact">
+    <section className="py-12 md:py-6" id="contact">
       <div className="max-w-6xl mx-auto px-2">
 
         {/* Contact Section */}
