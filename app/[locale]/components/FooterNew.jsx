@@ -15,11 +15,11 @@ const FooterNew = () => {
 
   const menuItems = [
     { title: "Home", id: "home" },
-    { title: "Why Trade With Us", id: "whyTrade" },
-    { title: "Journey With Us", id: "journey" },
-    { title: "How It Works", id: "howItWorks" },
-    { title: "FAQ's", id: "faq" },
-    { title: "Contact Us", id: "contact" },
+    { title: "Rewards", id: "rewards" },
+    { title: "Benefits", id: "benefits" },
+    { title: "Levels", id: "level" },
+    { title: "Steps", id: "step" },
+    { title: "FAQs", id: "faq" },
   ];
 
   const scrollToSection = (id) => {
