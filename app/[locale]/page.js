@@ -12,6 +12,7 @@ import FrequentlyAskedQuestions from "./components/home/FrequentlyAskedQuestions
 import VIPSteps from "./components/home/VIPSteps";
 import VIPJourney from "./components/home/VIPJourney";
 import { useUserStore } from "./store/userSlice";
+import Carousel3D from "./components/carusal/carusal";
 import YouStayed from "./components/home/YouStayed";
 import TierCards from "./components/home/TierCards";
 
@@ -62,6 +63,8 @@ export default function Home() {
       <LiveChatWidget license="13507356" />
       <LocationContextProvider>
         <HeroBanner />
+        {/* <Carousel3D/> */}
+     
        <YouStayed />
         <DirectAccess />
 

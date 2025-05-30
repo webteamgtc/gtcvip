@@ -98,6 +98,6 @@ export async function POST(req) {
     return NextResponse.json({ message: otp }, { status: 200 })
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: 'Error Sending OTP' }, { status: 500 })
+    return NextResponse.json({ message: error }, { status: 500 })
   }
 }

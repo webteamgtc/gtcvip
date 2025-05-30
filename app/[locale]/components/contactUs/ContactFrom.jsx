@@ -18,6 +18,7 @@ import useFormHook from "../hooks/useFormHooks";
 import useCountriesDetails from "@/context/useCountiesDetails";
 import { convertToDesiredLocale } from "@/helpers";
 import { useUserStore } from "../../store/userSlice";
+import { displayName } from "next-intl/link";
 
 
 const TradeForm = () => {
@@ -56,6 +57,31 @@ const TradeForm = () => {
     terms: true,
   });
 
+  const generatePassword = (length = 12) => {
+    const lower = "abcdefghijklmnopqrstuvwxyz";
+    const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const number = "0123456789";
+    const special = "!@#$%^&*";
+
+    const all = lower + upper + number + special;
+
+    // Ensure at least one of each type
+    const password = [
+      lower[Math.floor(Math.random() * lower.length)],
+      upper[Math.floor(Math.random() * upper.length)],
+      number[Math.floor(Math.random() * number.length)],
+      special[Math.floor(Math.random() * special.length)],
+    ];
+
+    // Fill the rest with random chars
+    for (let i = password.length; i < length; i++) {
+      password.push(all[Math.floor(Math.random() * all.length)]);
+    }
+
+    // Shuffle to avoid predictable positions
+    return password.sort(() => Math.random() - 0.5).join('');
+  };
+
   useEffect(() => {
     if (countryData?.country) {
       const filterData = countryList.find(
@@ -71,15 +97,35 @@ const TradeForm = () => {
 
 
   const sendDataToZaiper = async (data) => {
-    console.log({ data })
+    const password = generatePassword();
+    const payloadRegister = {
+      password: password,
+      confirmPassword: password,
+      email: data.email,
+      firstName: data.Full_name,
+      lastName: data.last_name,
+      userName: data?.Full_name,
+      displayName: data?.Full_name,
+      accessLevel: 1,
+      joinServer: true,
+      emailPassword: true,
+      sendEmail: true,
+    }
+
     await axios.post(
       `/api/email`,
-      JSON.stringify(data)
+      JSON.stringify(payloadRegister)
     ).then(res => {
       console.log({ res })
     }).catch(err => {
       console.log({ err })
     })
+    await axios.post('/api/register', payloadRegister)
+      .then(res => toast.success(res.data.message))
+      .catch(err => {
+        toast.error("Something went wrong");
+        console.log({ err });
+      });
     await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/2pqc16e/`, JSON.stringify(data)).then(res => {
       toast.success(res?.data?.message)
       setUser(data);
@@ -154,7 +200,7 @@ const TradeForm = () => {
     const response = await axios.post(
       `/api/otp-smtp`,
       JSON.stringify({ email: formik.values.email })
-    );
+    )
     if (response.status === 200) {
       setSendEmailOtpLoading(false);
       setStoredEmailOtp(response.data.message);
@@ -164,6 +210,7 @@ const TradeForm = () => {
     } else {
       toast.error(t("otp_error"));
       setDisableSendOtpBtn(false);
+      setSendEmailOtpLoading(false);
     }
   };
   const verifyEmailOtp = async () => {
@@ -335,7 +382,7 @@ const TradeForm = () => {
                 <PhoneInput
                   className={`bg-transparent text-secondary simple p-1.5 border-opacity-100 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border-2 ${formik.touched.phone && formik.errors.phone
                     ? "border-2 border-red-600"
-                        : "border-2 border-gray-300"
+                    : "border-2 border-gray-300"
                     }`}
                   onChange={(value) => formik.setFieldValue("phone", value)}
                   value={formik.values.phone}
@@ -361,7 +408,7 @@ const TradeForm = () => {
                       )
                       .map((item, index) => {
                         return (
-                          <option  key={item?.code} value={item?.nameInEnglish}>
+                          <option key={item?.code} value={item?.nameInEnglish}>
                             {item?.name}
                           </option>
                         );
