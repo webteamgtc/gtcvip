@@ -31,10 +31,16 @@ export async function POST(req) {
                     <tr>
                           <td class="content" style="font-family: Arial, sans-serif; color: #192055; font-size: 15px; line-height: 1.6; padding: 0px 0px;">
                             <h3 style="font-size: 16px; color: #192055; margin-bottom: 16px; padding: 0px 20px;">
-                              Dear  ${reqBody.Full_name || ''},
+                              Dear  ${reqBody.firstName || ''},
                             </h3>
                             <p style="margin-bottom: 16px; padding: 0px 20px;">
                               Thank you for signing up with <b style="color: #b68756;">GTC VIP</b> – we’re thrilled to have you on board!
+                            </p>
+                             <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              User Name: <b style="color: #b68756;">${reqBody?.userName}</b>
+                            </p>
+                              <p style="margin-bottom: 16px; padding: 0px 20px;">
+                              Password: <b style="color: #b68756;">${reqBody?.password}</b>
                             </p>
                             <p style="margin-bottom: 16px; padding: 0px 20px;">
                               You're now one step closer to experiencing a smarter, faster, and more powerful way to trade. Our team is reviewing your submission and will get back to you shortly with the next steps.
@@ -108,7 +114,7 @@ export async function POST(req) {
 </body>
 </html>
     `
-};
+  };
   try {
     await transporter.sendMail(mailData);
 
