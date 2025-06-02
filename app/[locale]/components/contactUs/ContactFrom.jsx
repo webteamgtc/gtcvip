@@ -102,47 +102,55 @@ const TradeForm = () => {
       password: password,
       confirmPassword: password,
       email: data.email,
-      firstName: data.Full_name,
-      lastName: data.last_name,
-      userName: data?.Full_name,
-      displayName: data?.Full_name,
+      firstname: data.Full_name?.replace(/\s/g, ''),
+      lastname: data.last_name?.replace(/\s/g, ''),
+      username: data.Full_name?.replace(/\s/g, ''),
+      displayName: data.Full_name?.replace(/\s/g, ''),
       accessLevel: 1,
       joinServer: true,
       emailPassword: true,
       sendEmail: true,
+    };
+
+    try {
+      // ✅ First: call your local /api/register
+      const registerRes = await axios.post('/api/register', payloadRegister);
+      toast.success(registerRes.data.message);
+
+
+      await axios.post("https://hooks.zapier.com/hooks/catch/16420445/2pqc16e/", JSON.stringify(data)).then(res => {
+        toast.success(res?.data?.message)
+        setUser(data);
+        formik.resetForm()
+        setLoading(false)
+        setShowEmailOtpVerify(false)
+        setEmailOtp("")
+        setDisableSendOtpBtn(false)
+        setDisableVerifyEmailBtn(false)
+        setIsEmailVerified(false)
+        router.push("/thank-you",);
+      }).catch((err) => {
+        toast.error("Something went wrong")
+        console.log({ err })
+      })
+
+    } catch (err) {
+      const detailErrors = err?.response?.data?.data?.detail;
+      const generalMessage = err?.response?.data?.data?.message;
+
+      if (detailErrors && typeof detailErrors === 'object') {
+        Object.values(detailErrors).forEach((msg) => {
+          toast.error(msg);
+        });
+      } else {
+        toast.error(generalMessage || "Something went wrong");
+      }
+
+      setLoading(false);
+      console.error("API Error:", err);
     }
+  };
 
-    await axios.post(
-      `/api/email`,
-      JSON.stringify(payloadRegister)
-    ).then(res => {
-      console.log({ res })
-    }).catch(err => {
-      console.log({ err })
-    })
-    await axios.post('/api/register', payloadRegister)
-      .then(res => toast.success(res.data.message))
-      .catch(err => {
-        toast.error("Something went wrong");
-        console.log({ err });
-      });
-    await axios.post(`https://hooks.zapier.com/hooks/catch/16420445/2pqc16e/`, JSON.stringify(data)).then(res => {
-      toast.success(res?.data?.message)
-      setUser(data);
-      formik.resetForm()
-      setLoading(false)
-      setShowEmailOtpVerify(false)
-      setEmailOtp("")
-      setDisableSendOtpBtn(false)
-      setDisableVerifyEmailBtn(false)
-      setIsEmailVerified(false)
-      router.push("/thank-you",);
-    }).catch((err) => {
-      toast.error("Something went wrong")
-      console.log({ err })
-    })
-
-  }
 
   const formik = useFormik({
     initialValues: initialValues,
@@ -150,13 +158,13 @@ const TradeForm = () => {
     validationSchema: Yup.object({
       Full_name: Yup.string()
         .matches(
-          /^[\p{L}\p{M}\s]*$/u,
+          /^[\p{L}\p{M}]+$/u, // Removed \s
           'Only contain letters.'
         )
         .required("First name is required"),
       last_name: Yup.string()
         .matches(
-          /^[\p{L}\p{M}\s]*$/u,
+          /^[\p{L}\p{M}]+$/u, // Removed \s
           'Only contain letters.'
         )
         .required("Last name is required"),
