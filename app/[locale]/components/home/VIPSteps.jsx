@@ -20,7 +20,7 @@ const VIPSteps = () => {
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-0 max-w-6xl mx-auto overflow-hidden rounded-md px-2">
         <StepBox
-          step="Step 1 - Sign Up"
+          step="Step 1 – Sign Up"
           title="Register"
           description="Create your free GTC VIP account in minutes. No fuss, just quick access."
           bgColor="bg-[#1e255b]"

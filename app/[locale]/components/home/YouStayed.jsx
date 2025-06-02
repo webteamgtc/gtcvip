@@ -20,8 +20,8 @@ const YouStayed = () => {
         </p>
 
         {/* Replace below with your actual animation or image */}
-        <Carousel3D />
-        {/* <TeamCarousel /> */}
+  
+       <TeamCarousel /> 
 
         <p className="leading-relaxed max-w-3xl mx-auto">
           GTC VIP isn’t just about cool tools or pretty dashboards. It’s about a real trader-first community; one that rewards you with exclusive perks, luxury gifts, and unforgettable experiences just for doing what you already love.

@@ -34,7 +34,7 @@ export async function POST(req) {
                               Dear  ${reqBody.firstName || ''},
                             </h3>
                             <p style="margin-bottom: 16px; padding: 0px 20px;">
-                              Thank you for signing up with <b style="color: #b68756;">GTC VIP</b> – we’re thrilled to have you on board!
+                              Thank you for signing up with <a href="https://my.gtcvip.com/v2/app/login" style="color: #b68756; font-weight: 600; text-decoration:underline">GTC VIP</a> – we’re thrilled to have you on board!
                             </p>
                              <p style="margin-bottom: 16px; padding: 0px 20px;">
                               User Name: <b style="color: #b68756;">${reqBody?.userName}</b>

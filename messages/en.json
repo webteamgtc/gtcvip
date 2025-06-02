@@ -527,5 +527,25 @@
       "heading4": "Regulatory Supervision",
       "desc4": "GTC Multi Trading DMCC, established in Dubai, UAE in 2016, is a licensed and regulated broker under the Dubai Multi Commodities Centre (DMCC). We are authorized to conduct specific financial investment business and are a broker member of the Dubai Gold & Commodities Exchange (DGCX). GTC Multi Trading DMCC is also regulated by the Securities & Commodities Authority (SCA)."
     }
+  },
+    "market_overview": {
+    "headers": {
+      "instrument": "Instrument",
+      "date1": "Mon, 5 May, 2025",
+      "date2": "Tues, 6 May, 2025",
+      "date3": "Mon, 26 May 2025",
+      "date4": "Thurs, 29 May 2025"
+    },
+    "status": {
+      "normal": "Normal Trading Hours",
+      "early_close": "Early Close 21:30",
+      "early_close1": "Early Close 20:30",
+      "early_close2": "Early Close 23:00",
+      "early_close3": "Early Close 20:00",
+      "early_close4": "Early Close 11:30",
+      "closed": "Closed",
+      "daylight": "Late Open 02:15",
+      "daylight1": "Late Open 03:00"
+    }
   }
 }

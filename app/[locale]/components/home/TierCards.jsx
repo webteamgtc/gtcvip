@@ -69,7 +69,7 @@ export default function TierCards() {
     "Commodities Research",
     "Crypto Research",
     "Indices Research",
-    "MT4 /5 Premium Indicator Bundle",
+    "MT4/5 Premium Indicator Bundle",
     "AI Analysts",
     "Pro Trader Direct Access",
     "Priority Store Access",
