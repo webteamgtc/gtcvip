@@ -10,12 +10,12 @@ const MarketOverviewPage = () => {
 
   return (
     <>
-
+     <div className="bg-[#111948]">
       <GenericTradingHours />
       <div className="inner-content pb-10 md:pb-12 lg:pb-14 xl:pb-16 2xl:pb-20 mt-14">
         <div className="container">
-        <h2 className="HeadingH2 text-primary dark:text-white">Holiday Hours & Notices</h2>
-          <p className="text text-center dark:text-white mb-5 s max-w-5xl mx-auto">
+        <h2 className="HeadingH2 text-white">Holiday Hours & Notices</h2>
+          <p className="text text-center text-white mb-5 s max-w-5xl mx-auto">
         Market holidays may affect the trading schedule and volatility of the markets. This can vary from country to country, so it is important to stay up to date with the upcoming changes and holiday trading hours to plan your trades accordingly.
 
 
@@ -29,6 +29,7 @@ const MarketOverviewPage = () => {
 
 
         </div>
+      </div>
       </div>
     </>
   );

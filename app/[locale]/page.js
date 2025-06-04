@@ -15,6 +15,8 @@ import { useUserStore } from "./store/userSlice";
 import Carousel3D from "./components/carusal/carusal";
 import YouStayed from "./components/home/YouStayed";
 import TierCards from "./components/home/TierCards";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 
@@ -62,6 +64,7 @@ export default function Home() {
     <>
       <LiveChatWidget license="13507356" />
       <LocationContextProvider>
+       <Header currentLanguage={currentLanguage} />
         <HeroBanner />
         {/* <Carousel3D/> */}
      
@@ -73,7 +76,7 @@ export default function Home() {
         <VIPSteps />
         
         <FrequentlyAskedQuestions data={gtcFaqData} />
-   
+         <Footer />
   
         {/* <CompanyNews/> */}
         </LocationContextProvider>

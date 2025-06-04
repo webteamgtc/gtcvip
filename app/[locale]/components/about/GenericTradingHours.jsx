@@ -440,10 +440,10 @@ const GenericTradingHours = () => {
 
     return (
         <>
-            <section className='pt-10 md:pt-12 lg:pt-16 xl:pt-20 2xl:pt-28'>
+            <section className='pt-10 '>
                 <div className='max-w-6xl mx-auto'>
-                    <div className='text-center mt-10'>
-                        <h2 className="HeadingH2 text-primary dark:text-white text-center">Forex & CFD Trading Hours</h2>
+                    <div className='text-center text-white mt-10'>
+                        <h2 className="HeadingH2 text-white text-center">Forex & CFD Trading Hours</h2>
                         <p>Check the latest trading hours for Forex, Metals, Commodities, and other financial instruments. Plan your trades with GTCFX's up-to-date market session times.
 
 </p>

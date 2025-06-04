@@ -13,7 +13,8 @@ import Script from "next/script";
 import { supportedLanguages } from "@/helpers/localization";
 import CookiesBanner from "@/app/[locale]/components/CookiesBanner";
 import { getCookie, setCookie } from "cookies-next";
-import LoadingPopup from "./components/LoadingPopup";
+
+
 
 const roboto = localFont({
   src: [
@@ -101,13 +102,13 @@ export default async function LocaleLayout({ children, params }) {
       <body className="bg-white text-black dark:bg-gradient-to-t dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white transition-colors duration-300 min-h-screen">
 
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header currentLanguage={currentLanguage} />
+          
           {children}
           <ToastContainer autoClose={3000} />
           <Suspense fallback={null}>
             <FacebookPixelEvents />
           </Suspense>
-          <FooterNew />
+      
         </NextIntlClientProvider>
        
       
