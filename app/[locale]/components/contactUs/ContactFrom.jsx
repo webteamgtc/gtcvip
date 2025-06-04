@@ -427,7 +427,7 @@ const TradeForm = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col items-start justify-center gap-x-6">
+          <div className="mt-6 flex flex-col items-center justify-center gap-x-6">
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}

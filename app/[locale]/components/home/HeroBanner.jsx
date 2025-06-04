@@ -13,7 +13,7 @@ const HeroBanner = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-12 text-center md:text-left min-h-[450px]">
           
           {/* Left Column - 70% width (8/12) */}
-          <div className="md:col-span-7 content text-left pt-10">
+          <div className="md:col-span-7 content text-center md:text-left pt-10">
             <h1 className="text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:to-90% dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300">
               Your Loyalty.<br />Rewarded.
             </h1>
@@ -22,7 +22,7 @@ const HeroBanner = () => {
               GTC VIP is the new standard when it comes to trading communities.<br />
               Register, trade, and gain access to loyalty points that could see you be rewarded with a Mercedes G63, an all-expenses-paid holiday in Las Vegas, and many more exciting gifts. Click on the button below to get started
             </p>
-            <div className="text-left mt-5">
+            <div className="text-center md:text-left mt-5">
              <Link href="https://my.gtcvip.com/v2/app/login"
               target="_blank"
               className="
