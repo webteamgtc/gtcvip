@@ -17,6 +17,7 @@ import YouStayed from "./components/home/YouStayed";
 import TierCards from "./components/home/TierCards";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FooterNew from "./components/FooterNew";
 
 
 
@@ -64,7 +65,7 @@ export default function Home() {
     <>
       <LiveChatWidget license="13507356" />
       <LocationContextProvider>
-       <Header currentLanguage={currentLanguage} />
+       <Header  />
         <HeroBanner />
         {/* <Carousel3D/> */}
      
@@ -76,7 +77,7 @@ export default function Home() {
         <VIPSteps />
         
         <FrequentlyAskedQuestions data={gtcFaqData} />
-         <Footer />
+        <FooterNew />
   
         {/* <CompanyNews/> */}
         </LocationContextProvider>

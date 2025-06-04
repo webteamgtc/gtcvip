@@ -304,7 +304,7 @@ const TradeForm = () => {
                       value={formik.values.email}
                       autoComplete="email"
                       placeholder={t("email")}
-                      className={`block w-full border border-gray-100 bg-transparent border-opacity-100 rounded-md p-2 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
+                      className={`block w-full border-1 border-gray-100 bg-transparent border-opacity-100 rounded-md p-2 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
                         ? "border-2 border-red-600"
                         : "border-2 border-gray-300"
                         }`}
@@ -431,7 +431,7 @@ const TradeForm = () => {
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}
-                className="block bg-primary text-xl w-full h-[40px] text-white uppercase border border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
+                className="block bg-primary text-xl w-full h-[40px] text-white uppercase border-2 rounded-md border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
                 type="submit"
               >
                 {loading ? <p> {t("sending")}</p> : <p>Get REWARDED</p>}
