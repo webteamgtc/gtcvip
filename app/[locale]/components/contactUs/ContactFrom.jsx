@@ -427,16 +427,17 @@ const TradeForm = () => {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col items-start justify-end gap-x-6">
+          <div className="mt-6 flex flex-col items-start justify-center gap-x-6">
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}
-                className="block bg-primary text-xl w-[120px] h-[40px] border border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-sm sm:leading-6 mb-2"
+                className="block bg-primary text-xl w-full h-[40px] text-white uppercase border border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
                 type="submit"
               >
-                {loading ? <p> {t("sending")}</p> : <p>{t("submit")}</p>}
+                {loading ? <p> {t("sending")}</p> : <p>Get REWARDED</p>}
               </button>
             }
+            <p className="text-center text-xs">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className="text-sm text-secondary underline">Login</a></p>
             <p className="text-xs py-3 leading-5">{t("contactTerms")}.</p>
           </div>
         </form>

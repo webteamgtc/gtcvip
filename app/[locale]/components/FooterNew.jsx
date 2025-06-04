@@ -48,13 +48,18 @@ const FooterNew = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
- const ContactItem = ({ iconSrc, title, details, link }) => (
-  <div className="flex justify-start items-center gap-4">
-    <div className="relative w-14 h-14">
-      <Image src={iconSrc} fill alt={title} className="object-contain" />
+const ContactItem = ({ iconSrc, title, details, link }) => (
+  <div className="flex items-start gap-4 w-full md:w-64">
+    <div className="min-w-[48px] min-h-[48px] max-w-[48px] max-h-[48px] relative flex-shrink-0">
+      <Image
+        src={iconSrc}
+        alt={title}
+        fill
+        className="object-contain"
+      />
     </div>
     <div className="flex flex-col gap-1">
-      <h3 className="text-lg text-secondary font-medium">{title}</h3>
+      <h3 className="text-base text-secondary font-medium">{title}</h3>
       {link ? (
         <a
           href={link}
@@ -84,10 +89,10 @@ const FooterNew = () => {
           }}
         >
           <div
-            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#1e255b] dark:to-[#1e255b] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-12 transition-colors"
+            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#1e255b] dark:to-[#1e255b] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-6 transition-colors"
           >
             {/* Heading */}
-            <div className="top-section text-center mb-10">
+            <div className="top-section text-center mb-5">
               <h2
                 style={{ lineHeight: "3.3rem" }}
                 className="text-primary text-2xl font-[500] xl:text-[30px] 2xl:text-[35px] max-w-sm mx-auto leading-normal dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300"
@@ -97,14 +102,11 @@ const FooterNew = () => {
             </div>
 
             {/* Form + Contact Info */}
-            <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-16 md:p-4">
-              <ContactFrom />
-              <div className="contact-info flex flex-col gap-8">
-                {contactDetails.map((item, index) => (
-                  <ContactItem key={index} {...item} />
-                ))}
-              </div>
-            </div>
+          <div className="contact-info flex flex-wrap justify-center md:justify-between gap-8 md:gap-16 md:px-8">
+  {contactDetails.map((item, index) => (
+    <ContactItem key={index} {...item} />
+  ))}
+</div>
           </div>
         </div>
 

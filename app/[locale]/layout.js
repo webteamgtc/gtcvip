@@ -88,13 +88,11 @@ export default async function LocaleLayout({ children, params }) {
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header currentLanguage={currentLanguage} />
-          <LoadingPopup />
           {children}
           <ToastContainer autoClose={3000} />
           <Suspense fallback={null}>
             <FacebookPixelEvents />
           </Suspense>
-   
           <FooterNew />
         </NextIntlClientProvider>
        

@@ -171,7 +171,7 @@ const Header = () => {
               {mounted && (
                 <button
                   onClick={toggleTheme}
-                  className="text-white dark:text-yellow-400 border border-white dark:border-yellow-400 p-[1px] rounded-full text-base"
+                  className="text-white dark:text-yellow-400 border border-white dark:border-yellow-400 p-[1px] rounded-full text-base leading-5"
                 >
                   {theme === "dark" ? "☀️" : "🌙"}
                 </button>
