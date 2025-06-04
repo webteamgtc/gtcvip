@@ -80,8 +80,22 @@ export default async function LocaleLayout({ children, params }) {
     >
       <head>
         <meta name="facebook-domain-verification" content="60dqaxv53ub77e10r0xc6bmbl9y2b3"/>
-      
-       
+              <Script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PCM3L15VZ6"
+    />
+    <Script
+      id="gtag-init"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PCM3L15VZ6');
+        `,
+      }}
+    />
      
       </head>
       <body className="bg-white text-black dark:bg-gradient-to-t dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white transition-colors duration-300 min-h-screen">
