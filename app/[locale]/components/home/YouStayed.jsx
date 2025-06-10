@@ -14,11 +14,7 @@ const YouStayed = () => {
         <p className="leading-relaxed max-w-xl mx-auto">
           Every chart you opened, every lot you traded, and every day you stuck with us built up to this. Now it’s your turn to enjoy the rewards.
         </p>
-        <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto">
-          Every chart you opened, every lot you traded, and every day you stuck with us built up to this. Now it’s your turn to enjoy the rewards.
-
-        </p>
-
+      
         {/* Replace below with your actual animation or image */}
   
        <TeamCarousel /> 
