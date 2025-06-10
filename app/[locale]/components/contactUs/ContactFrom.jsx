@@ -438,7 +438,7 @@ const TradeForm = () => {
               </button>
             }
             <p className="text-center text-xs">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className="text-sm text-secondary underline">Login</a></p>
-            <p className="text-xs py-3 leading-5">{t("contactTerms")}.</p>
+            <p className="text-[11.5px] py-3 leading-5">{t("contactTerms")}.</p>
           </div>
         </form>
       </div>
