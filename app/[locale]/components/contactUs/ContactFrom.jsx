@@ -19,6 +19,67 @@ import useCountriesDetails from "@/context/useCountiesDetails";
 import { convertToDesiredLocale } from "@/helpers";
 import { useUserStore } from "../../store/userSlice";
 import { displayName } from "next-intl/link";
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+
+
+const FloatingInput = ({
+  label,
+  id,
+  name,
+  type = "text",
+  value,
+  onChange,
+  onBlur,
+  error,
+  touched,
+}) => {
+  const [focused, setFocused] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const isActive = focused || value?.length > 0;
+  const isPassword = type === 'password';
+
+  return (
+    <div className="relative w-full mb-1">
+      <label
+        htmlFor={id}
+        className={`absolute left-1 transform font-normal leading-[1.7rem] transition-all duration-300 bg-[#232a5f] px-1
+          ${isActive ? '-translate-y-3 scale-90' : 'translate-y-[4px] scale-100 opacity-50 border-opacity-50'} 
+          ${error && touched ? 'text-red-500' : 'text-[#a7753f]'}`}
+      >
+        {label}
+      </label>
+      <input
+        id={id}
+        name={name}
+        type={isPassword && !showPassword ? 'password' : 'text'}
+        value={value}
+        onChange={onChange}
+        autoComplete="false"
+        onFocus={() => setFocused(true)}
+        onBlur={(e) => {
+          setFocused(false);
+          onBlur(e);
+        }}
+        className={`w-full rounded-md border bg-transparent px-4 py-2 text-[16px] md:text-[14px] placeholder:text-[#a7753f] text-white focus:outline-none 
+          ${error && touched ? 'border-red-500' : 'border-[#a7753f]'}`}
+      />
+      {isPassword && (
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute top-3 right-3 text-[#a7753f] focus:outline-none"
+        >
+          {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+        </button>
+      )}
+      {error && touched && (
+        <p className="text-xs text-red-500 mt-1">{error}</p>
+      )}
+    </div>
+  );
+};
+
 
 
 const TradeForm = () => {
@@ -51,9 +112,10 @@ const TradeForm = () => {
     utm_source: "",
     Full_name: "",
     last_name: "",
-    phone: "",
+    userName: "",
     email: data?.email || "",
-    country: '',
+    password: '',
+    confirmPassword: "",
     terms: true,
   });
 
@@ -99,13 +161,13 @@ const TradeForm = () => {
   const sendDataToZaiper = async (data) => {
     const password = generatePassword();
     const payloadRegister = {
-      password: password,
-      confirmPassword: password,
+      password: data?.password,
+      confirmPassword: data?.confirmPassword,
       email: data.email,
-      firstname: data.Full_name?.replace(/\s/g, ''),
-      lastname: data.last_name?.replace(/\s/g, ''),
-      username: data.Full_name?.replace(/\s/g, ''),
-      displayName: data.Full_name?.replace(/\s/g, ''),
+      firstname: data.Full_name,
+      lastname: data.last_name,
+      username: data.userName?.replace(/\s/g, ''),
+      displayName: data.userName?.replace(/\s/g, ''),
       accessLevel: 1,
       joinServer: true,
       emailPassword: true,
@@ -158,30 +220,45 @@ const TradeForm = () => {
     validationSchema: Yup.object({
       Full_name: Yup.string()
         .matches(
-          /^[\p{L}\p{M}]+$/u, // Removed \s
-          'Only contain letters.'
+          /^[\p{L}\p{M}]+$/u,
         )
         .required("First name is required"),
       last_name: Yup.string()
         .matches(
-          /^[\p{L}\p{M}]+$/u, // Removed \s
-          'Only contain letters.'
+          /^[\p{L}\p{M}]+$/u,
         )
         .required("Last name is required"),
+      userName: Yup.string()
+        .matches(
+          /^[\p{L}\p{M}0-9]+$/u,
+          'Only letters and numbers are allowed. No spaces.'
+        )
+        .required("Username is required"),
       email: Yup.string()
         .email(t("error.invalidEmail"))
         .required(t("error.email")),
 
-      country: Yup.string().required(t("error.country")),
-      terms: Yup.bool().oneOf([true], t("error.termOfService")),
+      // ✅ Add these:
+      password: Yup.string()
+        .required("Password is required")
+        .min(8, "Password must be at least 8 characters")
+        .matches(/[a-z]/, "Must include at least one lowercase letter")
+        .matches(/[A-Z]/, "Must include at least one uppercase letter")
+        .matches(/\d/, "Must include at least one number")
+        .matches(/[@$!%*?&#^()\-_=+{}[\]|;:'\",.<>/~`]/, "Must include at least one special character"),
+
+      confirmPassword: Yup.string()
+        .required("Please confirm your password")
+        .oneOf([Yup.ref("password"), null], "Passwords must match"),
     }),
-    validate: (values) => {
-      const errors = {};
-      if (!values.phone) {
-        errors.phone = t("error.phone");
-      }
-      return errors;
-    },
+
+    // validate: (values) => {
+    //   const errors = {};
+    //   if (!values.phone) {
+    //     errors.phone = t("error.phone");
+    //   }
+    //   return errors;
+    // },
     onSubmit: async (values) => {
       if (path.includes("gtcvip")) {
         console.log("Inside ib");
@@ -243,71 +320,50 @@ const TradeForm = () => {
 
   return (
     <>
-      <div className="bg-[#232a5f]">
+      <div className="bg-[#232a5f]"
+        style={{ boxShadow: '0 0 5px #23375c80' }}
+      >
         <form onSubmit={formik.handleSubmit}>
           <div className="space-y-12">
             <div className="grid max-w-6xl grid-cols-1 gap-x-2 gap-y-2 sm:grid-cols-6 md:col-span-2 text-primary dark:text-white text-left placeholder:text-white dark:placeholder:text-white">
               <div className="sm:col-span-3">
+                <FloatingInput
+                  id="Full_name"
+                  name="Full_name"
+                  label="Full Name"
+                  value={formik.values.Full_name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.errors.Full_name}
+                  touched={formik.touched.Full_name}
+                />
 
-                <div>
-
-                  <input
-                    type="text"
-                    name="Full_name"
-                    placeholder={"First name"}
-                    className={`block w-full bg-transparent border-opacity-100 rounded-md p-2  outline-none sm:text-sm sm:leading-6 ${formik.touched.Full_name && formik.errors.Full_name
-                      ? "border-[1px] border-red-600 border-opacity-50"
-                      : "border-[1px] border-secondary border-opacity-25"
-                      }`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.Full_name}
-                  />
-
-                </div>
               </div>
               <div className="sm:col-span-3">
-                <div>
-                  <input
-                    type="text"
-                    name="last_name"
-                    placeholder={"Last name"}
-                    className={`block w-full border border-gray-100 bg-transparent border-opacity-100 rounded-md p-2  outline-none sm:text-sm sm:leading-6 ${formik.touched.last_name && formik.errors.last_name
-                    ? "border-[1px] border-red-600 border-opacity-50"
-                      : "border-[1px] border-secondary border-opacity-25"
-                      }`}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    value={formik.values.last_name}
-                  />
-                </div>
+                <FloatingInput
+                  id="last_name"
+                  name="last_name"
+                  label="Last name"
+                  value={formik.values.last_name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.errors.last_name}
+                  touched={formik.touched.last_name}
+                />
               </div>
 
               <div className="col-span-full">
                 <div className="flex flex-col">
-                  <div className="flex items-center gap-2 relative">
-                    <input
+                  <div className="flex items-center items-baseline gap-2 relative">
+                    <FloatingInput
                       id="email"
                       name="email"
-                      type="email"
-                      onChange={formik.handleChange}
-                      onBlur={(e) => {
-                        e.persist()
-                        // const findEmail = crmList?.some(x => x?.email == data?.email)
-                        // if (findEmail) {
-                        //   setStep("2")
-                        // } else {
-                        //   toast.error("Unable to find email address!")
-                        // }
-                        formik.handleBlur(e)
-                      }}
+                      label="E-mail (Cannot be changed)"
                       value={formik.values.email}
-                      autoComplete="email"
-                      placeholder={t("email")}
-                      className={`block w-full border-1 border-gray-100 bg-transparent border-opacity-100 rounded-md p-2 outline-none sm:text-sm sm:leading-6 ${formik.touched.email && formik.errors.email
-                      ? "border-[1px] border-red-600 border-opacity-50"
-                      : "border-[1px] border-secondary border-opacity-25"
-                        }`}
+                      onChange={formik.handleChange}
+                      onBlur={formik.handleBlur}
+                      error={formik.errors.email}
+                      touched={formik.touched.email}
                     />
                     <button
                       className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
@@ -387,42 +443,42 @@ const TradeForm = () => {
               </div>
 
               <div className="col-span-full">
-                <PhoneInput
-                  className={`bg-transparent text-secondary simple p-1.5 border-opacity-100 outline-none rounded-md focus-visible:outline-none mb-1 mt-0 client-reg border-2 ${formik.touched.phone && formik.errors.phone
-                   ? "border-[1px] border-red-600 border-opacity-50"
-                      : "border-[1px] border-secondary border-opacity-25"
-                    }`}
-                  onChange={(value) => formik.setFieldValue("phone", value)}
-                  value={formik.values.phone}
+                <FloatingInput
+                  id="userName"
+                  name="userName"
+                  label="Username (Cannot be changed)"
+                  value={formik.values.userName}
+                  onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  name="phone"
-                  countries={allowedCountries}
-                  defaultCountry={countryCode}
+                  error={formik.errors.userName}
+                  touched={formik.touched.userName}
                 />
               </div>
               <div className="col-span-full">
-                <select
-                  className={` bg-transparent text-white w-full text-sm py-3 px-2 border-[1px] border-secondary border-opacity-25 outline-none rounded-md ${formik.touched.country && formik.errors.country ? "border-2 border-white " : ""}`}
-                  name='country'
-                  value={formik.values.country}
+                <FloatingInput
+                  id="password"
+                  name="password"
+                  label="Password"
+                  type="password"
+                  value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                >
-                  <option value='' >{t("selectOne")}</option>
-                  {
-                    countryList
-                      ?.filter((item) =>
-                        !["Australia", "United States of America"].includes(item.nameInEnglish) // Exclude specific countries
-                      )
-                      .map((item, index) => {
-                        return (
-                          <option key={item?.code} value={item?.nameInEnglish}>
-                            {item?.name}
-                          </option>
-                        );
-                      })
-                  }
-                </select>
+                  error={formik.errors.password}
+                  touched={formik.touched.password}
+                />
+              </div>
+              <div className="col-span-full">
+                <FloatingInput
+                  id="confirmPassword"
+                  name="confirmPassword"
+                  label="Confirm Password"
+                  type="password"
+                  value={formik.values.confirmPassword}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.errors.confirmPassword}
+                  touched={formik.touched.confirmPassword}
+                />
               </div>
             </div>
           </div>
@@ -431,13 +487,17 @@ const TradeForm = () => {
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}
-                className="block bg-primary text-xl w-full h-[40px] text-white uppercase border-2 rounded-md border-gray-200 p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
+                className="block bg-[#a7753f] text-xl w-full h-[40px] uppercase font-semibold text-prumary rounded-md p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
                 type="submit"
               >
-                {loading ? <p> {t("sending")}</p> : <p>Get REWARDED</p>}
+                {loading ? <p> {t("sending")}</p> : <p>Register</p>}
               </button>
             }
-            <p className="text-center text-sm text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-secondary underline">Login</a></p>
+            <div className=" flex gap-3 justify-center items-center mb-3">
+              <p className="text-[#a7753f] underline">Terms of Service</p>
+              <p className="text-[#a7753f] underline">Privacy Policy</p>
+            </div>
+            <p className="text-center text-base text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
             <p className="text-xs py-3 leading-5 text-white">{t("contactTerms")}.</p>
           </div>
         </form>
