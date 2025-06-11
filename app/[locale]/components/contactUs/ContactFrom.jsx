@@ -115,7 +115,7 @@ const TradeForm = () => {
     try {
       // ✅ First: call your local /api/register
       const registerRes = await axios.post('/api/register', payloadRegister);
-      toast.success(registerRes.data.message);
+      toast.success(`Thank you, ${data.Full_name}! Please check your email to continue.`);
 
 
       await axios.post("https://hooks.zapier.com/hooks/catch/16420445/2pqc16e/", JSON.stringify(data)).then(res => {
@@ -412,7 +412,7 @@ const TradeForm = () => {
                   {
                     countryList
                       ?.filter((item) =>
-                        !["Australia", "United Kingdom", "United States of America"].includes(item.nameInEnglish) // Exclude specific countries
+                        !["Australia", "United States of America"].includes(item.nameInEnglish) // Exclude specific countries
                       )
                       .map((item, index) => {
                         return (
