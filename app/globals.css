@@ -406,7 +406,7 @@ iframe {
 
 .Toastify__toast-body {
   background-color: #131949 !important;
-  color: #a3753a !important;
+  color: #fff !important;
   font-weight: 500;
   text-align: center;
   font-size: 15px;

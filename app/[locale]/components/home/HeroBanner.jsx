@@ -41,15 +41,11 @@ const HeroBanner = () => {
           {/* Right Column - 30% width (4/12) */}
           <div className="md:col-span-5"><div
           className="relative py-[1px] px-[1px] rounded-lg"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(182,135,86,.3) 40%, rgba(5,3,49,0.1) 0%)",
-          }}
         >
           <div
-            className="contact-form relative bg-white dark:bg-gradient-to-b dark:from-[#202d7bdb] dark:via-[#050331] dark:to-[#1e255b] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-6 transition-colors"
+            className="contact-form relative bg-[#232a5f] rounded-lg shadow-lg overflow-hidden z-10 p-4 md:p-6 transition-colors"
           >
-            <h2 className="text-center text-lg font-bold mb-5 uppercase text-secondary dark:text-[#c5a981] py-2 border-b dark:border-[#ffffff2d]">BE REWARDED</h2>
+            <h2 className="text-center text-[24px] font-bold text-white mb-10">Create Account</h2>
              <ContactFrom /> 
             </div>
            
