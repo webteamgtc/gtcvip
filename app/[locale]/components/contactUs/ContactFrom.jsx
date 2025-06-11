@@ -493,12 +493,9 @@ const TradeForm = () => {
                 {loading ? <p> {t("sending")}</p> : <p>Register</p>}
               </button>
             }
-            <div className=" flex gap-3 justify-center items-center mb-3">
-              <p className="text-[#a7753f] underline">Terms of Service</p>
-              <p className="text-[#a7753f] underline">Privacy Policy</p>
-            </div>
+           
             <p className="text-center text-base text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
-            <p className="text-xs py-3 leading-5 text-white">{t("contactTerms")}.</p>
+            <p className="text-xs py-3 leading-5 text-white">{t("contactTerms")}</p>
           </div>
         </form>
       </div>
