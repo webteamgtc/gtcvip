@@ -95,7 +95,7 @@ const ContactItem = ({ iconSrc, title, details, link }) => (
             <div className="top-section text-center mb-5">
               <h2
                 style={{ lineHeight: "3.3rem" }}
-                className="text-primary text-2xl font-[500] xl:text-[30px] 2xl:text-[35px] max-w-sm mx-auto leading-normal dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300"
+                className="text-secondary text-2xl font-[500] xl:text-[30px] 2xl:text-[30px] max-w-sm mx-auto leading-normal transition-colors duration-300"
               >
                 Get in Touch
               </h2>

@@ -8,7 +8,7 @@ export async function POST(req) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer 1c1f3df817bd3dbfabe7bdfe3b49f4b2aa81c69eefdeb4890f5aec51c85c62b2`,
+        'Authorization': `Bearer 91bce713f979d72d50d80634195daad0c1003edef644aff6ee0d7bf99ef583fe`,
       },
       body: JSON.stringify(body),
     });

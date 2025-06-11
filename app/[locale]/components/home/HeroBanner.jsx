@@ -14,7 +14,7 @@ const HeroBanner = () => {
           
           {/* Left Column - 70% width (8/12) */}
           <div className="md:col-span-7 content text-center md:text-left pt-10">
-            <h1 className="text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:to-90% dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300">
+            <h1 className="text-2xl lg:text-[2.5rem] font-[500] 2xl:text-[30px] 3xl:text-[48px] leading-normal xl:leading-[3rem] 3xl:leading-[4rem] text-secondary duration-300">
               Your Loyalty<br />Rewarded
             </h1>
 

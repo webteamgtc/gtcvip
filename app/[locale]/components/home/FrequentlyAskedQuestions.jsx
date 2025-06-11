@@ -50,9 +50,9 @@ const FrequentlyAskedQuestions = ({ data }) => {
         <div className="top-section text-center mb-10">
           <h2
             className="
-              text-primary 
-              dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text 
-              text-2xl font-[500] md:text-[30px] 2xl:text-[35px] capitalize max-w-sm mx-auto leading-normal 
+              text-secondary 
+             
+              text-2xl font-[500] md:text-[30px] 2xl:text-[30px] capitalize max-w-xs mx-auto leading-normal 
               transition-colors duration-300
             "
           >

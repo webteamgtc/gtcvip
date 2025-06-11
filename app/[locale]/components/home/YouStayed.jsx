@@ -8,7 +8,7 @@ const YouStayed = () => {
     <section id="rewards" className=" text-primary dark:text-white transition-colors duration-300 py-10 md:py-16">
       <div className="container max-w-6xl mx-auto px-4 text-center space-y-6 text-base 2xl:text-lg">
 
-        <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[35px] max-w-72 md:max-w-sm mx-auto leading-normal text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:to-90% dark:via-white to-10% dark:to-secondary dark:bg-clip-text transition-colors duration-300 md:px-5" >   You Been Loyal<br></br>
+        <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[30px] max-w-72 md:max-w-sm mx-auto leading-normal text-secondary  duration-300 md:px-5" >   You Been Loyal<br></br>
           Now Watch It Pay Off </h2>
 
         <p className="leading-relaxed max-w-xl mx-auto">

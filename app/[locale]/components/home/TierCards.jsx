@@ -2,9 +2,9 @@ import LiveAccountButton from "../liveAccountButton";
 const tiers = [
   {
     badgeColor: "bg-orange-300",
-    label: "STANDARD",
+    label: "Bronze",
     title: "Available for",
-    price: "All Traders",
+    price: "$0 – $100",
     benefits: [
       "Access to Basic Market Analysis",
       "Community Access",
@@ -13,8 +13,8 @@ const tiers = [
   },
   {
     badgeColor: "bg-gray-300",
-    label: "PRIORITY",
-     price: "$10,000",
+    label: "Silver",
+     price: "$100 – $3,000",
     title: "Equity",
     benefits: [
       "Access to Lower Tier Rewards",
@@ -24,8 +24,8 @@ const tiers = [
   },
   {
     badgeColor: "bg-yellow-300",
-    label: "V I P",
-     price: "$50,000 ",
+    label: "Gold",
+     price: "$3,000 – $10,000",
     title: "Equity",
     benefits: [
       "Triple the Reward Points",
@@ -40,7 +40,7 @@ export default function TierCards() {
   return (
     <section id="level" className="max-w-6xl mx-auto pt-12 md:pt-16 text-primary dark:text-white transition-colors duration-300">
        <div className="top-section text-center mb-10">
-      <h2 style={{ lineHeight: "3.3rem" }} className=" text-2xl font-[500] md:text-[30px] 2xl:text-[40px] max-w-xs mx-auto leading-normal text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Your Journey Starts Here
+      <h2 style={{ lineHeight: "3.3rem" }} className=" text-2xl font-[500] md:text-[30px] 2xl:text-[35px] max-w-64 mx-auto leading-normal text-secondary  transition-colors duration-300 " > Your Journey Starts Here
 </h2>
       </div>
     <div className="overflow-x-auto">

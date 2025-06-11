@@ -4,6 +4,9 @@ import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useUserStore } from "../store/userSlice";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import FooterNew from "../components/FooterNew";
 
 const ThankYouPage = () => {
   const searchParams = useSearchParams();
@@ -38,6 +41,8 @@ const ThankYouPage = () => {
   if (!hasHydrated || !user) return null;
 
   return (
+    <>
+    <Header />
     <section className="pt-10 md:pt-14 xl:pt-20 3xl:pt-20 5xl:pt-28 transition-colors duration-300">
   <div className="container text-left md:pt-20 lg:pt-24 2xl:pt-28">
     {/* Heading */}
@@ -83,7 +88,8 @@ const ThankYouPage = () => {
     </div>
   </div>
 </section>
-
+<FooterNew />
+</>
   );
 };
 

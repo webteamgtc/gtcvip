@@ -13,7 +13,7 @@ const VIPSteps = () => {
   return (
     <section id="step" className="py-10 md:py-16">
       <div className="top-section text-center mb-10">
-       <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[35px] max-w-xs md:max-w-sm mx-auto leading-tight text-primary dark:text-transparent dark:bg-gradient-to-r dark:from-secondary dark:via-white dark:to-secondary dark:bg-clip-text transition-colors duration-300 " > Get Your GTC VIP Access in 
+       <h2 className=" text-2xl font-[500] md:text-[30px] 2xl:text-[30px] max-w-xs md:max-w-xs mx-auto leading-tight text-secondary  transition-colors duration-300 " > Get Your GTC VIP Access in 
 3 Simple Steps
  </h2>
       </div>
