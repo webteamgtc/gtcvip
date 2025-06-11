@@ -43,9 +43,9 @@ const FloatingInput = ({
     <div className="relative w-full mb-1">
       <label
         htmlFor={id}
-        className={`absolute left-1 transform font-normal leading-[1.7rem] transition-all duration-300 bg-[#232a5f] px-1
-          ${isActive ? '-translate-y-3 scale-90' : 'translate-y-[4px] scale-100 opacity-50 border-opacity-50'} 
-          ${error && touched ? 'text-red-500' : 'text-[#a7753f]'}`}
+        className={`absolute left-1 text-base transform font-normal leading-[1.7rem] transition-all duration-300 bg-[#232a5f] px-1
+          ${isActive ? '-translate-y-3 scale-90' : 'translate-y-[12px] scale-100'} 
+          ${error && touched ? 'text-red-500' : 'text-[#575757]'}`}
       >
         {label}
       </label>
@@ -61,20 +61,20 @@ const FloatingInput = ({
           setFocused(false);
           onBlur(e);
         }}
-        className={`w-full rounded-md border bg-transparent px-4 py-2 text-[16px] md:text-[14px] placeholder:text-[#a7753f] text-white focus:outline-none 
-          ${error && touched ? 'border-red-500' : 'border-[#a7753f]'}`}
+        className={`w-full rounded-md border bg-transparent px-4 py-3 text-[16px] placeholder:text-[#575757] text-white focus:outline-none 
+          ${error && touched ? 'border-red-500' : 'border-[#575757]'}`}
       />
       {isPassword && (
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute top-3 right-3 text-[#a7753f] focus:outline-none"
+          className="absolute top-3 right-3 text-[#575757] focus:outline-none"
         >
           {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
         </button>
       )}
       {error && touched && (
-        <p className="text-xs text-red-500 mt-1">{error}</p>
+        <p className="text-sm text-red-500 mt-1">{error}</p>
       )}
     </div>
   );
@@ -493,9 +493,22 @@ const TradeForm = () => {
                 {loading ? <p> {t("sending")}</p> : <p>Register</p>}
               </button>
             }
-           
+            <div className=" flex gap-3 justify-center items-center mb-3">
+              <p className="text-[#a7753f] underline">Terms of Service</p>
+              <p className="text-[#a7753f] underline">Privacy Policy</p>
+            </div>
             <p className="text-center text-base text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
-            <p className="text-xs py-3 leading-5 text-white">{t("contactTerms")}</p>
+           <p className="text-xs py-3 leading-5 text-white">
+  By clicking Submit, I acknowledge that I have read, understood, and agree to the{" "}
+  <a href="#" target="_blank" className="underline text-secondary">
+    Terms of Service
+  </a>{" "}
+  and{" "}
+  <a href="#" target="_blank" className="underline text-secondary">
+    Privacy Policy
+  </a>
+  , and I give my consent to GTC Group to contact me.
+</p>
           </div>
         </form>
       </div>
