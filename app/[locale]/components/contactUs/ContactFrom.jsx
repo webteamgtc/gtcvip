@@ -427,10 +427,11 @@ const TradeForm = () => {
                         paddingBottom: "8px",
                         paddingTop: "8px",
                         width: "20%",
-                        backgroundColor: "#d1d5db",
-                        color: "#000",
+                        backgroundColor: "#252a60",
+                        border: "1px solid #575757",
+                        color: "#b28752",
                         fontWeight: "700",
-                        outlineColor: "#f9c617",
+                        outlineColor: "#b28752",
                       }}
                     />
                     <button
