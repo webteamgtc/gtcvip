@@ -37,38 +37,48 @@ const FloatingInput = ({
   const [showPassword, setShowPassword] = useState(false);
 
   const isActive = focused || value?.length > 0;
-  const isPassword = type === 'password';
+  const isPassword = type === "password";
 
   return (
     <div className="relative w-full mb-1">
       <label
         htmlFor={id}
         className={`absolute left-1 text-base transform font-normal leading-[1.7rem] transition-all duration-300 bg-[#232a5f] px-1
-          ${isActive ? '-translate-y-3 scale-90' : 'translate-y-[12px] scale-100'} 
-          ${error && touched ? 'text-red-500' : 'text-[#575757]'}`}
+          ${isActive ? "-translate-y-3 scale-90" : "translate-y-[12px] scale-100"} 
+          ${
+            error && touched
+              ? "text-red-500"
+              : focused
+              ? "text-secondary"
+              : "text-[#575757]"
+          }`}
       >
         {label}
       </label>
       <input
         id={id}
         name={name}
-        type={isPassword && !showPassword ? 'password' : 'text'}
+        type={isPassword && !showPassword ? "password" : "text"}
         value={value}
         onChange={onChange}
-        autoComplete="false"
+        autoComplete="off"
         onFocus={() => setFocused(true)}
         onBlur={(e) => {
           setFocused(false);
           onBlur(e);
         }}
-        className={`w-full rounded-md border bg-transparent px-4 py-3 text-[16px] placeholder:text-[#575757] text-white focus:outline-none 
-          ${error && touched ? 'border-red-500' : 'border-[#575757]'}`}
+        className={`w-full rounded-md border bg-transparent px-4 py-3 text-[16px] focus:outline-none 
+          ${error && touched ? "border-red-500" : focused ? "border-secondary" : "border-[#575757]"} 
+          ${focused ? "text-white" : "text-white"} 
+          placeholder:text-[#575757]`}
       />
       {isPassword && (
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute top-3 right-3 text-[#575757] focus:outline-none"
+          className={`absolute top-3 right-3 ${
+            focused ? "text-white" : "text-[#575757]"
+          } focus:outline-none`}
         >
           {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
         </button>
@@ -366,7 +376,7 @@ const TradeForm = () => {
                       touched={formik.touched.email}
                     />
                     <button
-                      className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
+                      className={`bg-secondary rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
                 hover:bg-primary hover:text-secondary hover:border-2`}
                       type="button"
                       onClick={sendEmailOtp}
