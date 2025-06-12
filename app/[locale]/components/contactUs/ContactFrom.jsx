@@ -50,7 +50,7 @@ const FloatingInput = ({
               ? "text-red-500"
               : focused
               ? "text-secondary"
-              : "text-[#575757]"
+              : "text-secondary"
           }`}
       >
         {label}
@@ -70,14 +70,14 @@ const FloatingInput = ({
         className={`w-full rounded-md border bg-transparent px-4 py-3 text-[16px] focus:outline-none 
           ${error && touched ? "border-red-500" : focused ? "border-secondary" : "border-[#575757]"} 
           ${focused ? "text-white" : "text-white"} 
-          placeholder:text-[#575757]`}
+          placeholder:text-secondary`}
       />
       {isPassword && (
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
           className={`absolute top-3 right-3 ${
-            focused ? "text-white" : "text-[#575757]"
+            focused ? "text-white" : "text-secondary"
           } focus:outline-none`}
         >
           {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
@@ -376,7 +376,7 @@ const TradeForm = () => {
                       touched={formik.touched.email}
                     />
                     <button
-                      className={`bg-secondary rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
+                      className={`bg-secondary rounded-md text-sm  border-2  w-[30%] py-[10px] border-primary transition-colors duration-300
                 hover:bg-primary hover:text-secondary hover:border-2`}
                       type="button"
                       onClick={sendEmailOtp}
@@ -435,7 +435,7 @@ const TradeForm = () => {
                       }}
                     />
                     <button
-                      className="bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] text-white text-sm font-semibold w-[30%] py-[10px] rounded-md hover:bg-primary hover:text-secondary hover:border-2 border-primary border-2 transition-colors duration-300"
+                      className="bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] text-white text-sm w-[30%] py-[10px] rounded-md hover:bg-primary hover:text-secondary hover:border-2 border-primary border-2 transition-colors duration-300"
                       type="button"
                       onClick={verifyEmailOtp}
                       disabled={disableVerifyEmailOtpBtn}
@@ -498,7 +498,7 @@ const TradeForm = () => {
             {message != false &&
               <button
                 disabled={!isEmailVerified || message == false}
-                className="block bg-[#a7753f] text-xl w-full h-[40px] uppercase font-semibold text-prumary rounded-md p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
+                className="block bg-[#a7753f] text-xl w-full h-[40px] uppercase text-prumary rounded-md p-2 border-opacity-100  placeholder:text-primary outline-none sm:text-base sm:leading-6 mb-2"
                 type="submit"
               >
                 {loading ? <p> {t("sending")}</p> : <p>Register</p>}
@@ -508,7 +508,7 @@ const TradeForm = () => {
               <p className="text-[#a7753f] underline">Terms of Service</p>
               <p className="text-[#a7753f] underline">Privacy Policy</p>
             </div>
-            <p className="text-center text-base text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
+            <p className="text-center text-base text-white">Already an existing member or a GTC client? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
            <p className="text-xs py-3 leading-5 text-white">
   By clicking Submit, I acknowledge that I have read, understood, and agree to the{" "}
   <a href="#" target="_blank" className="underline text-secondary">
