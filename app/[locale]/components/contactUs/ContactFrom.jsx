@@ -37,7 +37,7 @@ const FloatingInput = ({
   const [showPassword, setShowPassword] = useState(false);
 
   const isActive = focused || value?.length > 0;
-  const isPassword = type === 'password';
+  const isPassword = type === "password";
 
   return (
     <div className="relative w-full mb-1">
@@ -52,29 +52,33 @@ const FloatingInput = ({
       <input
         id={id}
         name={name}
-        type={isPassword && !showPassword ? 'password' : 'text'}
+        type={isPassword && !showPassword ? "password" : "text"}
         value={value}
         onChange={onChange}
-        autoComplete="false"
+        autoComplete="off"
         onFocus={() => setFocused(true)}
         onBlur={(e) => {
           setFocused(false);
           onBlur(e);
         }}
-        className={`w-full rounded-md border bg-transparent px-4 py-2 text-[16px] md:text-[14px] placeholder:text-[#a7753f] text-white focus:outline-none 
-          ${error && touched ? 'border-red-500' : 'border-[#a7753f]'}`}
+        className={`w-full rounded-md border bg-transparent px-4 py-3 text-[16px] focus:outline-none 
+          ${error && touched ? "border-red-500" : focused ? "border-secondary" : "border-[#575757]"} 
+          ${focused ? "text-white" : "text-white"} 
+          placeholder:text-[#575757]`}
       />
       {isPassword && (
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute top-3 right-3 text-[#a7753f] focus:outline-none"
+          className={`absolute top-3 right-3 ${
+            focused ? "text-white" : "text-[#575757]"
+          } focus:outline-none`}
         >
           {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
         </button>
       )}
       {error && touched && (
-        <p className="text-xs text-red-500 mt-1">{error}</p>
+        <p className="text-sm text-red-500 mt-1">{error}</p>
       )}
     </div>
   );
@@ -366,7 +370,7 @@ const TradeForm = () => {
                       touched={formik.touched.email}
                     />
                     <button
-                      className={`bg-gradient-to-l from-secondary via-[#807f8d] to-[#202d7bdb] rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
+                      className={`bg-secondary rounded-md text-sm  border-2 font-semibold w-[30%] py-[10px] border-primary transition-colors duration-300
                 hover:bg-primary hover:text-secondary hover:border-2`}
                       type="button"
                       onClick={sendEmailOtp}
@@ -417,10 +421,11 @@ const TradeForm = () => {
                         paddingBottom: "8px",
                         paddingTop: "8px",
                         width: "20%",
-                        backgroundColor: "#d1d5db",
-                        color: "#000",
+                        backgroundColor: "#252a60",
+                        border: "1px solid #575757",
+                        color: "#b28752",
                         fontWeight: "700",
-                        outlineColor: "#f9c617",
+                        outlineColor: "#b28752",
                       }}
                     />
                     <button
@@ -498,7 +503,17 @@ const TradeForm = () => {
               <p className="text-[#a7753f] underline">Privacy Policy</p>
             </div>
             <p className="text-center text-base text-white">Already an existing member? <a href="https://my.gtcvip.com/v2/app/login" target="blank" className=" text-[#a7753f] font-semibold underline">Login</a></p>
-            <p className="text-xs py-3 leading-5 text-white">{t("contactTerms")}.</p>
+           <p className="text-xs py-3 leading-5 text-white">
+  By clicking Submit, I acknowledge that I have read, understood, and agree to the{" "}
+  <a href="#" target="_blank" className="underline text-secondary">
+    Terms of Service
+  </a>{" "}
+  and{" "}
+  <a href="#" target="_blank" className="underline text-secondary">
+    Privacy Policy
+  </a>
+  , and I give my consent to GTC Group to contact me.
+</p>
           </div>
         </form>
       </div>
