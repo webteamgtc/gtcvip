@@ -44,7 +44,7 @@ const FloatingInput = ({
       <label
         htmlFor={id}
         className={`absolute left-1 transform font-normal leading-[1.7rem] transition-all duration-300 bg-[#232a5f] px-1
-          ${isActive ? '-translate-y-3 scale-90' : 'translate-y-[4px] scale-100 opacity-50 border-opacity-50'} 
+          ${isActive ? '-translate-y-3 scale-90 border-opacity-100' : 'translate-y-[4px] scale-100 opacity-50 border-opacity-50'} 
           ${error && touched ? 'text-red-500' : 'text-[#a7753f]'}`}
       >
         {label}
