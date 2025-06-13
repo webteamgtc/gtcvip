@@ -25,7 +25,7 @@ const tiers = [
   },
   {
     level: "Gold",
-    range: "$5,000 – $15,000",
+    range: "$5,000 – $50,000",
     icon: FaCrown,
     frontContent: "Silver +\nCrypto Research\nIndices Research",
     backContent: [
@@ -37,7 +37,7 @@ const tiers = [
   },
   {
     level: "Platinum",
-    range: "$15,000 – $100,000",
+    range: "$50,000 – $100,000",
     icon: FaDiamond,
     frontContent: "Gold +\nRedeem entertainment, watches, gold bars",
     backContent: [
@@ -50,7 +50,7 @@ const tiers = [
     level: "Diamond",
     range: "$100,000+",
     icon: FaGem,
-    frontContent: "Platinum +\nRedeem Cars",
+    frontContent: "Platinum +\nRedeem Cars", 
     backContent: [
       "Everything in Platinum plus",
       "Redeem Cars"
