@@ -16,26 +16,26 @@ const LiveAccountButton = () => {
       <button
         onClick={handleScroll}
         className="
-          text-sm lg:text-lg px-8 py-2 text-center rounded-full
-          w-full md:w-48 md:mx-0 mx-auto
+          text-sm lg:text-lg px-6 py-2 text-center rounded-full
+          w-64 md:w-64 md:mx-0 mx-auto
           bg-primary text-white hover:bg-secondary hover:text-white
           dark:bg-white dark:text-black dark:hover:bg-secondary dark:hover:text-white
           transition-colors duration-300
         "
       >
-        BE REWARDED
+        Join Now to Be Rewarded
       </button>
 
-      <span className="text-sm">
-        or{" "}
-        <a
-          href="https://my.gtcvip.com/v2/app/login"
-          target="_blank"
-          className="text-secondary underline"
-        >
-          Login
-        </a>
-      </span>
+     <span className="text-sm md:text-base">
+  Already an existing member or a GTC client?{" "}
+  <a
+    href="https://my.gtcvip.com/v2/app/login"
+    target="_blank"
+    className="text-secondary underline"
+  >
+    Login
+  </a>
+</span>
     </div>
   );
 };
