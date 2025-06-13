@@ -8,6 +8,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import clsx from 'clsx';
 
 const team = [
+    { name: 'iPhone 16 Pro Max', image: '/apartment.webp' },
   { name: 'iPhone 16 Pro Max', image: '/pro/P-01.webp' },
   { name: 'iPhone 16 Pro Max', image: '/pro/P-02.webp' },
   { name: 'iPhone 16 Pro Max', image: '/pro/P-03.webp' },
@@ -20,7 +21,7 @@ const team = [
   { name: 'David Williams', image: '/pro/P-10.webp' },
 ];
 
-export default function TeamCarousel() {
+export default function TeamCarousel() { 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
