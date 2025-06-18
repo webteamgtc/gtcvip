@@ -5,7 +5,7 @@ import { FaCrown, FaDiamond, FaGem } from "react-icons/fa6";
 const tiers = [
   {
     level: "Bronze",
-    range: "$0 – $100",
+    range: "$0 – $1000",
     icon: FaMedal,
     frontContent: "FX Research",
     backContent: ["FX Research"],
@@ -13,7 +13,7 @@ const tiers = [
   },
   {
     level: "Silver",
-    range: "$100 – $3,000",
+    range: "$1000 – $5,000",
     icon: FaAward,
     frontContent: "Bronze +\nCommodities Research\nRedeem Electronics",
     backContent: [
@@ -25,7 +25,7 @@ const tiers = [
   },
   {
     level: "Gold",
-    range: "$3,000 – $10,000",
+    range: "$5,000 – $50,000",
     icon: FaCrown,
     frontContent: "Silver +\nCrypto Research\nIndices Research",
     backContent: [
@@ -37,7 +37,7 @@ const tiers = [
   },
   {
     level: "Platinum",
-    range: "$10,000 – $100,000",
+    range: "$50,000 – $100,000",
     icon: FaDiamond,
     frontContent: "Gold +\nRedeem entertainment, watches, gold bars",
     backContent: [
@@ -57,7 +57,7 @@ const tiers = [
     ],
     color: "text-cyan-400",
   },
-];
+]; 
 
 export default function TierCards() {
   return (
