@@ -49,7 +49,7 @@ export default function Home() {
     },
     {
       title: "Can I lose my points or status?",
-      paragraphs: ["Your points and status are safe as long as you stay active in the program. We do encourage regular participation to keep your VIP benefits active. Specific terms and conditions apply, which you can find in the program gu"],
+      paragraphs: ["Your points and status are safe as long as you stay active in the program. We do encourage regular participation to keep your VIP benefits active. Specific terms and conditions apply, which you can find in the program guide"],
     },
     {
       title: "Can I share my rewards or points with others?",
