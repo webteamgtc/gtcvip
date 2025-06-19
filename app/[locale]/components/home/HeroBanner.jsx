@@ -20,7 +20,7 @@ const HeroBanner = () => {
 
             <p className="text-primary dark:text-white text-sm xl:text-base 2xl:text-lg tracking-wider py-4">
               GTC VIP is the new standard when it comes to trading communities.<br />
-              Register, trade, and gain access to loyalty points that could see you be rewarded with a Mercedes G63, an all-expenses-paid holiday in Las Vegas, and many more exciting gifts. Click on the button below to get started
+              Register, trade, and gain access to loyalty points that could see you be rewarded with a Mercedes G63, an all-expenses-paid holiday in Las Vegas, and many more exciting gifts. Click on the button below to get started.
             </p>
             <div className="text-center md:text-center mt-5">
              <LiveAccountButton />
