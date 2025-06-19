@@ -17,6 +17,9 @@ const VIPSteps = () => {
 in Just 3 Simple Steps
 
  </h2>
+  <p className="max-w-lg mx-auto mt-5">It’s fast, free, and built to reward your loyalty from the very beginning.
+
+ </p>
       </div>
 
       <div className="flex flex-col md:flex-row gap-2 md:gap-0 max-w-6xl mx-auto overflow-hidden rounded-md px-2">
