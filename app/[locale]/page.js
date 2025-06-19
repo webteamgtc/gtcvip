@@ -45,7 +45,7 @@ export default function Home() {
     },
     {
       title: "Is it free to join GTC VIP?",
-      paragraphs: ["AYes! It’s completely free. The moment you register, you’re automatically enrolled in the GTC VIP programme and start earning points from day one. If you really want to earn big loyalty points, then it’s best to get a GTC trading account, top it up and trade. The more you trade, the more points you’ll earn."],
+      paragraphs: ["Yes! It’s completely free. The moment you register, you’re automatically enrolled in the GTC VIP programme and start earning points from day one. If you really want to earn big loyalty points, then it’s best to get a GTC trading account, top it up and trade. The more you trade, the more points you’ll earn."],
     },
     {
       title: "Can I lose my points or status?",
