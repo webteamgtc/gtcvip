@@ -39,9 +39,13 @@ const FreshPress = () => {
   return (
     <div className="md:max-w-6xl mx-auto px-4" id="whyTrade">
       <div className="top-section text-center mb-10">
-        <h2 className="text-2xl font-semibold xl:text-[30px] 2xl:text-[30px] max-w-sm mx-auto leading-normal text-secondary duration-300">
-          Why is Everyone Talking About GTC VIP?
+        <h2 className="text-2xl font-semibold xl:text-[30px] 2xl:text-[30px] max-w-[260px] mx-auto leading-normal text-secondary duration-300">
+          Where Loyalty
+Feels Like Luxury
+
         </h2>
+        <p className="max-w-lg mx-auto mt-5">We’ve redefined what it means to be loyal and turned everyday trading actions into prestige, perks, and pure reward.
+</p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

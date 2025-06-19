@@ -58,6 +58,8 @@ const FrequentlyAskedQuestions = ({ data }) => {
           >
             Frequently Asked Questions
           </h2>
+           <p className="max-w-lg mx-auto mt-5">Got a question about GTC VIP? You’ll probably find the answer here, and if not, we’re always just a message away.
+</p>
         </div>
 
         <div className="max-w-6xl mx-auto space-y-4">
