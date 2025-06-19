@@ -33,7 +33,7 @@ export default function Home() {
   const gtcFaqData = [
     {
       title: "What is the GTC VIP?",
-      paragraphs: ["GTC VIP is our Loyalty Programme that’s been built for traders who stick with us. Earn points through your trading activity and redeem them for luxury rewards, exclusive perks, and unforgettable experiences, which are all designed to thank you for your loyalty."],
+      paragraphs: ["GGTC VIP is our Loyalty Programme that’s been built for traders who stick with us. Earn points through your trading activity and redeem them for luxury rewards, exclusive perks, and unforgettable experiences, which are all designed to thank you for your loyalty."],
     },
     {
       title: "How do I earn points?",
@@ -45,11 +45,11 @@ export default function Home() {
     },
     {
       title: "Is it free to join GTC VIP?",
-      paragraphs: ["As long as you remain active, your points and tier status are safe. If you go inactive for an extended period, points may expire. You can find the full details in the programme’s Terms & Conditions."],
+      paragraphs: ["AYes! It’s completely free. The moment you register, you’re automatically enrolled in the GTC VIP programme and start earning points from day one. If you really want to earn big loyalty points, then it’s best to get a GTC trading account, top it up and trade. The more you trade, the more points you’ll earn."],
     },
     {
       title: "Can I lose my points or status?",
-      paragraphs: ["Your points and status are safe as long as you stay active in the program. We do encourage regular participation to keep your VIP benefits active. Specific terms and conditions apply, which you can find in the program guide."],
+      paragraphs: ["As long as you remain active, your points and tier status are safe. If you go inactive for an extended period, points may expire. You can find the full details in the programme’s Terms & Conditions."],
     },
     {
       title: "Can I share my rewards or points with others?",
