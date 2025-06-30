@@ -79,6 +79,7 @@ export default async function LocaleLayout({ children, params }) {
           : `${roboto.variable} font-sans`
       } `}
     >
+      
       <head>
         <meta name="facebook-domain-verification" content="60dqaxv53ub77e10r0xc6bmbl9y2b3"/>
               <Script
@@ -97,7 +98,11 @@ export default async function LocaleLayout({ children, params }) {
         `,
       }}
     />
-     
+      <script
+          defer
+          id="convrs-webchat"
+          src="https://webchat.conv.rs/0bc7dfc471ae1a9e19e6a0418f9b6fd3724bfbcf.js"
+        ></script>
       </head>
       <body className="bg-white text-black dark:bg-gradient-to-t dark:from-[#283085] dark:via-[#050331] dark:to-[#050331] dark:text-white transition-colors duration-300 min-h-screen">
 

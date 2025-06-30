@@ -5,7 +5,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import LocationContextProvider from "../../context/location-context";
-import { LiveChatWidget } from "@livechat/widget-react";
 import DirectAccess from "./components/home/DirectAccess";
 import HeroBanner from "./components/home/HeroBanner";
 import FrequentlyAskedQuestions from "./components/home/FrequentlyAskedQuestions";
@@ -63,7 +62,7 @@ export default function Home() {
   
   return (
     <>
-      <LiveChatWidget license="13507356" />
+
       <LocationContextProvider>
        <Header  />
         <HeroBanner />
