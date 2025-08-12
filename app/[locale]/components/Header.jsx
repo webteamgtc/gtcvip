@@ -78,11 +78,11 @@ const Header = () => {
   };
 
   const navigationData = [
-    { title: "Home", id: "home" },
+  
     { title: "Rewards", id: "rewards" },
     { title: "Benefits", id: "benefits" },
     { title: "Levels", id: "level" },
-    { title: "Steps", id: "step" },
+    { title: "Steps", id: "step" },  
     { title: "FAQs", id: "faq" },
   ];
 
@@ -164,9 +164,17 @@ const Header = () => {
               <Link href="https://my.gtcvip.com/v2/app/login" target="_blank" className="bg-secondary text-white px-4 py-1 rounded-full hover:bg-primary">
                Login
               </Link>
-              <Link href="https://my.gtcvip.com/v2/app/register" target="_blank" className="bg-green-600 text-white px-4 py-1 rounded-full hover:bg-primary">
-                Register
-              </Link>
+              
+             <Link
+  href="https://contest.gtcvip.com/5k-demo-trading-competition"
+  target="_blank"
+  className="bg-green-600 text-white px-4 py-1 rounded-full hover:bg-white hover:text-primary animate-pulse-infinite transition-all duration-500 ease-in-out"
+  style={{
+    animation: "pulse 2s infinite",
+  }}
+>
+  Join Demo Competition
+</Link>
               {/* Theme Toggle */}
               {mounted && (
                 <button
