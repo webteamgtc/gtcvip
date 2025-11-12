@@ -165,16 +165,7 @@ const Header = () => {
                Login
               </Link>
               
-             <Link
-  href="https://contest.gtcvip.com/5k-demo-trading-competition"
-  target="_blank"
-  className="bg-green-600 text-white px-4 py-1 rounded-full hover:bg-white hover:text-primary animate-pulse-infinite transition-all duration-500 ease-in-out"
-  style={{
-    animation: "pulse 2s infinite",
-  }}
->
-  Join Demo Competition
-</Link>
+     
               {/* Theme Toggle */}
               {mounted && (
                 <button

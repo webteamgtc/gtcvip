@@ -62,21 +62,8 @@ const MobileMenu = () => {
               <AiOutlineClose />
             </button>
           </div>
-          <div className="flex flex-col items-start px-4 pt-4 space-y-2">
-                                <Link
-                href="https://contest.gtcvip.com/5k-demo-trading-competition"
-                target="_blank"
-                className="bg-green-600 text-white px-4 py-1 rounded-full hover:bg-white hover:text-primary animate-pulse-infinite transition-all duration-500 ease-in-out"
-                style={{
-                  animation: "pulse 2s infinite",
-                }}
-              >
-                Join Demo Competition
-              </Link>
-          </div>
-
           <ul className="p-4 space-y-2">
-            {navigationData.map((item, index) => (
+            {navigationData.map((item, index) => ( 
               <li
                 key={index}
                 className="text-sm text-gray-900 rounded hover:bg-gray-100 p-2 cursor-pointer"
