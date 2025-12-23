@@ -84,7 +84,7 @@ export default async function LocaleLayout({ children, params }) {
         <meta name="facebook-domain-verification" content="60dqaxv53ub77e10r0xc6bmbl9y2b3"/>
               <Script
       async
-      src="https://www.googletagmanager.com/gtag/js?id=G-PCM3L15VZ6"
+      src="https://www.googletagmanager.com/gtag/js?id=G-NG20Y9N9C2"
     />
     <Script
       id="gtag-init"
@@ -94,9 +94,9 @@ export default async function LocaleLayout({ children, params }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-PCM3L15VZ6');
+          gtag('config', 'G-NG20Y9N9C2');
         `,
-      }}
+      }} 
     />
       <script
           defer
